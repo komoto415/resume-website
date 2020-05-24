@@ -1,0 +1,104 @@
+.accordion {
+    margin: 0px 0px 15px 0px;
+    box-sizing: border-box;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    width: 100%;
+}
+
+.accordion-select {
+    cursor: pointer;
+    margin: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.accordion-title {
+    position: relative;
+}
+
+.accordion-title:not(:nth-last-child(2))::after {
+    border: 1px solid transparent;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.accordion-title span {
+    bottom: 0px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.accordion-content {
+    box-sizing: border-box;
+    overflow: auto;
+    position: relative;
+    transition: margin 0.3s ease 0.1s;
+}
+
+.accordion-select:checked + .accordion-title + .accordion-content {
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+/* Generated styles starts here */
+
+.accordion {
+    border-color: #2e091b;
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 0px;
+    flex-direction: row;
+    height: 550px;
+} 
+
+.accordion-title,
+.accordion-select  {
+    background-color: #7f204e;
+    color: #ffffff;
+    width: 50px;
+    height: 100%;
+    font-size: 16px;
+}
+
+.accordion-select {
+    margin-bottom: -50px;
+    margin-right: -50px;
+}
+
+.accordion-title:not(:nth-last-child(2))::after {
+    border-bottom-color: transparent;
+    border-right-color: #5c1738;
+} 
+
+.accordion-select:hover + .accordion-title,
+.accordion-select:checked + .accordion-title {
+    background-color: #e80974;
+} 
+
+ .accordion-title span  {	
+    transform: rotate(-90deg);
+    -ms-writing-mode: lr-bt;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    padding-bottom: 25px;
+    padding-top: 25px;
+    line-height: 50px;
+} 
+
+.accordion-content {
+    background-color: #5c5c5c;
+    color: #dbd9ff;
+    height: 100%;
+    margin-bottom: 0;
+    margin-right: calc(-1 * calc(100% - 150px));
+    padding: 15px;
+    width: calc(100% - 150px);
+} 

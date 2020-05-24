@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body, html {
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #303047 !important;
+    color: white !important;
+}

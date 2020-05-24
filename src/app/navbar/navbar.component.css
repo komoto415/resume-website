@@ -1,0 +1,14 @@
+header.navbar {
+    background-color: darkgray;
+    width: 100vw;
+    height: 10vh;
+}
+
+nav {
+    color: white;
+    text-align: right;
+}
+
+.content {
+    margin: 10px;
+}

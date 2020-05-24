@@ -1,0 +1,49 @@
+.banner-image {
+    /* image credit: https://mymodernmet.com/hong-kong-neon-xavier-portela/ */
+    height: 95vh;
+    background-image: url("/assets/banners/hong-kong-banner-v2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+    filter: blur(1.1px);
+    -webkit-filter: blur(1.1px);
+}
+
+.banner-content {
+    font-size: larger;
+    transform: translate(5vw, -35vh);
+    height: 0px;
+}
+
+.content {
+    transform: translate(5vw, -35vh);
+    z-index: 0;
+}
+
+.inner {
+    padding: 0px 10px 0px 10px;
+    font-size: 45px;
+    font-style: italic;
+}
+
+.inner-text-b {
+    color: transparent;
+    background-color: darkgray;
+    filter: alpha(opacity=70);
+    /* IE */
+    -moz-opacity: 0.7;
+    /* Mozilla */
+    opacity: 0.7;
+    /* CSS3 */
+    position: absolute;
+
+}
+.inner-text {
+    position: absolute;
+}
