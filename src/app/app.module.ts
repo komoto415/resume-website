@@ -9,6 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ResumeComponent } from './resume/resume.component';
 import { SlidesComponent } from './slides/slides.component';
 import { EducationCardComponent } from './resume/education-card/education-card.component';
+import { LanguagesComponent } from './resume/languages/languages.component';
+import { ExperiencesComponent } from './resume/experiences/experiences.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { EducationCardComponent } from './resume/education-card/education-card.c
     ResumeComponent,
     SlidesComponent,
     EducationCardComponent,
+    LanguagesComponent,
+    ExperiencesComponent,
   ],
   imports: [
     BrowserModule,
