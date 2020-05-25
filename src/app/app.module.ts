@@ -11,6 +11,7 @@ import { SlidesComponent } from './slides/slides.component';
 import { EducationCardComponent } from './resume/education-card/education-card.component';
 import { LanguagesComponent } from './resume/languages/languages.component';
 import { ExperiencesComponent } from './resume/experiences/experiences.component';
+import { ContactMeComponent } from './contact-me/contact-me.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ExperiencesComponent } from './resume/experiences/experiences.component
     EducationCardComponent,
     LanguagesComponent,
     ExperiencesComponent,
+    ContactMeComponent,
   ],
   imports: [
     BrowserModule,
