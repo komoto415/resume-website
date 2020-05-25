@@ -51,8 +51,6 @@
     margin-bottom: 30px;
 }
 
-.edu {
+app-education-card {
     min-width: 100%;
-    background-color: rgb(71, 78, 97);
-    color: aliceblue;
 }

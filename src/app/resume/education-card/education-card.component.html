@@ -1,0 +1,43 @@
+<div class="card border-dark mb-3 edu" *ngFor="let college of colleges;">
+    <div class="card-header" data-toggle="collapse" attr.data-target="#{{ college.shorthand }}" aria-expanded="false"
+        attr.aria-controls="{{ college.shorthand }}">
+        <div class="row">
+            <div class="col-auto">
+                {{ college.name }}
+            </div>
+            <div class="col" style="text-align: right;">
+                {{ college.timeline }}
+            </div>
+        </div>
+    </div>
+    <div class="collapse" attr.id="{{ college.shorthand }}">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-10">
+                    <h6 class="card-title"> Bachelors {{ college.bachelors }} {{ college.degree }}</h6>
+                    <span>
+                        {{ college.minors.length > 0 ? (college.minors.length > 1 ? "Minors" : "Minor") : "" }}
+                    </span>
+                    <ul>
+                        <li *ngFor="let minor of college.minors;">
+                            {{ minor }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <label>{{ college.gpa }}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6>Classes of Notes</h6>
+                    <ul>
+                        <li *ngFor="let class of college.classes;">
+                            {{ class }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
