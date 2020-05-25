@@ -6,32 +6,36 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./education-card.component.css']
 })
 export class EducationCardComponent implements OnInit {
-    colleges = [
+    colleges: object = [
         {
             "name": "St. Edwards University",
-            "timeline" : "2017-2021",
-            "shorthand" : "steds",
-            "bachelors" : "in Science",
-            "degree" : "Computer Science",
+            "timeline": "2017-2021",
+            "shorthand": "steds",
+            "degrees": [
+                "Bachelors of Science in Computer Science",
+            ],
             "gpa": "3.45",
-            "minors" : ["Mathematics",],
+            "minors": [
+                "Mathematics",
+            ],
             "classes": [
                 "Software Engineering I",
                 "Component-Based Programming",
+                "Database Theory",
             ],
-
-        }, 
-        {
-            "name": "Washington University in St. Louis",
-            "timeline" : "2021-2024",
-            "shorthand": "washu",
-            "bachelors" : "in Science",
-            "degree" : "Electrical Engineering",
-            "gpa": "N/A",
-            "minors" : [],
-            "classes": ["N/A"],
-        }
-
+        },
+        // {
+        //     "name": "Washington University in St. Louis",
+        //     "timeline": "2021-2024",
+        //     "shorthand": "washu",
+        //     "degrees": [
+        //         "Masters in Robotics",
+        //         "Bachelors of Science Electrical Engineering",
+        //     ],
+        //     "gpa": "N/A",
+        //     "minors": [],
+        //     "classes": [],
+        // },
     ]
     constructor() { }
 
