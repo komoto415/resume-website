@@ -1,5 +1,9 @@
 .edu {
     min-width: 100% !important;
     background-color: rgb(71, 78, 97);
-    color: aliceblue;
+}
+
+.clazz {
+    cursor: pointer;
+    text-decoration: underline !important;
 }
