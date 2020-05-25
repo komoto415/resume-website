@@ -1,6 +1,5 @@
 <div class="card border-dark mb-3 edu" *ngFor="let college of colleges;">
-    <div class="card-header" data-toggle="collapse" attr.data-target="#{{ college.shorthand }}" aria-expanded="false"
-        attr.aria-controls="{{ college.shorthand }}">
+    <div class="card-header">
         <div class="row">
             <div class="col-8">
                 {{ college.name }}
@@ -10,7 +9,6 @@
             </div>
         </div>
     </div>
-    <div class="collapse" attr.id="{{ college.shorthand }}">
         <div class="card-body">
             <div class="row">
                 <div class="col-10">
@@ -41,5 +39,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
