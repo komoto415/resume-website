@@ -1,0 +1,26 @@
+.box {
+    background: #fff;
+    border-radius: 4px;
+    padding-bottom: 100%;
+ }
+ 
+ .col-sm-4 {
+    margin-top: 30px !important;
+ }
+ 
+.skill {
+    background-color: transparent;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: .2s;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+}
+
+.resume {
+    margin-top: 30px; 
+    margin-bottom: 30px;
+}

@@ -1,0 +1,5 @@
+<div *ngFor="let row of languages" class="row resume justify-content-center">
+    <div *ngFor="let langauge of row" class="col-sm-3">
+        <div class="box skill" attr.id="{{langauge}}" [style.background-image]="getImagePath(langauge)"></div>
+    </div>
+</div>
