@@ -66,7 +66,7 @@
     color: #ffffff;
     width: 50px;
     height: 100%;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .accordion-select {
@@ -95,10 +95,20 @@
 
 .accordion-content {
     background-color: #5c5c5c;
-    color: #dbd9ff;
     height: 100%;
     margin-bottom: 0;
     margin-right: calc(-1 * calc(100% - 150px));
     padding: 15px;
     width: calc(100% - 150px);
+    font-size: 22px;
 } 
+
+img {
+    max-height: 300px;
+    min-width: 250px;
+    border-radius: 50%;
+}
+
+.about-text {
+    overflow-y: auto;
+}
