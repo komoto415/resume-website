@@ -29,18 +29,19 @@
         <div class="row">
             <div class="col">
                 <h6>
-                    {{ college.classes.length > 0 ? ("Class" + (college.classes.length > 1 ? "es" : "" ) + " of Note") : ""}}
+                    {{ college.classes.length > 0 ? 
+                        ("Class" + (college.classes.length > 1 ? "es" : "" ) + " of Note") : ""}}
                 </h6>
                 <ul *ngIf="college.minors.length > 0">
-                    <li *ngFor="let class of college.classes;">
+                    <li *ngFor="let class of this.college.classes;">
                         <span class="clazz" data-toggle="modal"
-                            attr.data-target="#{{this.simplifyString(class)}}">{{ class }}</span>
+                            attr.data-target="#{{ this.simplifyString(class) }}">{{ class }}</span>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="modal fade" attr.id="{{this.simplifyString(class)}}" tabindex="-1" role="dialog" aria-hidden="true"
+    <div class="modal fade" attr.id="{{ this.simplifyString(class) }}" tabindex="-1" role="dialog" aria-hidden="true"
         *ngFor="let class of college.classes;">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
             <div class="modal-content edu">
@@ -52,40 +53,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <p>
-                            I am going to make a lot of words and more words I am going to make a lot of words and more
-                            words I am going to
-                            make a lot of words and more words I am going to make a lot of words and more words I am
-                            going to make a lot of
-                            words and more words I am going to make a lot of words and more words I am going to make a
-                            lot of words and more words I
-                            am going to make a lot of words and more words I am going to make a lot of words and more
-                            words I am going to
-                            make a lot of words and more words I am going to make a lot of words and more words I am
-                            going to make a lot of
-                            words and more words I am going to make a lot of words and more words I am going to make a
-                            lot of words and more words I
-                            am going to make a lot of words and more words I am going to make a lot of words and more
-                            words I am going to
-                            make a lot of words and more words
-                        </p>
-                        <p>
-                            I am going to make a lot of words and more words I am going to make a lot of words and more
-                            words I am going to
-                            make a lot of words and more words I am going to make a lot of words and more words I am
-                            going to make a lot of
-                            words and more words I am going to make a lot of words and more words I am going to make a
-                            lot of words and more words I
-                            am going to make a lot of words and more words I am going to make a lot of words and more
-                            words I am going to
-                            make a lot of words and more words I am going to make a lot of words and more words I am
-                            going to make a lot of
-                            words and more words I am going to make a lot of words and more words I am going to make a
-                            lot of words and more words I
-                            am going to make a lot of words and more words I am going to make a lot of words and more
-                            words I am going to
-                            make a lot of words and more words
-                        </p>
+                        <app-class-swe *ngIf="class == 'Software Engineering I'"></app-class-swe>
+                        <app-class-components *ngIf="class == 'Component-Based Programming'"></app-class-components>
                     </div>
                 </div>
             </div>
