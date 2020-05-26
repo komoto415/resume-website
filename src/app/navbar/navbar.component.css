@@ -1,11 +1,5 @@
 header.navbar {
-    width: 100vw;
     height: 10vh;
-}
-
-nav {
-    color: white;
-    text-align: right;
 }
 
 .content {
