@@ -6,3 +6,16 @@
 app-education-card {
     min-width: 100%;
 }
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #1d1d33;
+    border-radius: 50px;
+}
+
+.wrapper {
+    margin: 10px 3vw 10px 3vw;
+}
