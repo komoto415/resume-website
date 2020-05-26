@@ -21,15 +21,12 @@
     width: 100%;
 }
 
-.icon img {
-    max-height: 75px;
-    min-height: 40%;
-    cursor: pointer;
-    padding: 5px;
-    transition: 0.5s;
+.icon i {
+    /* cursor: pointer; */
+    color: black;
+    transition: 0.4s;
 }
 
-.icon img:hover {
-    background-color: #606079;
-    border-radius: 15px;
+.icon i:hover {
+    color: #2c2c4e;
 }
