@@ -61,7 +61,7 @@
 }
 
 .accordion-title, .accordion-select {
-    background-color: #7f204e;
+    background-color: #501431;
     color: #ffffff;
     width: 50px;
     height: 100%;
@@ -75,11 +75,12 @@
 
 .accordion-title:not(:nth-last-child(2))::after {
     border-bottom-color: transparent;
-    border-right-color: #5c1738;
+    border-right-color: #2c0c1b;
 }
 
 .accordion-select:hover+.accordion-title, .accordion-select:checked+.accordion-title {
-    background-color: #e80974;
+    background-color: #700539;
+    transition: 0.3s;
 }
 
 .accordion-title span {
@@ -92,7 +93,7 @@
 }
 
 .accordion-content {
-    background-color: #5c5c5c;
+    background-color: #34344e;
     height: 100%;
     margin-bottom: 0;
     margin-right: calc(-1 * calc(100% - 150px));
