@@ -14,6 +14,8 @@ import { LanguagesComponent } from './resume/languages/languages.component';
 import { ExperiencesComponent } from './resume/experiences/experiences.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { FooterComponent } from './footer/footer.component';
+import { ClassComponentsComponent } from './resume/education-card/class-components/class-components.component';
+import { ClassSweComponent } from './resume/education-card/class-swe/class-swe.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { FooterComponent } from './footer/footer.component';
     ExperiencesComponent,
     ContactMeComponent,
     FooterComponent,
+    ClassComponentsComponent,
+    ClassSweComponent,
   ],
   imports: [
     BrowserModule,
