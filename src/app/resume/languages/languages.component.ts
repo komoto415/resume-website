@@ -27,7 +27,8 @@ export class LanguagesComponent implements OnInit {
     constructor() { }
 
     public getImagePath(language:string) {
-        return `url(/assets/languages/${language}.png)`;
+        // return `url(/assets/languages/${language}.png)`;
+        return `/assets/languages/${language}.png`;
     }
 
     ngOnInit(): void {
