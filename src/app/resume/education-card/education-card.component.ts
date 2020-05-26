@@ -21,7 +21,7 @@ export class EducationCardComponent implements OnInit {
             "classes": [
                 "Software Engineering I",
                 "Component-Based Programming",
-                "Database Theory",
+                // "Database Theory",
             ],
         },
         // {
