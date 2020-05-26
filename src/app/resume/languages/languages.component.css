@@ -2,12 +2,21 @@
     background: #fff;
     border-radius: 4px;
     padding-bottom: 100%;
- }
- 
- .col-sm-4 {
+}
+
+.col-sm-3 {
     margin-top: 30px !important;
- }
- 
+}
+
+.skill img {
+    max-height: auto;
+    max-width: 125px;
+    height: auto;
+    width: 75%;
+    /* object-fit: cover; */
+    /* overflow: hidden; */
+}
+
 .skill {
     background-color: transparent;
     background-position: center;
@@ -21,6 +30,6 @@
 }
 
 .resume {
-    margin-top: 30px; 
+    margin-top: 30px;
     margin-bottom: 30px;
 }
