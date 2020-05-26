@@ -1,7 +1,7 @@
 .wrapper {
     margin-top: 20px;
-    margin-bottom: 55px;
-    height: 18rem;
+    margin-bottom: 50px;
+    height: 10rem;
 }
 
 .inner-wrapper {
@@ -28,5 +28,6 @@
 }
 
 .icon i:hover {
-    color: #2c2c4e;
+    color: #18183a;
+    transform: scale(1.1);
 }
