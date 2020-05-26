@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module'; // CLI imports AppRoutingModule
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
@@ -28,7 +29,8 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
   imports: [
     BrowserModule,
     NgbModule,
-    AppRoutingModule // CLI adds AppRoutingModule to the AppModule's imports array
+    AppRoutingModule,
+    FontAwesomeModule // CLI adds AppRoutingModule to the AppModule's imports array
   ],
   providers: [],
   bootstrap: [AppComponent]
