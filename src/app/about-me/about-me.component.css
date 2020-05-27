@@ -1,0 +1,15 @@
+.wrapper {
+    margin: 1.5rem 4rem 0 4rem;
+    padding: 20px;
+    background-color: #34344e;
+}
+
+.about-text  {
+    font-size: 1.5rem;
+}
+
+img {
+    max-height: 300px;
+    min-width: 250px;
+    border-radius: 50%;
+}

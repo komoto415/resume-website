@@ -16,6 +16,7 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 import { FooterComponent } from './footer/footer.component';
 import { ClassComponentsComponent } from './resume/education-card/class-components/class-components.component';
 import { ClassSweComponent } from './resume/education-card/class-swe/class-swe.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ClassSweComponent } from './resume/education-card/class-swe/class-swe.c
     FooterComponent,
     ClassComponentsComponent,
     ClassSweComponent,
+    AboutMeComponent,
   ],
   imports: [
     BrowserModule,
