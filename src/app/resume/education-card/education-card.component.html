@@ -2,7 +2,7 @@
     <div class="card-header">
         <div class="row">
             <div class="col-8">
-                <h6>{{ college.name }}</h6>
+                <span id="school">{{ college.name }}</span>
             </div>
             <div class="col-4" style="text-align: right;">
                 {{ college.timeline }}
@@ -41,6 +41,7 @@
             </div>
         </div>
     </div>
+    
     <div class="modal fade" attr.id="{{ this.simplifyString(class) }}" tabindex="-1" role="dialog" aria-hidden="true"
         *ngFor="let class of college.classes;">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
