@@ -7,3 +7,27 @@
     cursor: pointer;
     text-decoration: underline !important;
 }
+
+@media screen and (min-width: 540px) {
+    .card {
+        font-size: 16px;
+    }
+    h5 {
+        font-size: 20px;
+    }
+    h6 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        font-size: 14px;
+    }
+    h5 {
+        font-size: 18px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+}

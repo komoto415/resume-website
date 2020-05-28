@@ -19,3 +19,9 @@ app-education-card {
 .wrapper {
     margin: 10px 3vw 10px 3vw;
 }
+
+@media screen and (max-width: 480px) {
+    h3 {
+        font-size: 25px;
+    }
+}

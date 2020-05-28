@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationCardComponent implements OnInit {
     colleges: object = [
+        // {
+        //     "name": "Washington University in St. Louis",
+        //     "timeline": "2021-2024",
+        //     "shorthand": "washu",
+        //     "degrees": [
+        //         "Masters in Robotics",
+        //         "Bachelors of Science Electrical Engineering",
+        //     ],
+        //     "gpa": "N/A",
+        //     "minors": [],
+        //     "classes": [],
+        // },
         {
             "name": "St. Edwards University",
             "timeline": "2017-2021",
@@ -24,22 +36,22 @@ export class EducationCardComponent implements OnInit {
                 // "Database Theory",
             ],
         },
-        // {
-        //     "name": "Washington University in St. Louis",
-        //     "timeline": "2021-2024",
-        //     "shorthand": "washu",
-        //     "degrees": [
-        //         "Masters in Robotics",
-        //         "Bachelors of Science Electrical Engineering",
-        //     ],
-        //     "gpa": "N/A",
-        //     "minors": [],
-        //     "classes": [],
-        // },
+        {
+            "name": "Hong Kong International School",
+            "timeline": "Graudated 2017",
+            "shorthand": "hkis",
+            "degrees": [
+                "High School Diploma",
+            ],
+            "gpa": "",
+            "minors": [],
+            "classes": [],
+        },
+
     ]
     constructor() { }
 
-    simplifyString(className:string) {
+    simplifyString(className: string) {
         className = className.split(' ').join('-').toLowerCase();
         return `${className}-modal`
     }
