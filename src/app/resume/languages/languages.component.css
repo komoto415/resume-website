@@ -1,3 +1,7 @@
+.wrapper {
+    margin: 0 30px 0 30px;
+}
+
 .box {
     background: #fff;
     border-radius: 4px;
@@ -10,13 +14,14 @@
 
 .skill img {
     max-height: auto;
-    max-width: 100px;
+    max-width: 150px;
     height: auto;
-    width: 75%;
+    width: 95%;
 }
 
 .skill {
     transition: .2s;
+
 }
 
 .skill:hover {
