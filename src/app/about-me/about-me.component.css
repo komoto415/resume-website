@@ -9,7 +9,6 @@
 
 img {
     max-height: 300px;
-    min-width: 250px;
     border-radius: 50%;
 }
 
@@ -17,19 +16,22 @@ img {
     visibility: hidden;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
+    .more-about-text {
+        visibility: visible;
+    }
+    #about-text-p2 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
     .about-text {
         font-size: 15px;
     }
     img {
         max-height: 100px;
         min-width: 100px;
-    }
-    .more-about-text {
-        visibility: visible;
-    }
-    #about-text-p2 {
-        display: none;
     }
 }
 
@@ -42,7 +44,7 @@ img {
 @media screen and (max-width: 640px) {
     img {
         max-height: 190px;
-        min-width: 150px;
+        /* min-width: 150px; */
     }
 }
 
@@ -54,6 +56,6 @@ img {
 @media screen and (max-width: 880px) {
     img {
         max-height: 250px;
-        min-width: 200px;
+        /* min-width: 200px; */
     }
 }
