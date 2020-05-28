@@ -1,5 +1,5 @@
 .resume {
-    margin-top: 30px; 
+    margin-top: 15px; 
     margin-bottom: 30px;
 }
 
@@ -22,6 +22,6 @@ app-education-card {
 
 @media screen and (max-width: 480px) {
     h3 {
-        font-size: 25px;
+        font-size: 22px;
     }
 }
