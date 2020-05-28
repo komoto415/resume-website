@@ -1,7 +1,4 @@
 header.navbar {
-    height: 10vh;
-}
-
-.content {
-    margin: 10px;
+    height: 75px;
+    font-size: 25px;
 }
