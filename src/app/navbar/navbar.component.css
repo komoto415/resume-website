@@ -2,3 +2,7 @@ header.navbar {
     height: 75px;
     font-size: 25px;
 }
+
+header {
+    background-color: #22223b;
+}
