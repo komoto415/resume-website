@@ -1,8 +1,14 @@
-<header class="sticky-top navbar navbar-expand-lg">
-    <div class="justify-content-start">
-        <a href="/"><span style="color: aliceblue;">Jeffrey Ng</span></a>
-    </div>
-    <div class="justify-content-end">
-        <!-- More stuff -->
+<header class="navbar sticky-top navbar-expand-lg justify-content-start">
+    <span class="navbar-brand">
+        <a routerLink="" routerLinkActive="active">
+            <span style="color: aliceblue;">
+                Jeffrey Ng
+            </span>
+        </a>
+    </span>
+    <div *ngIf="router.url != '/projects'">
+        <span class="navbar-item">
+            <a routerLink="projects" routerLinkActive="active">>>> ./Projects</a>
+        </span>
     </div>
 </header>
