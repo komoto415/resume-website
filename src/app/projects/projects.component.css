@@ -7,8 +7,11 @@ a {
     font-size: 80%;
 }
 
+h5 {
+    font-weight: 590;
+}
+
 a:hover {
-    color: aliceblue;
     text-decoration: none !important;
     cursor: pointer;
 }
