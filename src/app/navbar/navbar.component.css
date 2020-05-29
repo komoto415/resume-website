@@ -12,4 +12,8 @@ header.navbar {
 
 header {
     background-color: #22223b;
+} 
+
+a:hover {
+    text-decoration: none !important;
 }
