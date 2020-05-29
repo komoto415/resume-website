@@ -17,6 +17,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ClassComponentsComponent } from './resume/education-card/class-components/class-components.component';
 import { ClassSweComponent } from './resume/education-card/class-swe/class-swe.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { HomeComponent } from './home/home.component';
+import { FilterPipe } from './projects/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { AboutMeComponent } from './about-me/about-me.component';
     ClassComponentsComponent,
     ClassSweComponent,
     AboutMeComponent,
+    ProjectsComponent,
+    HomeComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
