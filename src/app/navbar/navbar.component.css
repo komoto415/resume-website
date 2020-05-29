@@ -1,6 +1,13 @@
 header.navbar {
-    height: 75px;
-    font-size: 25px;
+    height: 60px;
+}
+
+.navbar-brand {
+    font-size: 24px !important;
+}
+
+.navbar-item {
+    font-size: 20px !important;
 }
 
 header {
