@@ -1,0 +1,49 @@
+<div class="navbar">
+    Projects
+</div>
+
+<div class="wrapper">
+    <div class="content">
+
+        <!-- <div class="controller">
+            <h4>Search for a particular project!</h4>
+            <div class="row">
+                <label for="#projectSearch" class="col-2">Project Title</label>
+                <div class="col-10">
+                    <input type="" id="projectSearch" placeholder="Project Title">
+                </div>
+            </div>
+            <div class="row justify-content-center" id="tagCheckboxes">
+                <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="defaultInline1">
+                    <label class="custom-control-label" for="defaultInline1">Python</label>
+                </div>
+
+                <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="defaultInline2">
+                    <label class="custom-control-label" for="defaultInline2">Java</label>
+                </div>
+
+                <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="defaultInline3">
+                    <label class="custom-control-label" for="defaultInline3">C++</label>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-lg-4" *ngFor="let row of projects;">
+                <div *ngFor="let project of row;" class="inner">
+                    <div class="card">
+                        <img attr.src="/assets/projects/{{project.thumbnail}}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"> {{ project.title }} </h5>
+                            <p class="card-text"> {{ project.desc }} </p>
+                            <span *ngFor="let tag of project.tags"> #{{ tag }} </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

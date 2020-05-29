@@ -1,0 +1,63 @@
+#tagCheckboxes, .controller {
+    min-width: 100%;
+    /* margin: 10px 3vw 10px 3vw; */
+    padding: 0 15px 0 15px;
+    background-color: grey;
+}
+
+.controller {
+    margin-bottom: 30px;
+}
+
+#projectSearch {
+    width: 50%;
+    background-color: transparent;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+}
+
+#projectSearch:focus {
+    outline-width: 0;
+    caret-color: aliceblue;
+}
+
+@media screen and (min-width: 700px) {
+    #projectSearch {
+        width: 55%;
+    }
+}
+
+.inner, .col-lg-4 {
+    margin-bottom: 30px;
+}
+
+.card {
+    /* background-color: rgb(42, 32, 71); */
+    background-color: transparent;
+    border-color: aliceblue;
+    cursor: pointer;
+}
+
+.content {
+    margin: 0;
+    height: 100%;
+}
+
+.wrapper {
+    height: 100vh;
+    margin: 10px 4rem 0 4rem;
+    display: table;
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .content {
+        margin: 0 2vh 0 2vw;
+    }
+}
