@@ -3,6 +3,10 @@ a {
     text-decoration: none !important;
 }
 
+.tag {
+    font-size: 80%;
+}
+
 a:hover {
     color: aliceblue;
     text-decoration: none !important;
