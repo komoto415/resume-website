@@ -34,14 +34,15 @@
                 </h6>
                 <ul *ngIf="college.minors.length > 0">
                     <li *ngFor="let class of this.college.classes;">
-                        <span class="clazz" data-toggle="modal"
-                            attr.data-target="#{{ this.simplifyString(class) }}">{{ class }}</span>
+                        <!-- <span class="clazz" data-toggle="modal"
+                            attr.data-target="#{{ this.simplifyString(class) }}">{{ class }}</span> -->
+                        <span>{{ class }}</span>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    
+
     <div class="modal fade" attr.id="{{ this.simplifyString(class) }}" tabindex="-1" role="dialog" aria-hidden="true"
         *ngFor="let class of college.classes;">
         <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
