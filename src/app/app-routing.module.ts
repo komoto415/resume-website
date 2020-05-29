@@ -6,11 +6,14 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', },
   { path: 'projects', component: ProjectsComponent, },
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled',
+    scrollPositionRestoration: 'enabled',
+  }
+  )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
