@@ -21,11 +21,10 @@
 
 .skill {
     transition: .2s;
-
 }
 
 .skill:hover {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
 }
 
 .resume {

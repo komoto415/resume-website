@@ -12,11 +12,11 @@ export class LanguagesComponent implements OnInit {
             "java",
             "sql",
         ],
-        [
-            "julia",
-            "cpp",
-            "c",
-        ],
+        // [
+        //     "julia",
+        //     "cpp",
+        //     "c",
+        // ],
         [
             "html",
             "css",

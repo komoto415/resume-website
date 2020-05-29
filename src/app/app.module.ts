@@ -20,6 +20,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { HomeComponent } from './home/home.component';
 import { FilterPipe } from './projects/filter.pipe';
+import { FlavourOneComponent } from './flavour-one/flavour-one.component';
+import { FlavourTwoComponent } from './flavour-two/flavour-two.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { FilterPipe } from './projects/filter.pipe';
     ProjectsComponent,
     HomeComponent,
     FilterPipe,
+    FlavourOneComponent,
+    FlavourTwoComponent,
   ],
   imports: [
     BrowserModule,
