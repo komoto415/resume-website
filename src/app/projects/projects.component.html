@@ -1,5 +1,5 @@
 <div class="navbar">
-    Projects
+    <span class="navbar-brand">Projects</span>
 </div>
 
 <div class="wrapper">
@@ -34,14 +34,16 @@
         <div class="row">
             <div class="col-lg-4" *ngFor="let row of projects;">
                 <div *ngFor="let project of row;" class="inner">
-                    <div class="card">
-                        <img attr.src="/assets/projects/{{project.thumbnail}}" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title"> {{ project.title }} </h5>
-                            <p class="card-text"> {{ project.desc }} </p>
-                            <span *ngFor="let tag of project.tags"> #{{ tag }} </span>
+                    <a attr.href="{{ project.link }}" target="_blank">
+                        <div class="card">
+                            <img attr.src="/assets/projects/{{project.thumbnail}}" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title"> {{ project.title }} </h5>
+                                <p class="card-text"> {{ project.desc }} </p>
+                                <span *ngFor="let tag of project.tags"> #{{ tag }} </span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
