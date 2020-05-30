@@ -1,0 +1,33 @@
+/* Header */
+header.navbar {
+    height: 60px;
+}
+
+@media screen and (max-width: 260px) {
+    #projects {
+        display: none;
+    }
+}
+
+.navbar-brand {
+    font-size: 24px !important;
+}
+
+.navbar-item {
+    font-size: 20px !important;
+}
+
+header {
+    background-color: #22223b;
+} 
+
+a:hover {
+    text-decoration: none !important;
+}
+
+
+/* Footer */
+footer {
+    background-color: #22223b;
+    height: 80px;
+}
