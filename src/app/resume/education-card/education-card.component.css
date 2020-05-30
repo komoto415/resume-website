@@ -3,6 +3,10 @@
     background-color: rgb(71, 78, 97);
 }
 
+.card {
+    max-width: 400px !important;
+}
+
 .clazz {
     cursor: pointer;
     text-decoration: underline !important;
