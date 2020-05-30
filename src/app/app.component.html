@@ -1,5 +1,25 @@
-<app-navbar></app-navbar>
+<header class="navbar sticky-top navbar-expand-lg justify-content-start">
+    <span class="navbar-brand">
+        <a style="color: aliceblue;" routerLink="" routerLinkActive="active">
+            <span>
+                Jeffrey Ng
+            </span>
+        </a>
+    </span>
+    <div *ngIf="!checkURL('/projects')">
+    <!-- <div *ngIf="this.router.url !== '/projects'"> -->
+        <span class="navbar-item" id="projects">
+            <a routerLink="projects" routerLinkActive="active">>>> Projects</a>
+        </span>
+    </div>
+</header>
 <main>
     <router-outlet></router-outlet>
 </main>
-<app-footer></app-footer>
+<footer class="page-footer font-small">
+    <div class="footer-copyright text-center py-3">
+        <span>Icons from <a href="https://fontawesome.com/" target="_blank">Font Awesome</a></span>
+        <br>
+        <span>© 2020 Copyright: Jeffrey Ng</span>
+    </div>
+</footer>
