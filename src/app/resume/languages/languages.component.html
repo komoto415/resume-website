@@ -1,7 +1,7 @@
 <div class="wrapper">
-    <div *ngFor="let row of languages" class="row resume justify-content-center">
-        <div *ngFor="let langauge of row" class="col">
-            <div class="skill d-flex justify-content-center" attr.id="{{langauge}}">
+    <div class="row resume justify-content-center">
+        <div *ngFor="let langauge of languages" class="col-4">
+            <div class=" skill d-flex justify-content-center" attr.id="{{langauge}}">
                 <img [src]="this.getImagePath(langauge)">
             </div>
         </div>

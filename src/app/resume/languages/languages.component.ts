@@ -6,27 +6,21 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./languages.component.css']
 })
 export class LanguagesComponent implements OnInit {
-    languages: Array<Array<string>> = [
-        [
+    languages: Array<string> = [
             "python",
             "java",
             "sql",
-        ],
-        // [
-        //     "julia",
-        //     "cpp",
-        //     "c",
-        // ],
-        [
             "html",
             "css",
             "js",
-        ],
-    ];
+            "julia",
+            "cpp",
+            "c",
+        ];
 
     constructor() { }
 
-    public getImagePath(language:string) {
+    public getImagePath(language: string) {
         // return `url(/assets/languages/${language}.png)`;
         return `/assets/languages/${language}.png`;
     }
