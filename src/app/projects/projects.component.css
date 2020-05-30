@@ -1,21 +1,38 @@
+/* Project related navbar stuff */
+
 .navbar {
     background-color: #3b3b69;
+    height: 55px;
+}
+
+.navbar a {
+    /* color: rgb(9, 102, 202) !important; */
+}
+
+.navbar a:hover {
+    text-decoration: none !important;
+    color: #007bff !important;
 }
 
 .navbar-brand {
     font-size: 20px !important;
 }
 
+@media screen and (max-width: 420px) {
+    .navbar-item {
+        display: none;
+    }
+}
+
 /* Connent Wrappers */
+
 .content {
     margin: 0;
-    height: 100%;
 }
 
 .wrapper {
-    height: 100vh;
     margin: 30px 4rem 0 4rem;
-    display: table;
+    /* display: table; */
 }
 
 @media screen and (max-width: 480px) {
@@ -31,8 +48,20 @@
     }
 }
 
+.project {
+    min-height: calc(100vh - 225px);
+}
+
+/* Project Selector */
+
+.hide {
+    height: 0;
+    width: 0;
+    display: none;
+}
 
 /* Cards */
+
 .inner, .col-lg-4 {
     margin-bottom: 30px;
 }
@@ -44,7 +73,7 @@
     cursor: pointer;
 }
 
-a {
+.inner a {
     color: aliceblue;
     text-decoration: none !important;
 }
@@ -66,4 +95,4 @@ a:hover {
 a:hover h5 {
     color: rgb(89, 175, 250);
     text-decoration: underline;
-}   
+}

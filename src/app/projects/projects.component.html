@@ -1,25 +1,37 @@
-<div class="navbar">
-    <span class="navbar-brand">Projects</span>
-    <span class="navbar-item"> {{ this.getCurretProject() }}</span>
+<div class="navbar justify-content-start">
+    <a *ngIf="!isParentUrl()" routerLink="../projects"><span class="navbar-brand">Projects</span></a>
+    <span *ngIf="isParentUrl()" class="navbar-brand">Projects</span>
+    <span class="navbar-item">
+        <span *ngIf="!isParentUrl()">>>> </span> {{ this.getCurretProject() }}
+    </span>
 </div>
+
 
 <div class="wrapper">
     <div class="content">
-        <!-- <app-project-controller></app-project-controller> -->
-        <div class="row">
-            <div class="col-lg-4" *ngFor="let row of projects;">
-                <div *ngFor="let project of row;" class="inner">
-                    <!-- <a attr.href="{{ project.link }}" target="_blank"> -->
-                    <a routerLink="{{ project.router }}">
-                        <div class="card">
-                            <img attr.src="/assets/projects/{{project.thumbnail}}" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title"> {{ project.title }} </h5>
-                                <p class="card-text"> {{ project.desc }} </p>
-                                <span class="tag" *ngFor="let tag of project.tags"> #{{ tag }} </span>
+        <div [ngClass]="{ hide : this.router.url === '/projects' }" class="project">
+            <div>
+                <h1>{{ this.getCurretProject() }}</h1>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+        <div [ngClass]="{ hide : this.router.url !== '/projects' }">
+            <app-project-controller></app-project-controller>
+            <div class="row">
+                <div class="col-lg-4" *ngFor="let row of projects;">
+                    <div *ngFor="let project of row;" class="inner">
+                        <!-- <a attr.href="{{ project.link }}" target="_blank"> -->
+                        <a routerLink="{{ project.router }}">
+                            <div class="card">
+                                <img attr.src="/assets/projects/{{project.thumbnail}}" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title"> {{ project.title }} </h5>
+                                    <p class="card-text"> {{ project.desc }} </p>
+                                    <span class="tag" *ngFor="let tag of project.tags"> #{{ tag }} </span>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
