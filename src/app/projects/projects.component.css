@@ -5,10 +5,6 @@
     height: 55px;
 }
 
-.navbar a {
-    /* color: rgb(9, 102, 202) !important; */
-}
-
 .navbar a:hover {
     text-decoration: none !important;
     color: #007bff !important;
