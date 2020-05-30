@@ -1,0 +1,8 @@
+.not-found {
+    height: calc(100vh - 140px);
+    padding: 30px;
+}
+/* 
+    header 60px
+    footer 80px
+*/
