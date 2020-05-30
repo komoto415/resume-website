@@ -25,9 +25,10 @@ import { FlavourTwoComponent } from './home/flavour-two/flavour-two.component';
 
 
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectControllerComponent } from './projects/project-controller/project-controller.component';
+import { ProjectSelectorComponent } from './projects/project-selector/project-selector.component';
 import { WegoServicesComponent } from './projects/wego-services/wego-services.component';
 import { CompToAlgoComponent } from './projects/comp-to-algo/comp-to-algo.component';
-import { ProjectControllerComponent } from './projects/project-controller/project-controller.component';
 
 import { PageErrorComponent } from './page-error/page-error.component';
 import { PageNotFoundComponent } from './page-error/page-not-found/page-not-found.component';
@@ -56,6 +57,7 @@ import { MaintenanceComponent } from './page-error/maintenance/maintenance.compo
         ProjectControllerComponent,
         PageErrorComponent,
         MaintenanceComponent,
+        ProjectSelectorComponent,
     ],
     imports: [
         BrowserModule,
