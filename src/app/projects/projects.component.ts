@@ -49,8 +49,12 @@ export class ProjectsComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    getProjects() {
+    public getProjects() {
         return this.projects;
+    }
+
+    public isParentUrl() {
+        return this.router.url === '/projects'
     }
 
     public getCurretProject() {
