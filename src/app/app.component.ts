@@ -11,8 +11,12 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent implements OnInit {
     title = 'website';
 
-    constructor() { }
+    constructor(public router: Router) { }
 
-    ngOnInit() {
+    ngOnInit(): void {
+    }
+
+    checkURL(str:string) {
+        return this.router.url.includes(str);
     }
 }
