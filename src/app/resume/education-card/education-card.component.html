@@ -1,62 +1,66 @@
-<div class="card border-dark mb-3 edu" *ngFor="let college of colleges;">
-    <div class="card-header">
-        <div class="row">
-            <div class="col-8">
-                <span id="school">{{ college.name }}</span>
-            </div>
-            <div class="col-4" style="text-align: right;">
-                {{ college.timeline }}
-            </div>
-        </div>
-    </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-10">
-                <h6 *ngFor="let degree of college.degrees;" class="card-title">{{ degree }}</h6>
-                <span>
-                    {{ college.minors.length > 0 ? ("Minor" + (college.minors.length > 1 ? "s" : "")) : "" }}
-                </span>
-                <ul *ngIf="college.minors.length > 0">
-                    <li *ngFor="let minor of college.minors;">
-                        {{ minor }}
-                    </li>
-                </ul>
-            </div>
-            <!-- <div class="col-2">
-                <label>{{ college.gpa }}</label>
-            </div> -->
-        </div>
-        <div class="row">
-            <div class="col">
-                <h6>
-                    {{ college.classes.length > 0 ? 
-                        ("Class" + (college.classes.length > 1 ? "es" : "" ) + " of Note") : ""}}
-                </h6>
-                <ul *ngIf="college.minors.length > 0">
-                    <li *ngFor="let class of this.college.classes;">
-                        <!-- <span class="clazz" data-toggle="modal"
-                            attr.data-target="#{{ this.simplifyString(class) }}">{{ class }}</span> -->
-                        <span>{{ class }}</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" attr.id="{{ this.simplifyString(class) }}" tabindex="-1" role="dialog" aria-hidden="true"
-        *ngFor="let class of college.classes;">
-        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-            <div class="modal-content edu">
-                <div class="modal-header">
-                    <h5 class="modal-title"> {{ class }}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" style="color: aliceblue;">&times;</span>
-                    </button>
+<div class="row justify-content-center">
+    <div class="col-md-6" *ngFor="let college of colleges;">
+        <div class="card border-dark mb-3 edu" >
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        <span id="school">{{ college.name }}</span>
+                    </div>
+                    <div class="col-4" style="text-align: right;">
+                        {{ college.timeline }}
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <app-class-swe *ngIf="class == 'Software Engineering I'"></app-class-swe>
-                        <app-class-components *ngIf="class == 'Component-Based Programming'"></app-class-components>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-10">
+                        <h6 *ngFor="let degree of college.degrees;" class="card-title">{{ degree }}</h6>
+                        <span>
+                            {{ college.minors.length > 0 ? ("Minor" + (college.minors.length > 1 ? "s" : "")) : "" }}
+                        </span>
+                        <ul *ngIf="college.minors.length > 0">
+                            <li *ngFor="let minor of college.minors;">
+                                {{ minor }}
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="col-2">
+                        <label>{{ college.gpa }}</label>
+                    </div> -->
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h6>
+                            {{ college.classes.length > 0 ? 
+                                ("Class" + (college.classes.length > 1 ? "es" : "" ) + " of Note") : ""}}
+                        </h6>
+                        <ul *ngIf="college.minors.length > 0">
+                            <li *ngFor="let class of this.college.classes;">
+                                <!-- <span class="clazz" data-toggle="modal"
+                                    attr.data-target="#{{ this.simplifyString(class) }}">{{ class }}</span> -->
+                                <span>{{ class }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="modal fade" attr.id="{{ this.simplifyString(class) }}" tabindex="-1" role="dialog" aria-hidden="true"
+            *ngFor="let class of college.classes;">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                <div class="modal-content edu">
+                    <div class="modal-header">
+                        <h5 class="modal-title"> {{ class }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="color: aliceblue;">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <app-class-swe *ngIf="class == 'Software Engineering I'"></app-class-swe>
+                            <app-class-components *ngIf="class == 'Component-Based Programming'"></app-class-components>
+                        </div>
                     </div>
                 </div>
             </div>

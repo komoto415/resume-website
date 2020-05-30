@@ -26,7 +26,7 @@ export class EducationCardComponent implements OnInit {
             "degrees": [
                 "Bachelors of Science in Computer Science",
             ],
-            "gpa": "3.45",
+            // "gpa": "3.45",
             "minors": [
                 "Mathematics",
             ],
@@ -36,17 +36,17 @@ export class EducationCardComponent implements OnInit {
                 // "Database Theory",
             ],
         },
-        {
-            "name": "Hong Kong International School",
-            "timeline": "Graudated 2017",
-            "shorthand": "hkis",
-            "degrees": [
-                "High School Diploma",
-            ],
-            "gpa": "",
-            "minors": [],
-            "classes": [],
-        },
+        // {
+        //     "name": "Hong Kong International School",
+        //     "timeline": "Graudated 2017",
+        //     "shorthand": "hkis",
+        //     "degrees": [
+        //         "High School Diploma",
+        //     ],
+        //     "gpa": "",
+        //     "minors": [],
+        //     "classes": [],
+        // },
 
     ]
     constructor() { }
