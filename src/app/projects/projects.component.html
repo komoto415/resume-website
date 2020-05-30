@@ -1,40 +1,16 @@
 <div class="navbar">
     <span class="navbar-brand">Projects</span>
+    <span class="navbar-item"> {{ this.getCurretProject() }}</span>
 </div>
 
 <div class="wrapper">
     <div class="content">
-
-        <!-- <div class="controller">
-            <h4>Search for a particular project!</h4>
-            <div class="row">
-                <label for="#projectSearch" class="col-2">Project Title</label>
-                <div class="col-10">
-                    <input type="" id="projectSearch" placeholder="Project Title">
-                </div>
-            </div>
-            <div class="row justify-content-center" id="tagCheckboxes">
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="defaultInline1">
-                    <label class="custom-control-label" for="defaultInline1">Python</label>
-                </div>
-
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="defaultInline2">
-                    <label class="custom-control-label" for="defaultInline2">Java</label>
-                </div>
-
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="defaultInline3">
-                    <label class="custom-control-label" for="defaultInline3">C++</label>
-                </div>
-            </div>
-        </div> -->
-
+        <!-- <app-project-controller></app-project-controller> -->
         <div class="row">
             <div class="col-lg-4" *ngFor="let row of projects;">
                 <div *ngFor="let project of row;" class="inner">
-                    <a attr.href="{{ project.link }}" target="_blank">
+                    <!-- <a attr.href="{{ project.link }}" target="_blank"> -->
+                    <a routerLink="{{ project.router }}">
                         <div class="card">
                             <img attr.src="/assets/projects/{{project.thumbnail}}" class="card-img-top">
                             <div class="card-body">

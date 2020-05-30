@@ -1,0 +1,28 @@
+#tagCheckboxes, .controller {
+    min-width: 100%;
+    /* margin: 10px 3vw 10px 3vw; */
+    padding: 0 15px 0 15px;
+    background-color: grey;
+}
+
+.controller {
+    margin-bottom: 30px;
+}
+
+#projectSearch {
+    width: 50%;
+    background-color: transparent;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+}
+
+#projectSearch:focus {
+    outline-width: 0;
+    caret-color: aliceblue;
+}
+
+@media screen and (min-width: 700px) {
+    #projectSearch {
+        width: 55%;
+    }
+}

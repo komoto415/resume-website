@@ -6,8 +6,9 @@
             </span>
         </a>
     </span>
-    <div *ngIf="router.url != '/projects'">
-        <span class="navbar-item">
+    <!-- <div *ngIf="!checkURL('/projects')"> -->
+    <div *ngIf="this.router.url !== '/projects'">
+        <span class="navbar-item" id="projects">
             <a routerLink="projects" routerLinkActive="active">>>> ./Projects</a>
         </span>
     </div>

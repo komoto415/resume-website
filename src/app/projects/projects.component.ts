@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-projects',
@@ -13,7 +14,8 @@ export class ProjectsComponent implements OnInit {
                 thumbnail: "/wego.jpg", // https://ces.eetimes.com/wp-content/uploads/2020/01/image-eet-ces.jpg
                 tags: ["python","html5","javascript", "ngnix", "docker", "python", "swei", "agile-development", "multi-cloud-solution",],
                 desc: "In the advent of autonomous vehicles, we aim to take advantage of the growing market of Transportation as a Service with a scalable multi-service Web Application to help fulfil everyday needs.",
-                link: "https://github.com/sp20-swei-Team22"
+                link: "https://github.com/sp20-swei-Team22",
+                router: "wego-services",
             },
         ],
         [
@@ -23,6 +25,7 @@ export class ProjectsComponent implements OnInit {
                 tags: ["java", "components", "algorithms", "data-structures",],
                 desc: "An open bid for experimental projects that could be assigned in Component-Based Programming and then reduxed for Algorithm and Data Structures.",
                 link: "https://github.com/komoto415/TestAssignment",
+                router: "comp-to-algo",
             },
         ],
         [
@@ -36,9 +39,24 @@ export class ProjectsComponent implements OnInit {
 
     ]
 
-    constructor() { }
+    urlToTitle:Object = {
+        "wego-services": "We Go Services",
+        "comp-to-algo": "Components-Algorithms Bridge Assignment",
+    }
+
+    constructor(public router: Router) { }
 
     ngOnInit(): void {
+    }
+
+    getProjects() {
+        return this.projects;
+    }
+
+    public getCurretProject() {
+        var url:Array<String> = this.router.url.split('/');
+        var test:String = url[url.length - 1];
+        return this.urlToTitle[`${url[url.length - 1]}`];
     }
 
 }

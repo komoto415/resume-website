@@ -5,23 +5,26 @@ import { AppRoutingModule } from './app-routing.module'; // CLI imports AppRouti
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
-import { BannerComponent } from './banner/banner.component';
+import { BannerComponent } from './home/banner/banner.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ResumeComponent } from './resume/resume.component';
-import { SlidesComponent } from './slides/slides.component';
-import { EducationCardComponent } from './resume/education-card/education-card.component';
-import { LanguagesComponent } from './resume/languages/languages.component';
-import { ExperiencesComponent } from './resume/experiences/experiences.component';
-import { ContactMeComponent } from './contact-me/contact-me.component';
+import { ResumeComponent } from './home/resume/resume.component';
+import { SlidesComponent } from './home/slides/slides.component';
+import { EducationCardComponent } from './home/resume/education-card/education-card.component';
+import { LanguagesComponent } from './home/resume/languages/languages.component';
+import { ExperiencesComponent } from './home/resume/experiences/experiences.component';
+import { ContactMeComponent } from './home/contact-me/contact-me.component';
 import { FooterComponent } from './footer/footer.component';
-import { ClassComponentsComponent } from './resume/education-card/class-components/class-components.component';
-import { ClassSweComponent } from './resume/education-card/class-swe/class-swe.component';
-import { AboutMeComponent } from './about-me/about-me.component';
+import { ClassComponentsComponent } from './home/resume/education-card/class-components/class-components.component';
+import { ClassSweComponent } from './home/resume/education-card/class-swe/class-swe.component';
+import { AboutMeComponent } from './home/about-me/about-me.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { HomeComponent } from './home/home.component';
-import { FilterPipe } from './projects/filter.pipe';
-import { FlavourOneComponent } from './flavour-one/flavour-one.component';
-import { FlavourTwoComponent } from './flavour-two/flavour-two.component';
+import { FlavourOneComponent } from './home/flavour-one/flavour-one.component';
+import { FlavourTwoComponent } from './home/flavour-two/flavour-two.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WegoServicesComponent } from './projects/wego-services/wego-services.component';
+import { CompToAlgoComponent } from './projects/comp-to-algo/comp-to-algo.component';
+import { ProjectControllerComponent } from './projects/project-controller/project-controller.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +43,12 @@ import { FlavourTwoComponent } from './flavour-two/flavour-two.component';
     AboutMeComponent,
     ProjectsComponent,
     HomeComponent,
-    FilterPipe,
     FlavourOneComponent,
     FlavourTwoComponent,
+    PageNotFoundComponent,
+    WegoServicesComponent,
+    CompToAlgoComponent,
+    ProjectControllerComponent,
   ],
   imports: [
     BrowserModule,

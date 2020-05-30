@@ -11,14 +11,8 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent implements OnInit {
     title = 'website';
 
-    // constructor(private router: Router) { }
+    constructor() { }
 
     ngOnInit() {
-        // this.router.events.subscribe((evt) => {
-        //     if (!(evt instanceof NavigationEnd)) {
-        //         return;
-        //     }
-        //     window.scrollTo(0, 0)
-        // });
     }
 }

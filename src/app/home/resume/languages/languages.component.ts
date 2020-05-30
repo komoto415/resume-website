@@ -13,15 +13,14 @@ export class LanguagesComponent implements OnInit {
             "html",
             "css",
             "js",
-            "julia",
-            "cpp",
-            "c",
+            // "julia",
+            // "cpp",
+            // "c",
         ];
 
     constructor() { }
 
     public getImagePath(language: string) {
-        // return `url(/assets/languages/${language}.png)`;
         return `/assets/languages/${language}.png`;
     }
 

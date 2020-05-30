@@ -1,0 +1,12 @@
+.navbar {
+    background-color: #3b3b69;
+}
+
+.navbar-brand {
+    font-size: 20px !important;
+}
+
+.navbar a {
+    color: aliceblue;
+    text-decoration: none !important;
+}

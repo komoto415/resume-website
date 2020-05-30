@@ -1,27 +1,3 @@
-a {
-    color: aliceblue;
-    text-decoration: none !important;
-}
-
-.tag {
-    font-size: 80%;
-    opacity: .7;
-}
-
-h5 {
-    font-weight: 590;
-}
-
-a:hover {
-    text-decoration: none !important;
-    cursor: pointer;
-}
-
-a:hover h5 {
-    color: rgb(89, 175, 250);
-    text-decoration: underline;
-}
-
 .navbar {
     background-color: #3b3b69;
 }
@@ -30,46 +6,7 @@ a:hover h5 {
     font-size: 20px !important;
 }
 
-#tagCheckboxes, .controller {
-    min-width: 100%;
-    /* margin: 10px 3vw 10px 3vw; */
-    padding: 0 15px 0 15px;
-    background-color: grey;
-}
-
-.controller {
-    margin-bottom: 30px;
-}
-
-#projectSearch {
-    width: 50%;
-    background-color: transparent;
-    border-width: 0 0 2px 0;
-    border-style: solid;
-}
-
-#projectSearch:focus {
-    outline-width: 0;
-    caret-color: aliceblue;
-}
-
-@media screen and (min-width: 700px) {
-    #projectSearch {
-        width: 55%;
-    }
-}
-
-.inner, .col-lg-4 {
-    margin-bottom: 30px;
-}
-
-.card {
-    /* background-color: rgb(42, 32, 71); */
-    background-color: transparent;
-    border-color: aliceblue;
-    cursor: pointer;
-}
-
+/* Connent Wrappers */
 .content {
     margin: 0;
     height: 100%;
@@ -93,3 +30,40 @@ a:hover h5 {
         margin: 0 2vh 0 2vw;
     }
 }
+
+
+/* Cards */
+.inner, .col-lg-4 {
+    margin-bottom: 30px;
+}
+
+.card {
+    /* background-color: rgb(42, 32, 71); */
+    background-color: transparent;
+    border-color: aliceblue;
+    cursor: pointer;
+}
+
+a {
+    color: aliceblue;
+    text-decoration: none !important;
+}
+
+.tag {
+    font-size: 80%;
+    opacity: .7;
+}
+
+h5 {
+    font-weight: 590;
+}
+
+a:hover {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+a:hover h5 {
+    color: rgb(89, 175, 250);
+    text-decoration: underline;
+}   

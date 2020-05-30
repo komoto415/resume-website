@@ -2,6 +2,12 @@ header.navbar {
     height: 60px;
 }
 
+@media screen and (max-width: 260px) {
+    #projects {
+        display: none;
+    }
+}
+
 .navbar-brand {
     font-size: 24px !important;
 }
