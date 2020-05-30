@@ -15,15 +15,18 @@ const routes: Routes = [
     {
         path: 'projects',
         component: ProjectsComponent,
+        children: [
+            {
+                path: 'wego-services',
+                component: WegoServicesComponent,
+            },
+            {
+                path: 'comp-to-algo',
+                component: CompToAlgoComponent,
+            },
+        ]
 
-    },            {
-        path: 'projects/wego-services',
-        component: WegoServicesComponent,
-    },
-    {
-        path: 'projects/comp-to-algo',
-        component: CompToAlgoComponent,
-    },
+    },            
     {
         path: '**',
         component: PageNotFoundComponent,
