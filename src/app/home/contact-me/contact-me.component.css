@@ -12,18 +12,18 @@
     height: 100%;
 }
 
-@media screen and (min-width: 480px) {
-    h1 {
-        font-size: 30px;
-    }
-}
-
 @media screen and (max-width: 480px) {
     .inner-wrapper {
         margin-left: 20px;
         margin-right: 20px;
         padding: 10px 5% 5px 5%;
     }
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 480px) {
     h1 {
         font-size: 30px;
     }
@@ -36,13 +36,14 @@
 }
 
 @media screen and (min-width: 880px) {
-    .content {
-        padding: 0 15vw 0 15vw;
-    }
     h1 {
         font-size: 35px;
     }
+    .content {
+        padding: 0 15vw 0 15vw;
+    }
 }
+
 .content, .icon {
     height: 100%;
 }
