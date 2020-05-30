@@ -3,24 +3,15 @@
     background-color: #34344e;
 }
 
+
 img {
     max-height: 300px;
     border-radius: 50%;
 }
 
-@media screen and (max-width: 600px) {
-    .about-text {
-        font-size: 15px;
-    }
+@media screen and (max-width: 880px) {
     img {
-        max-height: 100px;
-        min-width: 100px;
-    }
-}
-
-@media screen and (min-width: 640px) {
-    .about-text {
-        font-size: 17px;
+        max-height: 250px;
     }
 }
 
@@ -30,14 +21,25 @@ img {
     }
 }
 
+@media screen and (max-width: 600px) {
+    img {
+        max-height: 100px;
+        min-width: 100px;
+    }
+    .about-text {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .about-text {
+        font-size: 17px;
+    }
+}
+
 @media screen and (min-width: 880px) {
     .about-text {
         font-size: 20px;
-    }
-}
-@media screen and (max-width: 880px) {
-    img {
-        max-height: 250px;
     }
 }
 
