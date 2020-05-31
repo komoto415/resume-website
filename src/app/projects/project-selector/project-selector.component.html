@@ -7,7 +7,9 @@
         *ngFor="let project of projects;">
         <a routerLink="{{ project.router }}">
             <div class="card">
-                <img class="card-img-top" attr.src="/assets/projects/{{project.thumbnail}}">
+                <img class="card-img-top" 
+                attr.src="/assets/projects/{{ project.thumbnail }}" 
+                attr.alt="{{ project.alt }}">
                 <div class="card-body">
                     <h5 class="card-title"> {{ project.title }} </h5>
                     <p class="card-text"> {{ project.desc }} </p>

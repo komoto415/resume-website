@@ -30,6 +30,7 @@ export class ProjectSelectorComponent implements OnInit {
             ],
             desc: "In the advent of autonomous vehicles, we aim to take advantage of the growing market of Transportation as a Service with a scalable multi-service Web Application to help fulfil everyday needs.",
             router: "wego-services",
+            alt: "",
         },
         {
             title: "Components-Algorithms Bridge Assignment",
@@ -42,6 +43,7 @@ export class ProjectSelectorComponent implements OnInit {
             ],
             desc: "An open bid for experimental projects that could be assigned in Component-Based Programming and then reduxed for Algorithm and Data Structures.",
             router: "comp-to-algo",
+            alt: "",
         },
         {
             title: "Login and Register",
@@ -53,6 +55,7 @@ export class ProjectSelectorComponent implements OnInit {
             ],
             desc: "The very first CS project I ever did in university. A simple command line login and register program. How far we've come!",
             router: "first-project",
+            alt: "",
         },
         {
             title: "Enigma Machine",
@@ -64,6 +67,7 @@ export class ProjectSelectorComponent implements OnInit {
             ],
             desc: "The inner machinations of my mind are an enigma",
             router: "enigma",
+            alt: "",
         },
         {
             title: "To Brock and not to Brock",
@@ -76,6 +80,7 @@ export class ProjectSelectorComponent implements OnInit {
             ],
             desc: "For my research project, my partner and I decided to teach a machine how to beat Brock in Pokemon Fire Red. If Twitch can do it, why can't a bot?",
             router: "senior-project",
+            alt: "",
         },
     ]
 
