@@ -37,7 +37,7 @@ export class ProjectSelectorComponent implements OnInit {
             title: "Enigma Machine",
             thumbnail: "/enigma.jpg", // https://content.presspage.com/uploads/1369/enigmamachine-701206.jpg?10000
             tags: ["python", "cli", "enigma",],
-            desc: "Enigma",
+            desc: "The inner machinations of my mind are an enigma",
             router: "enigma",
         },
         {
