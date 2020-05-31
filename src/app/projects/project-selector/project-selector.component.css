@@ -132,22 +132,6 @@ div.fade-out {
     }
 }
 
-/* div.project-card {
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-}
-
-div.project-card.show {
-    opacity: 1;
-    height: auto;
-} */
-
-/* .inner , .col-lg-4 {
-    margin-bottom: 30px;
-} */
-
 .card {
     /* background-color: rgb(42, 32, 71); */
     background-color: transparent;
@@ -159,11 +143,6 @@ div.project-card.show {
 .inner a {
     color: aliceblue;
     text-decoration: none !important;
-}
-
-.tag {
-    font-size: 80%;
-    opacity: .7;
 }
 
 h5 {
@@ -180,7 +159,12 @@ a:hover h5 {
     text-decoration: underline;
 }
 
-/* Mason layout overrides */
+.tag {
+    font-size: 80%;
+    opacity: .7;
+}
+
+/* Masonry layout overrides */
 
 .card-columns {
     -webkit-column-count: 1;
