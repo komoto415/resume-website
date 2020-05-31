@@ -1,6 +1,9 @@
 .banner {
     /* image credit: https://mymodernmet.com/hong-kong-neon-xavier-portela/ */
-    height: 80vh;
+    height: 55vh;
+    padding: 15vh 5vmin 10px 5vmin;
+
+    
     background-image: url("/assets/banners/hong-kong-banner-v2.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -9,36 +12,58 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    padding: 75px 5vmin 10px 5vmin;
 }
 
 .content {
     padding: 0px 10px 0px 10px;
     font-size: 30px;
-    position: relative;
+    font-style: italic;
     background: rgb(204, 204, 204);
     /* Fallback for older browsers without RGBA-support */
     background: rgba(90, 90, 90, 0.85);
 }
 
 .quote {
-    font-size: 35px;
-    font-style: italic;
+    font-size: 15px;
 }
 
 .tribute {
-    font-size: 40px;
+    font-size: 25px;
     text-align: right;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 330px) {
     .banner {
-        height: 55vh;
+        height: 65vh;
     }
     .quote {
         font-size: 20px;
     }
     .tribute {
         font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .banner {
+        height: 75vh;
+    }
+    .quote {
+        font-size: 30px;
+    }
+    .tribute {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .banner {
+        height: 95vh;
+    }
+    .quote {
+        font-size: 35px;
+    }
+    .tribute {
+        font-size: 40px;
     }
 }
