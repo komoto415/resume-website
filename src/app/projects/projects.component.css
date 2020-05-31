@@ -22,13 +22,13 @@
 
 /* Connent Wrappers */
 
-.content {
+.content, .project-content {
     margin: 0;
 }
 
 .wrapper {
     margin: 30px 4rem 0 4rem;
-    /* display: table; */
+    min-height: calc(100vh - 201px);
 }
 
 @media screen and (max-width: 480px) {
@@ -39,13 +39,9 @@
 }
 
 @media screen and (min-width: 480px) {
-    .content {
-        margin: 0 2vh 0 2vw;
+    .content, .project-content {
+        margin: 0 2vw 0 2vw;
     }
-}
-
-.project {
-    min-height: calc(100vh - 201px);
 }
 
 /* Project Selector */
@@ -54,4 +50,37 @@
     height: 0;
     width: 0;
     display: none;
+    transition: 1s ease-out;
+}
+
+/* Project Controller */
+
+#tagCheckboxes, .controller {
+    min-width: 100%;
+    /* margin: 10px 3vw 10px 3vw; */
+    padding: 0 15px 0 15px;
+    background-color: grey;
+}
+
+.controller {
+    margin-bottom: 30px;
+}
+
+#projectSearch {
+    width: 50%;
+    background-color: transparent;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    color: aliceblue;
+}
+
+#projectSearch:focus {
+    outline-width: 0;
+    caret-color: aliceblue;
+}
+
+@media screen and (min-width: 700px) {
+    #projectSearch {
+        width: 55%;
+    }
 }

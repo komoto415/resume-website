@@ -9,7 +9,7 @@
 
 <div class="wrapper">
     <div class="content">
-        <div [ngClass]="{ hide : this.router.url === '/projects' }" class="project">
+        <div [ngClass]="{ hide : this.router.url === '/projects' }">
             <div>
                 <h1>{{ this.getCurretProject() }}</h1>
             </div>
@@ -17,7 +17,38 @@
         </div>
         <div [ngClass]="{ hide : this.router.url !== '/projects' }">
             <!-- <app-project-controller></app-project-controller> -->
-            <app-project-selector></app-project-selector>
+
+            <!-- <div class="controller">
+                <h4>Search for a particular project!</h4>
+                <div class="row">
+                    <label for="#projectSearch" class="col-2">Project Title</label>
+                    <div class="col-10">
+                        <input type="text" id="projectSearch" placeholder="Project Title" 
+                        (keyup)="onKey($event.target.value)"> -->
+                        <!-- <input type="text" id="projectSearch" placeholder="Project Title" 
+                        (keyup.enter)="onEnter($event.target.value)"> -->
+                        <!-- <h2> </h2> -->
+                    <!-- </div>
+                </div> -->
+                <!-- <div class="row justify-content-center" id="tagCheckboxes">
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="defaultInline1">
+                        <label class="custom-control-label" for="defaultInline1">Python</label>
+                    </div>
+            
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="defaultInline2">
+                        <label class="custom-control-label" for="defaultInline2">Java</label>
+                    </div>
+            
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="defaultInline3">
+                        <label class="custom-control-label" for="defaultInline3">C++</label>
+                    </div>
+                </div>
+            </div> -->
+
+            <app-project-selector [test]="query"></app-project-selector>
         </div>
     </div>
 </div>
