@@ -33,6 +33,8 @@ import { CompToAlgoComponent } from './projects/comp-to-algo/comp-to-algo.compon
 import { PageErrorComponent } from './page-error/page-error.component';
 import { PageNotFoundComponent } from './page-error/page-not-found/page-not-found.component';
 import { MaintenanceComponent } from './page-error/maintenance/maintenance.component';
+import { FirstProjectComponent } from './projects/first-project/first-project.component';
+import { EnigmaComponent } from './projects/enigma/enigma.component';
 
 
 @NgModule({
@@ -58,6 +60,8 @@ import { MaintenanceComponent } from './page-error/maintenance/maintenance.compo
         PageErrorComponent,
         MaintenanceComponent,
         ProjectSelectorComponent,
+        FirstProjectComponent,
+        EnigmaComponent,
     ],
     imports: [
         BrowserModule,

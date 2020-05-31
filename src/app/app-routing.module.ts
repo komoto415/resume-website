@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-error/page-not-found/page-not-found.component';
 import { WegoServicesComponent } from './projects/wego-services/wego-services.component';
 import { CompToAlgoComponent } from './projects/comp-to-algo/comp-to-algo.component';
+import { FirstProjectComponent } from './projects/first-project/first-project.component';
+import { EnigmaComponent } from './projects/enigma/enigma.component';
 
 const routes: Routes = [
     {
@@ -24,9 +26,17 @@ const routes: Routes = [
                 path: 'comp-to-algo',
                 component: CompToAlgoComponent,
             },
+            {
+                path: 'first-project',
+                component: FirstProjectComponent,
+            },
+            {
+                path: 'enigma',
+                component: EnigmaComponent,
+            },
         ]
 
-    },            
+    },
     {
         path: '**',
         component: PageNotFoundComponent,
