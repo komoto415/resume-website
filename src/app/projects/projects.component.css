@@ -46,7 +46,7 @@
 
 /* Project Selector */
 
-.hide {
+.hide { 
     height: 0;
     width: 0;
     display: none;
@@ -55,15 +55,22 @@
 
 /* Project Controller */
 
+label {
+    text-align: right;
+    font-size: 115%;
+}
+
 #tagCheckboxes, .controller {
     min-width: 100%;
     /* margin: 10px 3vw 10px 3vw; */
-    padding: 0 15px 0 15px;
-    background-color: grey;
+    padding: 0 20px 0 20px;
+    background-color: #3b3b69;
 }
 
 .controller {
     margin-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .filter {
@@ -71,7 +78,23 @@
     background-color: transparent;
     border-width: 0 0 2px 0;
     border-style: solid;
-    color: aliceblue;
+    border-color: aliceblue;
+    color: rgb(184, 222, 255);
+}
+
+.filter::placeholder {
+    color: rgb(184, 222, 255);
+    opacity: .6;
+}
+
+.filter:-ms-input-placeholder {
+    color: rgb(184, 222, 255);
+    opacity: .6;
+}
+
+.filter::-ms-input-placeholder {
+    color: rgb(184, 222, 255);
+    opacity: .6;
 }
 
 .filter:focus {
