@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
     styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-    query: string;
+    keywordQuery:string;
+    tagQuery:string;
+
 
     constructor(public router: Router) { }
 
@@ -18,12 +20,12 @@ export class ProjectsComponent implements OnInit {
         return this.router.url === '/projects'
     }
 
-    onKey(value: any) {
-        this.query = value.toLowerCase();
+    updateKeywords(value:string) {
+        this.keywordQuery = value.toLowerCase();
     }
 
-    onEnter(value: string) { 
-        this.query = value.toLowerCase(); 
+    updateTags(value:string) {
+        this.tagQuery = value.toLowerCase();
     }
 
     urlToTitle: Object = {
