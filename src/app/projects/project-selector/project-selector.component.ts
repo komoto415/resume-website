@@ -9,9 +9,6 @@ import { of } from 'rxjs';
     styleUrls: ['../projects.component.css', './project-selector.component.css']
 })
 export class ProjectSelectorComponent implements OnInit {
-    @Input() keywordQueryIn: string = '';
-    @Input() tagQueryIn: string = '';
-
     projects: Array<Object> = [
         {
             title: "We Go Services",
@@ -69,43 +66,34 @@ export class ProjectSelectorComponent implements OnInit {
             router: "enigma",
             alt: "",
         },
-        {
-            title: "To Brock and not to Brock",
-            thumbnail: "/senior-project.png", // https://i.ibb.co/7yMB9t6/FireRed.png
-            tags: [
-                "python",
-                "julia",
-                "ml",
-                "pokemon",
-            ],
-            desc: "For my research project, my partner and I decided to teach a machine how to beat Brock in Pokemon Fire Red. If Twitch can do it, why can't a bot?",
-            router: "senior-project",
-            alt: "",
-        },
+        // {
+        //     title: "To Brock and not to Brock",
+        //     thumbnail: "/senior-project.png", // https://i.ibb.co/7yMB9t6/FireRed.png
+        //     tags: [
+        //         "python",
+        //         "julia",
+        //         "ml",
+        //         "pokemon",
+        //     ],
+        //     desc: "For my research project, my partner and I decided to teach a machine how to beat Brock in Pokemon Fire Red. If Twitch can do it, why can't a bot?",
+        //     router: "senior-project",
+        //     alt: "",
+        // },
     ]
 
-    public filterProjectByKeyword(title: string, desc: string, tags: string[]) {
-        if (this.keywordQueryIn == null) return false;
-        if (this.keywordQueryIn.length === 0) return false;
+    @Input() titleQueryIn: string = '';
+    @Input() tagQueryIn: string = '';
+
+    public filterProjectByTitle(title: string) {
+        if (this.titleQueryIn == null) return false;
+        if (this.titleQueryIn.length === 0) return false;
         
         // console.log("#########################");
-        // console.log(this.keywordQueryIn);
+        // console.log(this.titleQueryIn);
 
-        var trimKeyword = this.keywordQueryIn.trim();
-        var keywordList: string[] = trimKeyword.split(" ");
+        var trimtitle = this.titleQueryIn.trim();
 
-        var foundKeyword: boolean = false;
-        var combinedString: string = title.concat(" ".concat(desc)).concat(" ".concat(tags.join(" ")));
-        var combinedStringAsList: string[] = combinedString.split(" ");
-        for (let e in keywordList) {
-            let word: string = keywordList[e].trim();
-            foundKeyword = combinedString.includes(word);
-            if (foundKeyword) break;
-        }
-
-        // console.log("-----------------");
-        // console.log(foundKeyword);
-        return !foundKeyword;
+        return !title.toLowerCase().includes(trimtitle);
     }
 
     public filterProjectByTag(tags: string[]) {
@@ -126,8 +114,6 @@ export class ProjectSelectorComponent implements OnInit {
         }
 
         let foundTag: boolean = check > 0;
-        // console.log("-----------------");
-        // console.log(foundTag);
         return !foundTag;
     }
 
