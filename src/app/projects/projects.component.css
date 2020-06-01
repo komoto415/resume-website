@@ -46,64 +46,53 @@
 
 /* Project Selector */
 
-.hide { 
+.hide {
     height: 0;
     width: 0;
     display: none;
     transition: 1s ease-out;
 }
 
-/* Project Controller */
-
-label {
-    text-align: right;
-    font-size: 115%;
-}
-
-#tagCheckboxes, .controller {
-    min-width: 100%;
-    /* margin: 10px 3vw 10px 3vw; */
-    padding: 0 20px 0 20px;
-    background-color: #3b3b69;
-}
+/* Subcomponent content media scaling */
 
 .controller {
-    margin-bottom: 30px;
+    margin: 0 5vw 30px 5vw;
     padding-top: 20px;
     padding-bottom: 10px;
 }
 
-.filter {
-    width: 50%;
-    background-color: transparent;
-    border-width: 0 0 2px 0;
-    border-style: solid;
-    border-color: aliceblue;
-    color: rgb(184, 222, 255);
+.controller h4 {
+    font-size: 1.15rem;
+    text-align: center;
 }
 
-.filter::placeholder {
-    color: rgb(184, 222, 255);
-    opacity: .6;
+.card-columns, .controller {
+    font-size: 80%;
 }
 
-.filter:-ms-input-placeholder {
-    color: rgb(184, 222, 255);
-    opacity: .6;
+@media screen and (min-width: 480px) {
+    .controller h4 {
+        font-size: 1.30rem;
+    }
+    .card-columns, .controller {
+        font-size: 85%;
+    }
 }
 
-.filter::-ms-input-placeholder {
-    color: rgb(184, 222, 255);
-    opacity: .6;
+@media screen and (min-width: 800px) {
+    .controller h4 {
+        font-size: 1.40rem;
+    }
+    .card-columns, .controller {
+        font-size: 95%;
+    }
 }
 
-.filter:focus {
-    outline-width: 0;
-    caret-color: aliceblue;
-}
-
-@media screen and (min-width: 700px) {
-    #projectSearch {
-        width: 55%;
+@media screen and (min-width: 1000px) {
+    .controller h4 {
+        font-size: 24px;
+    }
+    .card-columns, .controller {
+        font-size: 100%;
     }
 }
