@@ -132,6 +132,8 @@ div.fade-out {
     }
 }
 
+/* Card content */
+
 .card {
     /* background-color: rgb(42, 32, 71); */
     background-color: transparent;
@@ -170,6 +172,8 @@ a:hover h5 {
     -webkit-column-count: 1;
     -moz-column-count: 1;
     column-count: 1;
+    padding: 0 5vw 0 5vw;
+    /* padding: 0 30px 0 30px; */
 }
 
 @media (min-width: 650px) {
