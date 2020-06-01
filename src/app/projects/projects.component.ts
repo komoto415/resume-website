@@ -7,8 +7,18 @@ import { Router } from '@angular/router';
     styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-    keywordQuery:string;
-    tagQuery:string;
+    titleQueryAux:string;
+    tagQueryAux:string;
+
+    public captureTitle($event) {
+        this.titleQueryAux = $event;
+        // console.log(this.titleQueryAux);
+    }
+
+    public captureTags($event) {
+        this.tagQueryAux = $event;
+        // console.log(this.tagQueryAux);
+    }
 
 
     constructor(public router: Router) { }
@@ -18,14 +28,6 @@ export class ProjectsComponent implements OnInit {
 
     public isParentUrl() {
         return this.router.url === '/projects'
-    }
-
-    updateKeywords(value:string) {
-        this.keywordQuery = value.toLowerCase();
-    }
-
-    updateTags(value:string) {
-        this.tagQuery = value.toLowerCase();
     }
 
     urlToTitle: Object = {

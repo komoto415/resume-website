@@ -5,8 +5,6 @@
         <span *ngIf="!isParentUrl()">>>> </span> {{ this.getCurretProject() }}
     </span>
 </div>
-
-
 <div class="wrapper">
     <div class="content">
         <div [ngClass]="{ hide : this.router.url === '/projects' }">
@@ -16,44 +14,9 @@
             <router-outlet></router-outlet>
         </div>
         <div [ngClass]="{ hide : this.router.url !== '/projects' }">
-            <!-- <app-project-controller></app-project-controller> -->
-            <div class="controller">
-                <h4>Search for a particular project!</h4>
-                <!-- <div class="row">
-                    <label for="#projectSearchKeyword" class="col-2">Project Title</label>
-                    <div class="col-10">
-                        <input type="text" class="filter" id="projectSearchKeyword" placeholder="keywords"
-                            (keyup)="updateKeywords($event.target.value)">
-                    </div>
-                </div> -->
-                <div class="row">
-                    <label for="#projectSearchTags" class="col-2">Project Tags: </label>
-                    <div class="col-10">
-                        <div style="margin-bottom: 10px;">
-                            <input type="text" class="filter" id="projectSearchTags" placeholder="tags"
-                            (keyup)="updateTags($event.target.value)">
-                        </div>
-                        <!-- <div class="row justify-content-start" id="tagCheckboxes">
-                            <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" id="defaultInline1">
-                                <label class="custom-control-label" for="defaultInline1">Python</label>
-                            </div>
-
-                            <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" id="defaultInline2">
-                                <label class="custom-control-label" for="defaultInline2">Java</label>
-                            </div>
-
-                            <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" id="defaultInline3">
-                                <label class="custom-control-label" for="defaultInline3">C++</label>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-
-            <app-project-selector [keywordQueryIn]="keywordQuery" [tagQueryIn]="tagQuery"></app-project-selector>
+            <app-project-controller (titleEmitter)="captureTitle($event)" (tagEmitter)="captureTags($event)">
+            </app-project-controller>
+            <app-project-selector [titleQueryIn]="titleQueryAux" [tagQueryIn]="tagQueryAux"></app-project-selector>
         </div>
     </div>
 </div>
