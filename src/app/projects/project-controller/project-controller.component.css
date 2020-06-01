@@ -1,23 +1,40 @@
+/* Project Controller */
+
+label {
+    text-align: right;
+    font-size: 115%;
+}
+
 #tagCheckboxes, .controller {
-    min-width: 100%;
-    /* margin: 10px 3vw 10px 3vw; */
-    padding: 0 15px 0 15px;
-    background-color: grey;
+    padding: 0 20px 0 20px;
+    background-color: #3b3b69;
 }
 
-.controller {
-    margin-bottom: 30px;
-}
-
-#projectSearch {
-    width: 50%;
+.filter {
+    width: 70%;
     background-color: transparent;
     border-width: 0 0 2px 0;
     border-style: solid;
-    color: aliceblue;
+    border-color: aliceblue;
+    color: rgb(184, 222, 255);
 }
 
-#projectSearch:focus {
+.filter::placeholder {
+    color: rgb(184, 222, 255);
+    opacity: .6;
+}
+
+.filter:-ms-input-placeholder {
+    color: rgb(184, 222, 255);
+    opacity: .6;
+}
+
+.filter::-ms-input-placeholder {
+    color: rgb(184, 222, 255);
+    opacity: .6;
+}
+
+.filter:focus {
     outline-width: 0;
     caret-color: aliceblue;
 }
