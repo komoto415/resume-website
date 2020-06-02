@@ -1,5 +1,5 @@
 .wrapper {
-    margin: 0 30px 0 30px;
+    margin: 0 30px;
 }
 
 .box {
@@ -42,10 +42,6 @@
 }
 
 .skill:hover {
-    /* transform: scale(1.1); */
-}
-
-.resume {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    transform: scale(1.1);
+    cursor: pointer;
 }
