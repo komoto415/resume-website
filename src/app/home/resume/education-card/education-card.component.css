@@ -3,6 +3,11 @@
     background-color: rgb(71, 78, 97);
 }
 
+.col-md.education {
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
 .card {
     max-width: 400px !important;
 }
@@ -10,6 +15,28 @@
 .clazz {
     cursor: pointer;
     text-decoration: underline !important;
+}
+
+.card {
+    font-size: 12px;
+}
+h5 {
+    font-size: 16px;
+}
+h6, #school {
+    font-size: 14px;
+}
+
+@media screen and (min-width: 480px) {
+    .card {
+        font-size: 14px;
+    }
+    h5 {
+        font-size: 20px;
+    }
+    h6, #school {
+        font-size: 16px;
+    }
 }
 
 @media screen and (min-width: 540px) {
@@ -21,17 +48,5 @@
     }
     h6, #school {
         font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .card {
-        font-size: 14px;
-    }
-    h5 {
-        font-size: 18px;
-    }
-    h6, #school {
-        font-size: 16px;
     }
 }
