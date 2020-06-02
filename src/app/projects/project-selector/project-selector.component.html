@@ -1,8 +1,8 @@
 <div class="card-columns">
     <div class="project-card inner" 
     ngClass="{{ 
-        filterProjectByTitle(project.title) ||
-        filterProjectByTag(project.tags)
+        filterProjectByTitle(project) ||
+        filterProjectByTag(project)
         ? 'fade-out' : 'fade-in' }}"
         *ngFor="let project of projects;">
         <a routerLink="{{ project.router }}">
