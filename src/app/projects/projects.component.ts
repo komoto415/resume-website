@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LanguagesService } from '../home/resume/languages/languages.service';
+import { ProjectsService } from './projects.service';
 
 @Component({
     selector: 'app-projects',
@@ -7,26 +9,36 @@ import { Router } from '@angular/router';
     styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-    titleQueryAux:string;
-    tagQueryAux:string;
+    titleQueryAux: string;
+    tagQueryAux: string;
+    filteredTags: string[];
 
-    public captureTitle($event) {
-        this.titleQueryAux = $event;
+    captureTitle(title) {
+        this.titleQueryAux = title;
         // console.log(this.titleQueryAux);
     }
 
-    public captureTags($event) {
-        this.tagQueryAux = $event;
+    captureTags(tags) {
+        this.tagQueryAux = tags;
         // console.log(this.tagQueryAux);
     }
 
-
-    constructor(public router: Router) { }
-
-    ngOnInit(): void {
+    capturefilteredTags(tags) {
+        console.log(tags);
+        this.filteredTags = tags
+        console.log(this.filteredTags);
     }
 
-    public isParentUrl() {
+
+    constructor(public projectsService: ProjectsService, public languageService: LanguagesService, public router: Router) {
+        this.filteredTags = this.projectsService.getAllTags();
+    }
+
+    ngOnInit(): void {
+        this.tagQueryAux = this.languageService.language;
+    }
+
+    isParentUrl() {
         return this.router.url === '/projects'
     }
 
@@ -37,7 +49,7 @@ export class ProjectsComponent implements OnInit {
         "enigma": "My Enigma Machine",
     }
 
-    public getCurretProject() {
+    getCurretProject(): string {
         var url: Array<String> = this.router.url.split('/');
         return this.urlToTitle[`${url[url.length - 1]}`];
     }
