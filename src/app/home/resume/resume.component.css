@@ -10,10 +10,22 @@ app-education-card {
 .container {
     margin-top: 50px;
     margin-bottom: 50px;
+
+}
+
+.language-wrapper {
+    margin-top: 50px;
+    padding: 20px;
     border-style: solid;
     border-width: 15px;
     border-color: #1d1d33;
     border-radius: 50px;
+}
+
+.education-wrapper {
+    margin: 0 7vw;
+    padding: 15px 3vw 0 3vw;
+    background-color: #34344e;
 }
 
 .wrapper {
