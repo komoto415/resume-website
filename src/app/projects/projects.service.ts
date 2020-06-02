@@ -61,19 +61,34 @@ export class ProjectsService {
             router: "enigma",
             alt: "",
         },
-        {
-            title: "To Brock and not to Brock",
-            thumbnail: "/senior-project.png", // https://i.ibb.co/7yMB9t6/FireRed.png
-            tags: [
-                "python",
-                "julia",
-                "ml",
-                "pokemon",
-            ],
-            desc: "For my research project, my partner and I decided to teach a machine how to beat Brock in Pokemon Fire Red. If Twitch can do it, why can't a bot?",
-            router: "senior-project",
-            alt: "",
-        },
+        // {
+        //     title: "My Website",
+        //     thumbnail: "/enigma.jpg", // https://content.presspage.com/uploads/1369/enigmamachine-701206.jpg?10000
+        //     tags: [
+        //         "javscript",
+        //         "html",
+        //         "css",
+        //         "AngularJS",
+        //         "DigitalOcean",
+        //         "Ngnix"
+        //     ],
+        //     desc: "The inner machinations of my mind are an enigma",
+        //     router: "enigma",
+        //     alt: "",
+        // },
+        // {
+        //     title: "To Brock and not to Brock",
+        //     thumbnail: "/senior-project.png", // https://i.ibb.co/7yMB9t6/FireRed.png
+        //     tags: [
+        //         "python",
+        //         "julia",
+        //         "ml",
+        //         "pokemon",
+        //     ],
+        //     desc: "For my research project, my partner and I decided to teach a machine how to beat Brock in Pokemon Fire Red. If Twitch can do it, why can't a bot?",
+        //     router: "senior-project",
+        //     alt: "",
+        // },
     ]
 
     getProjects(): Project[] {
