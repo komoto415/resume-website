@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { College } from './colleges';
 
 @Component({
     selector: 'app-education-card',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./education-card.component.css']
 })
 export class EducationCardComponent implements OnInit {
-    colleges: object = [
+    colleges: College[] = [
         // {
         //     "name": "Washington University in St. Louis",
         //     "timeline": "2021-2024",
@@ -26,7 +27,7 @@ export class EducationCardComponent implements OnInit {
             "degrees": [
                 "Bachelors of Science in Computer Science",
             ],
-            // "gpa": "3.45",
+            "gpa": "",
             "minors": [
                 "Mathematics",
             ],
@@ -36,17 +37,17 @@ export class EducationCardComponent implements OnInit {
                 // "Database Theory",
             ],
         },
-        // {
-        //     "name": "Hong Kong International School",
-        //     "timeline": "Graudated 2017",
-        //     "shorthand": "hkis",
-        //     "degrees": [
-        //         "High School Diploma",
-        //     ],
-        //     "gpa": "",
-        //     "minors": [],
-        //     "classes": [],
-        // },
+        {
+            "name": "Hong Kong International School",
+            "timeline": "Graudated 2017",
+            "shorthand": "hkis",
+            "degrees": [
+                "High School Diploma",
+            ],
+            "gpa": "",
+            "minors": [],
+            "classes": [],
+        },
 
     ]
     constructor() { }
