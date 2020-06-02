@@ -47,10 +47,7 @@
 /* Project Selector */
 
 .hide {
-    height: 0;
-    width: 0;
     display: none;
-    transition: 1s ease-out;
 }
 
 /* Subcomponent content media scaling */
@@ -70,12 +67,19 @@
     font-size: 80%;
 }
 
+label.tagCheckBox {
+    font-size: 70%;
+}
+
 @media screen and (min-width: 480px) {
     .controller h4 {
         font-size: 1.30rem;
     }
     .card-columns, .controller {
         font-size: 85%;
+    }
+    label.btn.btn-secondary.tagCheckbox {
+        font-size: 75% !important;
     }
 }
 
@@ -86,6 +90,9 @@
     .card-columns, .controller {
         font-size: 95%;
     }
+    label.btn.btn-secondary.tagCheckbox {
+        font-size: 85% !important;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -94,5 +101,8 @@
     }
     .card-columns, .controller {
         font-size: 100%;
+    }
+    label.btn.btn-secondary.tagCheckbox {
+        font-size: 90% !important;
     }
 }
