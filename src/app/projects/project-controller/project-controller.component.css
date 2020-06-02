@@ -44,3 +44,32 @@ label {
         width: 55%;
     }
 }
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:visited,
+.btn-secondary:focus {
+    background-color: #4a4a80 !important;
+    border-color: #4a4a80 !important;
+}
+
+.btn-secondary.active,
+.btn-secondary.active:hover,
+.btn-secondary.active:active,
+.btn-secondary.active:visited,
+.btn-secondary.active:focus {
+    background-color: #1f1f46 !important;
+    border-color: #1f1f46 !important;
+}
+
+/* Content Wrappers */
+
+.tag-wrapper {
+    margin: 0 15px;
+}
