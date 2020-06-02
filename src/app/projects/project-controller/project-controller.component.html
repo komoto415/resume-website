@@ -11,25 +11,24 @@
         <label for="#projectSearchTags" class="col-4">Tags</label>
         <div class="col-8">
             <div style="margin-bottom: 10px;">
-                <input type="text" class="filter" id="projectSearchTags" placeholder="tags"
-                    (keyup)="updateTags($event.target.value)">
+                <input type="text" class="filter" [value]="tagQuery" id="projectSearchTags" placeholder="tags"
+                    (keyup)="updateTags($event.target.value, '')">
             </div>
-            <!-- <div class="row justify-content-start" id="tagCheckboxes">
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="defaultInline1">
-                    <label class="custom-control-label" for="defaultInline1">Python</label>
-                </div>
-
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="defaultInline2">
-                    <label class="custom-control-label" for="defaultInline2">Java</label>
-                </div>
-
-                <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="defaultInline3">
-                    <label class="custom-control-label" for="defaultInline3">C++</label>
-                </div>
-            </div> -->
         </div>
     </div>
+    <!-- <div class="row justify-content-start" id="tagCheckboxes">
+        <div class="tag-wrapper">
+            <div class="btn-group-toggle" data-toggle="buttons">
+                <label (click)="isChecked($event)" class="btn btn-secondary tagCheckbox"
+                    *ngFor="let tag of filteredTagsIn" style="margin: 5px 10px">
+                    <input type="checkbox" autocomplete="off"> {{ tag }}
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div style="margin: 15px;">
+            <button class="btn btn-info btn-sm" (click)="clearForm($event)">Clear Inputs</button>
+        </div>
+    </div> -->
 </div>
