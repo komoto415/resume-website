@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { stringify } from 'querystring';
-import { of } from 'rxjs';
+import { Project } from '../project';
+import { ProjectsService } from '../projects.service';
 
 @Component({
     selector: 'app-project-selector',
@@ -9,104 +9,56 @@ import { of } from 'rxjs';
     styleUrls: ['../projects.component.css', './project-selector.component.css']
 })
 export class ProjectSelectorComponent implements OnInit {
-    projects: Array<Object> = [
-        {
-            title: "We Go Services",
-            // thumbnail: "/wego.jpg", // https://ces.eetimes.com/wp-content/uploads/2020/01/image-eet-ces.jpg
-            thumbnail: "/wego.jpg", // https://ces.eetimes.com/wp-content/uploads/2020/01/image-eet-ces.jpg
-            tags: [
-                "python",
-                "html5",
-                "javascript",
-                "ngnix",
-                "docker",
-                "python",
-                "web-app",
-                "swei",
-                "multi-cloud-solution",
-            ],
-            desc: "In the advent of autonomous vehicles, we aim to take advantage of the growing market of Transportation as a Service with a scalable multi-service Web Application to help fulfil everyday needs.",
-            router: "wego-services",
-            alt: "",
-        },
-        {
-            title: "Components-Algorithms Bridge Assignment",
-            thumbnail: "/kart-test.jpg", // https://www.aoe.com/fileadmin/AOE.com/images/main_navigation/blog/Stock_Photos/miscellaneous/Fotolia_94900081_Chess_Pieces_930_590_70.jpg
-            tags: [
-                "java",
-                "components",
-                "algorithms",
-                "data-structures",
-            ],
-            desc: "An open bid for experimental projects that could be assigned in Component-Based Programming and then reduxed for Algorithm and Data Structures.",
-            router: "comp-to-algo",
-            alt: "",
-        },
-        {
-            title: "Login and Register",
-            thumbnail: "/first-project.jpg", // https://naibuzz.com/wp-content/uploads/2017/09/StartOfANewJourney.jpg
-            tags: [
-                "python",
-                "cli",
-                "first",
-            ],
-            desc: "The very first CS project I ever did in university. A simple command line login and register program. How far we've come!",
-            router: "first-project",
-            alt: "",
-        },
-        {
-            title: "Enigma Machine",
-            thumbnail: "/enigma.jpg", // https://content.presspage.com/uploads/1369/enigmamachine-701206.jpg?10000
-            tags: [
-                "python",
-                "cli",
-                "enigma",
-            ],
-            desc: "The inner machinations of my mind are an enigma",
-            router: "enigma",
-            alt: "",
-        },
-        // {
-        //     title: "To Brock and not to Brock",
-        //     thumbnail: "/senior-project.png", // https://i.ibb.co/7yMB9t6/FireRed.png
-        //     tags: [
-        //         "python",
-        //         "julia",
-        //         "ml",
-        //         "pokemon",
-        //     ],
-        //     desc: "For my research project, my partner and I decided to teach a machine how to beat Brock in Pokemon Fire Red. If Twitch can do it, why can't a bot?",
-        //     router: "senior-project",
-        //     alt: "",
-        // },
-    ]
 
-    @Input() titleQueryIn: string = '';
-    @Input() tagQueryIn: string = '';
+    @Input() titleQueryIn: string;
+    @Input() tagQueryIn: string;
+    
+    @Output() tagsEmitter = new EventEmitter<string[]>();
 
-    public filterProjectByTitle(title: string) {
+    projects: Array<Project>;
+    tags: Set<string>;
+
+    constructor(public projectsService: ProjectsService, public router: Router) {
+        this.projects = this.projectsService.getProjects();
+        this.tags = new Set();
+    }
+
+    ngOnInit(): void {
+    }
+
+    filterProjectByTitle(project: Project): boolean {
         if (this.titleQueryIn == null) return false;
         if (this.titleQueryIn.length === 0) return false;
         
+        let title = project.title;
         // console.log("#########################");
         // console.log(this.titleQueryIn);
 
-        var trimtitle = this.titleQueryIn.trim();
+        let trimtitle = this.titleQueryIn.trim();
+        trimtitle = trimtitle.replace(/\s+/g, " "); 
 
-        return !title.toLowerCase().includes(trimtitle);
+        let foundTitle: boolean = title.toLowerCase().includes(trimtitle);
+        console.log("title'");
+        if (foundTitle) {
+            this.filterTags(project.tags);
+        }
+        return !foundTitle;
     }
 
-    public filterProjectByTag(tags: string[]) {
+    filterProjectByTag(project: Project): boolean {
         if (this.tagQueryIn == null) return false;
         if (this.tagQueryIn.length === 0) return false;
 
+        let tags: string[] = project.tags;
         // console.log("#########################");
         // console.log(this.tagQueryIn);
 
-        var trimTag: string = this.tagQueryIn.trim();
-        var tagList: string[] = trimTag.split(" ");
+        let trimTag: string = this.tagQueryIn.trim();
+        trimTag = trimTag.replace(/\s+/g, " "); 
 
-        var check: number = 0;
+        let tagList: string[] = trimTag.split(" ");
+
+        let check: number = 0;
         for (let e in tagList) {
             let word = tagList[e].trim();
             if (tags.includes(word)) check += 1;
@@ -114,22 +66,23 @@ export class ProjectSelectorComponent implements OnInit {
         }
 
         let foundTag: boolean = check > 0;
+        if (foundTag) {
+            this.filterTags(tags);
+        }
         return !foundTag;
     }
 
-    public tagsToClass(tags: string[]) {
+    tagsToClass(tags: string[]): string {
         return tags.join(' ');
     }
 
-    public getProjects() {
-        return this.projects;
+    filterTags(tags: string[]): void {
+        // console.log("need to filter");
+        // console.log(tags);
+        // console.log(this.tags);
+        // tags.forEach(e => this.tags.add(e));
+        // console.log(this.tags);
+        // console.log([...this.tags]); 
+        // this.tagsEmitter.emit([...this.tags]);
     }
-
-    constructor(public router: Router) {
-
-    }
-
-    ngOnInit(): void {
-    }
-
 }
