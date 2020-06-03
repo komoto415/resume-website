@@ -106,3 +106,216 @@ label.tagCheckBox {
         font-size: 90% !important;
     }
 }
+
+/* Fade in fade out credit: https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08 */
+
+.tagCheckboxLabel {
+    margin: 5px 10px;
+}
+
+.fade-in {
+    animation: fadeIn ease 1.0s;
+    -webkit-animation: fadeIn ease 1.0s;
+    -moz-animation: fadeIn ease 1.0s;
+    -o-animation: fadeIn ease 1.0s;
+    -ms-animation: fadeIn ease 1.0s;
+    position: relative;
+    opacity: 1;
+    height: inherit;
+    width: inherit;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+    100% {
+        position: relative;
+        opacity: 1;
+        height: inherit;
+        width: inherit;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+    100% {
+        position: relative;
+        opacity: 1;
+        height: inherit;
+        width: inherit;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+    100% {
+        position: relative;
+        opacity: 1;
+        height: inherit;
+        width: inherit;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+    100% {
+        position: relative;
+        opacity: 1;
+        height: inherit;
+        width: inherit;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+    100% {
+        position: relative;
+        opacity: 1;
+        height: inherit;
+        width: inherit;
+    }
+}
+
+.fade-out {
+    animation: fadeOut ease 1.0s;
+    -webkit-animation: fadeOut ease 1.0s;
+    -moz-animation: fadeOut ease 1.0s;
+    -o-animation: fadeOut ease 1.0s;
+    -ms-animation: fadeOut ease 1.0s;
+    position: absolute;
+    overflow: hidden;
+    height: 0px;
+    width: 0px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+@keyframes fadeOut {
+    0% {
+        position: relative;
+        opacity: 1;
+        height: inherit;
+        width: inherit;
+    }
+    100% {
+        position: absolute;
+        overflow: hidden;
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+}
+
+@-moz-keyframes fadeOut {
+    0% {
+        position: relative;
+        opacity: 1;
+        height: inherit;
+        width: inherit;
+    }
+    100% {
+        position: absolute;
+        overflow: hidden;
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        position: relative;
+        opacity: 1;
+        height: inherit;
+        width: inherit;
+    }
+    100% {
+        position: absolute;
+        overflow: hidden;
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+}
+
+@-o-keyframes fadeOut {
+    0% {
+        position: relative;
+        opacity: 1;
+        height: inherit;
+        width: inherit;
+    }
+    100% {
+        position: absolute;
+        overflow: hidden;
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+}
+
+@-ms-keyframes fadeOut {
+    0% {
+        position: relative;
+        opacity: 1;
+        height: inherit;
+        width: inherit;
+    }
+    100% {
+        position: absolute;
+        overflow: hidden;
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+}
