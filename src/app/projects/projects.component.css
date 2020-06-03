@@ -119,7 +119,6 @@ label.tagCheckBox {
     -moz-animation: fadeIn ease 1.0s;
     -o-animation: fadeIn ease 1.0s;
     -ms-animation: fadeIn ease 1.0s;
-    position: relative;
     opacity: 1;
     height: inherit;
     width: inherit;
@@ -133,9 +132,9 @@ label.tagCheckBox {
         padding: 0px;
         margin: 0px;
         border: 0px;
+        overflow: hidden;
     }
     100% {
-        position: relative;
         opacity: 1;
         height: inherit;
         width: inherit;
@@ -150,9 +149,9 @@ label.tagCheckBox {
         padding: 0px;
         margin: 0px;
         border: 0px;
+        overflow: hidden;
     }
     100% {
-        position: relative;
         opacity: 1;
         height: inherit;
         width: inherit;
@@ -167,9 +166,9 @@ label.tagCheckBox {
         padding: 0px;
         margin: 0px;
         border: 0px;
+        overflow: hidden;
     }
     100% {
-        position: relative;
         opacity: 1;
         height: inherit;
         width: inherit;
@@ -184,9 +183,9 @@ label.tagCheckBox {
         padding: 0px;
         margin: 0px;
         border: 0px;
+        overflow: hidden;
     }
     100% {
-        position: relative;
         opacity: 1;
         height: inherit;
         width: inherit;
@@ -201,9 +200,9 @@ label.tagCheckBox {
         padding: 0px;
         margin: 0px;
         border: 0px;
+        overflow: hidden;
     }
     100% {
-        position: relative;
         opacity: 1;
         height: inherit;
         width: inherit;
@@ -233,8 +232,8 @@ label.tagCheckBox {
         width: inherit;
     }
     100% {
-        position: absolute;
         overflow: hidden;
+        position: absolute;
         opacity: 0;
         height: 0px;
         width: 0px;
