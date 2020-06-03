@@ -14,11 +14,13 @@
             <router-outlet></router-outlet>
         </div>
         <div [ngClass]="{ hide : this.router.url !== '/projects' }">
-            <app-project-controller [filteredTagsIn]="filteredTags" (titleEmitter)="captureTitle($event)" (tagEmitter)="captureTags($event)">
+            <app-project-controller [tagsInView]="tagsInViewAux" (titleEmitter)="captureTitle($event)" (tagEmitter)="captureTags($event)">
             </app-project-controller>
-            <app-project-selector (tagsEmitter)="capturefilteredTags($event)" [titleQueryIn]="titleQueryAux"
+            <app-project-selector (currentTagsEmitter)="capturefilteredTags($event)" [titleQueryIn]="titleQueryAux"
                 [tagQueryIn]="tagQueryAux">
             </app-project-selector>
+            <!-- <app-project-controller></app-project-controller>
+            <app-project-selector></app-project-selector> -->
         </div>
     </div>
 </div>
