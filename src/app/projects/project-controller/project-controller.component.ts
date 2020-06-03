@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { LanguagesService } from 'src/app/home/resume/languages/languages.service';
 import { ProjectsService } from '../projects.service';
 
@@ -7,27 +7,65 @@ import { ProjectsService } from '../projects.service';
     templateUrl: './project-controller.component.html',
     styleUrls: ['../projects.component.css', './project-controller.component.css']
 })
-export class ProjectControllerComponent implements OnInit {
+export class ProjectControllerComponent implements OnInit, OnChanges {
     @Output() tagEmitter = new EventEmitter<string>();
     @Output() titleEmitter = new EventEmitter<string>();
 
-    @Input() filteredTagsIn: string[];
+    @Input() tagsInView: string[];
 
+    readonly FADE_IN_CLASS = "fade-in";
+    readonly FADE_OUT_CLASS = "fade-out";
+
+    tags: string[];
     titleQuery: string;
     tagQuery: string;
-    // tagCBDoms;
-    // lastInput:string;
 
     constructor(public projectsService: ProjectsService, public languageService: LanguagesService) {
-        this.titleQuery = "";
-        this.tagQuery = "";
-        // this.filteredTagIn = this.projectsService.getAllTags();
-        // this.lastInput = "";
-        // this.tagCBDoms = document.getElementsByClassName("tagCB");
+        this.tags = this.projectsService.getAllUniqueTags();
     }
 
     ngOnInit(): void {
-        this.tagQuery = this.languageService.language == null ? "" : this.languageService.language;
+        this.tagsInView = [];
+        this.tagQuery = "";
+        console.log(this.languageService.language)
+        if (this.languageService.language != null) {
+            this.tagQuery = this.languageService.language;
+            let checkBoxDiv = document.getElementById("tagCheckboxes").getElementsByTagName("LABEL");
+            for (let i = 0; i < checkBoxDiv.length; i++) {
+                // let label = checkBoxDiv[i];
+                // if (label.textContent.trim() === this.tagQuery) {
+                //     label.classList.add("active");
+                // }
+            }
+        }
+        console.log(this.tagQuery);
+        console.log(this.tags);
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        let oldTags: string[] = changes.tagsInView.previousValue;
+        let newTags: string[] = changes.tagsInView.currentValue;
+        if (oldTags == null && newTags || null) return;
+        // console.log(oldTags);
+        // console.log(newTags);
+        let hideMe: string[] = oldTags.filter(e => !newTags.includes(e));
+        // console.log(hideMe);
+        let checkBoxDiv = document.getElementById("tagCheckboxes").getElementsByTagName("LABEL");
+        // console.log(checkBoxDiv);
+        for (let i = 0; i < checkBoxDiv.length; i++) {
+            let label = checkBoxDiv[i];
+            let tag: string = label.textContent.trim();
+            // console.log(tag);
+            let labelClasses = label.classList;
+            // console.log(labelClasses)
+            if (hideMe.includes(tag)) {
+                labelClasses.remove(this.FADE_IN_CLASS);
+                labelClasses.add(this.FADE_OUT_CLASS);
+            } else {
+                labelClasses.remove(this.FADE_OUT_CLASS);
+                labelClasses.add(this.FADE_IN_CLASS);
+            }
+        }
     }
 
     isChecked($event): void {
@@ -37,10 +75,11 @@ export class ProjectControllerComponent implements OnInit {
         let check = !input.checked;
         let tag: string = label.childNodes[1].data.trim();
         if (check) {
-            // console.log("I've been checked! C:")
+            console.log("I've been checked! C:")
             // label.classList
             this.updateTags(tag, "checked");
         } else {
+            console.log("I've been unchecked! :C")
             this.updateTags(this.tagQuery.replace(
                 this.tagQuery.split("").length == 0 ? tag.concat(" ") : tag, "").trim()
                 , "");
@@ -94,6 +133,9 @@ export class ProjectControllerComponent implements OnInit {
         else this.tagQuery = val;
         // console.log(this.tagQuery);
         this.tagEmitter.emit(this.tagQuery);
+        // console.log(this.projectsControllerService.selectedTags);
+        // this.projectsControllerService.selectedTags = this.tagQuery;
+        // console.log(this.projectsControllerService.selectedTags);
     }
 
     matchCheckBoxWithText(): void {
