@@ -8,18 +8,17 @@ import { College } from './colleges';
 })
 export class EducationCardComponent implements OnInit {
     colleges: College[] = [
-        // {
-        //     "name": "Washington University in St. Louis",
-        //     "timeline": "2021-2024",
-        //     "shorthand": "washu",
-        //     "degrees": [
-        //         "Masters in Robotics",
-        //         "Bachelors of Science Electrical Engineering",
-        //     ],
-        //     "gpa": "N/A",
-        //     "minors": [],
-        //     "classes": [],
-        // },
+        {
+            "name": "Hong Kong International School",
+            "timeline": "Graudated 2017",
+            "shorthand": "hkis",
+            "degrees": [
+                "High School Diploma",
+            ],
+            "gpa": "",
+            "minors": [],
+            "classes": [],
+        },
         {
             "name": "St. Edwards University",
             "timeline": "2017-2021",
@@ -37,18 +36,18 @@ export class EducationCardComponent implements OnInit {
                 // "Database Theory",
             ],
         },
-        {
-            "name": "Hong Kong International School",
-            "timeline": "Graudated 2017",
-            "shorthand": "hkis",
-            "degrees": [
-                "High School Diploma",
-            ],
-            "gpa": "",
-            "minors": [],
-            "classes": [],
-        },
-
+        // {
+        //     "name": "Washington University in St. Louis",
+        //     "timeline": "2021-2024",
+        //     "shorthand": "washu",
+        //     "degrees": [
+        //         "Masters in Robotics",
+        //         "Bachelors of Science Electrical Engineering",
+        //     ],
+        //     "gpa": "N/A",
+        //     "minors": [],
+        //     "classes": [],
+        // },
     ]
     constructor() { }
 
