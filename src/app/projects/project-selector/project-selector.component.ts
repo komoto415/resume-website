@@ -1,3 +1,4 @@
+import { LanguagesService } from './../../home/resume/languages/languages.service';
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { Project } from '../project';
@@ -20,7 +21,7 @@ export class ProjectSelectorComponent implements OnInit, OnChanges {
 
     projects: Project[];
 
-    constructor(public projectsService: ProjectsService, public router: Router) {
+    constructor(public languageService: LanguagesService, public projectsService: ProjectsService, public router: Router) {
         this.projects = this.projectsService.getProjects();
     }
 
@@ -57,53 +58,54 @@ export class ProjectSelectorComponent implements OnInit, OnChanges {
 
     filterProjectByTag(tags: string): void {
         if (tags == null) return;
-        console.log(tags.length)
+        // console.log(tags.length)
         let tagsToKeep: string[] = [];
-        if (tags.length === 0) {
-            this.noQuery();
-            tagsToKeep = this.projectsService.getAllUniqueTags();
-        } else {
-            let trimTag = tags.trim();
-            trimTag = trimTag.replace(/\s+/g, " ");
-    
-            let tagList: string[] = trimTag.split(" ");
-    
-            let cards = document.getElementsByClassName("project-card");
-            // console.log(cards);
-            for (let div = 0; div < cards.length; div++) {
-                let card = cards[div];
-                let cardTagsAsString: string = card.getElementsByClassName("tags")[0].textContent;
-                // console.log(cardTagsAsString);
-                let removeHash = "  #";
-    
-    
-                let cardTagsAsList: string[] = cardTagsAsString.trim().split(removeHash)
-                    .map(e => e.replace(/[^a-zA-Z \-]/g, ""));
-    
-                var hasTags: boolean = tagList.every(e => {
-                    return cardTagsAsList.indexOf(e) >= 0
-                })
-    
-                let classList = card.classList;
-                let alreadyShowing = classList.contains(this.FADE_IN_CLASS);
-                if (hasTags) {
-                    if (!alreadyShowing) {
-                        classList.remove(this.FADE_OUT_CLASS);
-                        classList.add(this.FADE_IN_CLASS);
-                    }
-                    tagsToKeep = tagsToKeep.concat(cardTagsAsList);
-                } else {
-                    if (alreadyShowing) {
-                        classList.remove(this.FADE_IN_CLASS);
-                        classList.add(this.FADE_OUT_CLASS);
+        setTimeout(() => {
+            if (tags.length === 0) {
+                this.noQuery();
+                tagsToKeep = this.projectsService.getAllUniqueTags();
+            } else {
+                let trimTag = tags.trim();
+                trimTag = trimTag.replace(/\s+/g, " ");
+
+                let tagList: string[] = trimTag.split(" ");
+
+                let cards = document.getElementsByClassName("project-card");
+                // console.log(cards);
+                for (let div = 0; div < cards.length; div++) {
+                    let card = cards[div];
+                    let cardTagsAsString: string = card.getElementsByClassName("tags")[0].textContent;
+                    // console.log(cardTagsAsString);
+                    let removeHash = "  #";
+
+
+                    let cardTagsAsList: string[] = cardTagsAsString.trim().split(removeHash)
+                        .map(e => e.replace(/[^a-zA-Z \-\d]/g, ""));
+
+                    var hasTags: boolean = tagList.every(e => {
+                        return cardTagsAsList.indexOf(e) >= 0
+                    })
+
+                    let classList = card.classList;
+                    let alreadyShowing = classList.contains(this.FADE_IN_CLASS);
+                    if (hasTags) {
+                        if (!alreadyShowing) {
+                            classList.remove(this.FADE_OUT_CLASS);
+                            classList.add(this.FADE_IN_CLASS);
+                        }
+                        // console.log(cardTagsAsList);
+                        tagsToKeep = tagsToKeep.concat(cardTagsAsList);
+                    } else {
+                        if (alreadyShowing) {
+                            classList.remove(this.FADE_IN_CLASS);
+                            classList.add(this.FADE_OUT_CLASS);
+                        }
                     }
                 }
             }
-        }
-        tagsToKeep = [...new Set(tagsToKeep)];
-        this.filterTags(tagsToKeep);
-        // let titles = cards.getElementsBy
-        // this.filterTags(tags , foundTag);
+            tagsToKeep = [...new Set(tagsToKeep)];
+            this.filterTags(tagsToKeep);
+        }, this.languageService.language == null ? 100 : 0);
     }
 
     noQuery(): void {
