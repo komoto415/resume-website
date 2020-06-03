@@ -8,7 +8,7 @@ import { ProjectsService } from './projects/projects.service';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    providers: [LanguagesService, ProjectsService]
+    providers: [LanguagesService, ProjectsService,]
 })
 
 export class AppComponent implements OnInit {
