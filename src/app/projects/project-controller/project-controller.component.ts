@@ -22,64 +22,81 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
 
     constructor(public projectsService: ProjectsService, public languageService: LanguagesService) {
         this.tags = this.projectsService.getAllUniqueTags();
+        this.tagsInView = this.projectsService.getAllUniqueTags();
+        this.tagQuery = "";
+        if (this.languageService.language != null) {
+            this.tagQuery = this.languageService.language;
+        }
     }
 
     ngOnInit(): void {
-        this.tagsInView = [];
-        this.tagQuery = "";
-        console.log(this.languageService.language)
-        if (this.languageService.language != null) {
-            this.tagQuery = this.languageService.language;
-            let checkBoxDiv = document.getElementById("tagCheckboxes").getElementsByTagName("LABEL");
-            for (let i = 0; i < checkBoxDiv.length; i++) {
-                // let label = checkBoxDiv[i];
-                // if (label.textContent.trim() === this.tagQuery) {
-                //     label.classList.add("active");
-                // }
-            }
-        }
-        console.log(this.tagQuery);
-        console.log(this.tags);
+        // console.log("at init");
     }
 
     ngOnChanges(changes: SimpleChanges): void {
+        // console.log("at changes");
         let oldTags: string[] = changes.tagsInView.previousValue;
         let newTags: string[] = changes.tagsInView.currentValue;
-        if (oldTags == null && newTags || null) return;
         // console.log(oldTags);
         // console.log(newTags);
-        let hideMe: string[] = oldTags.filter(e => !newTags.includes(e));
-        // console.log(hideMe);
-        let checkBoxDiv = document.getElementById("tagCheckboxes").getElementsByTagName("LABEL");
-        // console.log(checkBoxDiv);
-        for (let i = 0; i < checkBoxDiv.length; i++) {
-            let label = checkBoxDiv[i];
-            let tag: string = label.textContent.trim();
-            // console.log(tag);
-            let labelClasses = label.classList;
-            // console.log(labelClasses)
-            if (hideMe.includes(tag)) {
-                labelClasses.remove(this.FADE_IN_CLASS);
-                labelClasses.add(this.FADE_OUT_CLASS);
-            } else {
-                labelClasses.remove(this.FADE_OUT_CLASS);
-                labelClasses.add(this.FADE_IN_CLASS);
+        if (oldTags == null) {
+            if (this.languageService.language != null) {
+                // console.log("need to activate a button");
+                let checkBoxDiv = document.getElementById("tagCheckboxes").getElementsByTagName("LABEL");
+                // console.log(checkBoxDiv);
+                for (let i = 0; i < checkBoxDiv.length; i++) {
+                    let label = checkBoxDiv[i];
+                    let tag = label.textContent.trim();
+                    // console.log(tag);
+                    if (tag === this.tagQuery) {
+                        // console.log("Found the button");
+                        label.classList.add("active");
+                        let input = <HTMLInputElement>label.getElementsByTagName("INPUT")[0];
+                        // console.log(input.checked);
+                        input.checked = true;
+                    }
+                }
+                this.updateTags(this.languageService.language, "");
             }
+            // console.log(this.tagQuery);
         }
+        if (newTags == null) return;
+        setTimeout(() => {
+            console.log(newTags);
+            let hideMe: string[] = this.tags.filter(e => !newTags.includes(e));
+            console.log(hideMe);
+            let checkBoxDiv = document.getElementById("tagCheckboxes").getElementsByTagName("LABEL");
+            // console.log(checkBoxDiv);
+            for (let i = 0; i < checkBoxDiv.length; i++) {
+                let label = checkBoxDiv[i];
+                let tag: string = label.textContent.trim();
+                // console.log(tag);
+                let labelClasses = label.classList;
+                // console.log(labelClasses)
+                if (hideMe.includes(tag)) {
+                    labelClasses.remove(this.FADE_IN_CLASS);
+                    labelClasses.add(this.FADE_OUT_CLASS);
+                } else {
+                    labelClasses.remove(this.FADE_OUT_CLASS);
+                    labelClasses.add(this.FADE_IN_CLASS);
+                }
+            }
+        }, this.languageService.language == null ? 500 : 0)
     }
 
     isChecked($event): void {
         let label = $event.target;
         // console.log(label.childNodes);
         let input = label.childNodes[0];
+        // console.log(input.checked);
         let check = !input.checked;
         let tag: string = label.childNodes[1].data.trim();
         if (check) {
-            console.log("I've been checked! C:")
+            // console.log("I've been checked! C:")
             // label.classList
             this.updateTags(tag, "checked");
         } else {
-            console.log("I've been unchecked! :C")
+            // console.log("I've been unchecked! :C")
             this.updateTags(this.tagQuery.replace(
                 this.tagQuery.split("").length == 0 ? tag.concat(" ") : tag, "").trim()
                 , "");
@@ -107,7 +124,7 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
                     break;
 
                 case "checkbox":
-                    console.log(node.checked);
+                    // console.log(node.checked);
                     if (node.checked) {
                         node.checked = false;
                         let label = node.parentNode;
@@ -132,6 +149,8 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
         if (how === "checked") this.tagQuery += `${this.tagQuery.length == 0 ? "" : " "}${val}`
         else this.tagQuery = val;
         // console.log(this.tagQuery);
+        let queryAsList: string[] = this.tagQuery.split(" ");
+        // console.log(queryAsList);
         this.tagEmitter.emit(this.tagQuery);
         // console.log(this.projectsControllerService.selectedTags);
         // this.projectsControllerService.selectedTags = this.tagQuery;
