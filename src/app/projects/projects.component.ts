@@ -32,10 +32,7 @@ export class ProjectsComponent implements OnInit {
     constructor(public projectsService: ProjectsService, public languageService: LanguagesService, public router: Router) {
     }
 
-    ngOnInit(): void {
-        this.tagsInViewAux = this.projectsService.getAllUniqueTags();
-        this.tagQueryAux = this.languageService.language;
-    }
+    ngOnInit(): void { }
 
     isParentUrl() {
         return this.router.url === '/projects'
