@@ -28,9 +28,9 @@ export class LanguagesComponent implements OnInit {
     }
 
     public goToProjectsUsing(language): void {
-        // this.goToProjectsWith = language;
-        // console.log(language);
-        // this.router.navigateByUrl('/projects');
+        this.goToProjectsWith = language;
+        console.log(language);
+        this.router.navigateByUrl('/projects');
     }
 
     ngOnInit(): void {
