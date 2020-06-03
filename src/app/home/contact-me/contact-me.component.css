@@ -1,56 +1,40 @@
 .wrapper {
     margin-top: 20px;
     margin-bottom: 50px;
-    height: 10rem;
 }
 
 .inner-wrapper {
-    margin-left: 8rem;
-    margin-right: 8rem;
     background-color: #444479;
-    padding: 1% 2% 2% 2%;
-    height: 100%;
+    padding: 2% 0;
+    width: 60vw;
 }
 
-@media screen and (max-width: 480px) {
-    .inner-wrapper {
-        margin-left: 20px;
-        margin-right: 20px;
-        padding: 10px 5% 5px 5%;
-    }
+h1 {
+    font-size: 24px;
+}
+
+@media screen and (min-width: 320px) {
     h1 {
-        font-size: 30px;
+        font-size: 26px;
     }
 }
 
 @media screen and (min-width: 480px) {
     h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 640) {
     h1 {
-        font-size: 20px;
+        font-size: 30px;
     }
 }
 
 @media screen and (min-width: 880px) {
     h1 {
-        font-size: 35px;
+        font-size: 32px;
     }
-    .content {
-        padding: 0 15vw 0 15vw;
-    }
-}
-
-.content, .icon {
-    height: 100%;
-}
-
-.s {
-    transition: .4s;
-    width: 100%;
 }
 
 .icon i {
