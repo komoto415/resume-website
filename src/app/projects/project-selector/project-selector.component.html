@@ -1,9 +1,5 @@
 <div class="card-columns">
-    <div class="project-card inner" 
-    ngClass="{{ 
-        filterProjectByTitle(project) ||
-        filterProjectByTag(project)
-        ? 'fade-out' : 'fade-in' }}"
+    <div class="project-card inner fade-in" 
         *ngFor="let project of projects;">
         <a routerLink="{{ project.router }}">
             <div class="card">
@@ -13,7 +9,9 @@
                 <div class="card-body">
                     <h5 class="card-title"> {{ project.title }} </h5>
                     <p class="card-text"> {{ project.desc }} </p>
-                    <span class="tag" *ngFor="let tag of project.tags"> #{{ tag }} </span>
+                    <div class="tags">
+                        <span class="tag" *ngFor="let tag of project.tags"> #{{ tag }} </span>
+                    </div>
                 </div>
             </div>
         </a>
