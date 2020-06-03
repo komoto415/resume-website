@@ -1,13 +1,13 @@
 <div class="controller">
     <h4>Search for a particular project!</h4>
-    <div class="row">
+    <!-- <div class="row">
         <label for="#projectSearchTitle" class="col-4">Project Title</label>
         <div class="col-8">
             <input type="text" class="filter" id="projectSearchTitle" placeholder="title"
                 (keyup)="updateTitle($event.target.value)">
         </div>
-    </div>
-    <div class="row">
+    </div> -->
+    <!-- <div class="row">
         <label for="#projectSearchTags" class="col-4">Tags</label>
         <div class="col-8">
             <div style="margin-bottom: 10px;">
@@ -15,12 +15,12 @@
                     (keyup)="updateTags($event.target.value, '')">
             </div>
         </div>
-    </div>
-    <!-- <div class="row justify-content-start" id="tagCheckboxes">
+    </div> -->
+    <div class="row justify-content-start" id="tagCheckboxes">
         <div class="tag-wrapper">
             <div class="btn-group-toggle" data-toggle="buttons">
-                <label (click)="isChecked($event)" class="btn btn-secondary tagCheckbox"
-                    *ngFor="let tag of filteredTagsIn" style="margin: 5px 10px">
+                <label (click)="isChecked($event)" class="btn btn-secondary tagCheckboxLabel fade-in"
+                    *ngFor="let tag of tags">
                     <input type="checkbox" autocomplete="off"> {{ tag }}
                 </label>
             </div>
@@ -30,5 +30,5 @@
         <div style="margin: 15px;">
             <button class="btn btn-info btn-sm" (click)="clearForm($event)">Clear Inputs</button>
         </div>
-    </div> -->
+    </div>
 </div>
