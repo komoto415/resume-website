@@ -11,30 +11,29 @@ import { ProjectsService } from './projects.service';
 export class ProjectsComponent implements OnInit {
     titleQueryAux: string;
     tagQueryAux: string;
-    filteredTags: string[];
+    tagsInViewAux: string[];
 
     captureTitle(title) {
         this.titleQueryAux = title;
         // console.log(this.titleQueryAux);
     }
 
-    captureTags(tags) {
-        this.tagQueryAux = tags;
+    captureTags(queryTags) {
+        this.tagQueryAux = queryTags;
         // console.log(this.tagQueryAux);
     }
 
-    capturefilteredTags(tags) {
-        console.log(tags);
-        this.filteredTags = tags
-        console.log(this.filteredTags);
+    capturefilteredTags(filteredTags) {
+        this.tagsInViewAux = filteredTags
+        // console.log(this.tagsInViewAux);
     }
 
 
     constructor(public projectsService: ProjectsService, public languageService: LanguagesService, public router: Router) {
-        this.filteredTags = this.projectsService.getAllTags();
     }
 
     ngOnInit(): void {
+        this.tagsInViewAux = this.projectsService.getAllUniqueTags();
         this.tagQueryAux = this.languageService.language;
     }
 
