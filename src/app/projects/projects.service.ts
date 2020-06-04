@@ -64,7 +64,7 @@ export class ProjectsService {
             alt: "",
         },
         {
-            title: "My Website",
+            title: "Inception Website",
             thumbnail: "/resume-website.PNG", // Just a screen shot c:
             tags: [
                 TagType.javascript,
@@ -75,7 +75,7 @@ export class ProjectsService {
                 TagType.ngnix,
             ],
             desc: "My first attempt and building at building an AngularJS app and deployment on a VPS",
-            router: "enigma",
+            router: "resume-website",
             alt: "",
         },
         // {

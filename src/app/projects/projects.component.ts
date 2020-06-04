@@ -43,6 +43,7 @@ export class ProjectsComponent implements OnInit {
         "comp-to-algo": "Components-Algorithms Bridge Assignment",
         "first-project": "Humble Beginnings",
         "enigma": "My Enigma Machine",
+        "resume-website": "How Incredibly Meta"
     }
 
     getCurretProject(): string {
