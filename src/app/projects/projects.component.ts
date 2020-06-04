@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LanguagesService } from '../home/resume/languages/languages.service';
+import { TechnicalSkillsService } from '../home/resume/languages/technical-skills.service';
 import { ProjectsService } from './projects.service';
 
 @Component({
@@ -29,7 +29,7 @@ export class ProjectsComponent implements OnInit {
     }
 
 
-    constructor(public projectsService: ProjectsService, public languageService: LanguagesService, public router: Router) {
+    constructor(public projectsService: ProjectsService, public technicalSkillsService: TechnicalSkillsService, public router: Router) {
     }
 
     ngOnInit(): void { }

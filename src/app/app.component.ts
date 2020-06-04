@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LanguagesService } from './home/resume/languages/languages.service';
+import { TechnicalSkillsService } from './home/resume/languages/technical-skills.service';
 import { ProjectsService } from './projects/projects.service';
 
 
@@ -8,7 +8,7 @@ import { ProjectsService } from './projects/projects.service';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    providers: [LanguagesService, ProjectsService,]
+    providers: [TechnicalSkillsService, ProjectsService,]
 })
 
 export class AppComponent implements OnInit {

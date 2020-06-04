@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LanguagesService } from './languages.service';
+import { TechnicalSkillsService } from './technical-skills.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
     templateUrl: './languages.component.html',
     styleUrls: ['./languages.component.css']
 })
-export class LanguagesComponent implements OnInit {
+export class TechnicalSkillsComponent implements OnInit {
     goToProjectsWith: string = "";
     languages: Array<string> = [
         "python", // https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png
@@ -21,7 +21,7 @@ export class LanguagesComponent implements OnInit {
         // "c", // https://www.pinclipart.com/picdir/big/396-3965857_c-c-programming-language-logo-clipart.png
     ];
 
-    constructor(public languageService: LanguagesService, public router: Router) { }
+    constructor(public technicalSkillsService: TechnicalSkillsService, public router: Router) { }
 
     public getImagePath(language: string): string {
         return `/assets/languages/${language}.png`;
@@ -37,7 +37,7 @@ export class LanguagesComponent implements OnInit {
     }
 
     ngOnDestroy(): void {
-        this.languageService.language = this.goToProjectsWith;
+        this.technicalSkillsService.technicalSkill = this.goToProjectsWith;
     }
 
 }

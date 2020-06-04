@@ -15,7 +15,7 @@ import { AboutMeComponent } from './home/about-me/about-me.component';
 
 import { ResumeComponent } from './home/resume/resume.component';
 import { ExperiencesComponent } from './home/resume/experiences/experiences.component';
-import { LanguagesComponent } from './home/resume/languages/languages.component';
+import { TechnicalSkillsComponent } from './home/resume/languages/languages.component';
 import { ContactMeComponent } from './home/contact-me/contact-me.component';
 import { EducationCardComponent } from './home/resume/education-card/education-card.component';
 import { ClassComponentsComponent } from './home/resume/education-card/class-components/class-components.component';
@@ -43,7 +43,7 @@ import { EnigmaComponent } from './projects/enigma/enigma.component';
         BannerComponent,
         ResumeComponent,
         EducationCardComponent,
-        LanguagesComponent,
+        TechnicalSkillsComponent,
         ExperiencesComponent,
         ContactMeComponent,
         ClassComponentsComponent,

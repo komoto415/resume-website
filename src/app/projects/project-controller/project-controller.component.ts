@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { LanguagesService } from 'src/app/home/resume/languages/languages.service';
+import { TechnicalSkillsService } from 'src/app/home/resume/languages/technical-skills.service';
 import { ProjectsService } from '../projects.service';
 
 @Component({
@@ -20,12 +20,12 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
     titleQuery: string;
     tagQuery: string;
 
-    constructor(public projectsService: ProjectsService, public languageService: LanguagesService) {
+    constructor(public projectsService: ProjectsService, public technicalSkillsService: TechnicalSkillsService) {
         this.tags = this.projectsService.getAllUniqueTags();
         this.tagsInView = this.projectsService.getAllUniqueTags();
         this.tagQuery = "";
-        if (this.languageService.language != null) {
-            this.tagQuery = this.languageService.language;
+        if (this.technicalSkillsService.technicalSkill != null) {
+            this.tagQuery = this.technicalSkillsService.technicalSkill;
         }
     }
 
@@ -40,7 +40,7 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
         // console.log(oldTags);
         // console.log(newTags);
         if (oldTags == null) {
-            if (this.languageService.language != null) {
+            if (this.technicalSkillsService.technicalSkill != null) {
                 // console.log("need to activate a button");
                 let checkBoxDiv = document.getElementById("tagCheckboxes").getElementsByTagName("LABEL");
                 // console.log(checkBoxDiv);
@@ -56,7 +56,7 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
                         input.checked = true;
                     }
                 }
-                this.updateTags(this.languageService.language, "");
+                this.updateTags(this.technicalSkillsService.technicalSkill, "");
             }
             // console.log(this.tagQuery);
         }
@@ -81,7 +81,7 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
                     labelClasses.add(this.FADE_IN_CLASS);
                 }
             }
-        }, this.languageService.language == null ? 500 : 0)
+        }, this.technicalSkillsService.technicalSkill == null ? 500 : 0)
     }
 
     isChecked($event): void {

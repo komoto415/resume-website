@@ -1,4 +1,4 @@
-import { LanguagesService } from './../../home/resume/languages/languages.service';
+import { TechnicalSkillsService } from '../../home/resume/languages/technical-skills.service';
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { Project } from '../project';
@@ -21,7 +21,7 @@ export class ProjectSelectorComponent implements OnInit, OnChanges {
 
     projects: Project[];
 
-    constructor(public languageService: LanguagesService, public projectsService: ProjectsService, public router: Router) {
+    constructor(public technicalSkillsService: TechnicalSkillsService, public projectsService: ProjectsService, public router: Router) {
         this.projects = this.projectsService.getProjects();
     }
 
@@ -105,7 +105,7 @@ export class ProjectSelectorComponent implements OnInit, OnChanges {
             }
             tagsToKeep = [...new Set(tagsToKeep)];
             this.filterTags(tagsToKeep);
-        }, this.languageService.language == null ? 100 : 0);
+        }, this.technicalSkillsService.technicalSkill == null ? 100 : 0);
     }
 
     noQuery(): void {
