@@ -5,8 +5,7 @@ export class ProjectsService {
     projects: Project[] = [
         {
             title: "We Go Services",
-            // thumbnail: "/wego.jpg", // https://ces.eetimes.com/wp-content/uploads/2020/01/image-eet-ces.jpg
-            thumbnail: "/wego.jpg", // https://ces.eetimes.com/wp-content/uploads/2020/01/image-eet-ces.jpg
+            thumbnail: "/wego.jpg", // https://www.newyorker.com/magazine/2013/11/25/auto-correct
             tags: [
                 TagType.python,
                 TagType.javascript,
@@ -65,7 +64,7 @@ export class ProjectsService {
         },
         {
             title: "Inception Website",
-            thumbnail: "/resume-website.PNG", // Just a screen shot c:
+            thumbnail: "/resume-website.jpg", // Just a screen shot c:
             tags: [
                 TagType.javascript,
                 TagType.html,
@@ -74,7 +73,7 @@ export class ProjectsService {
                 TagType.digitalocean,
                 TagType.ngnix,
             ],
-            desc: "My first attempt and building at building an AngularJS app and deployment on a VPS",
+            desc: "My first attempt at building an AngularJS app and deploying it on a VPS",
             router: "resume-website",
             alt: "",
         },
