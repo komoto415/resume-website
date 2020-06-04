@@ -7,6 +7,7 @@ import { WegoServicesComponent } from './projects/wego-services/wego-services.co
 import { CompToAlgoComponent } from './projects/comp-to-algo/comp-to-algo.component';
 import { FirstProjectComponent } from './projects/first-project/first-project.component';
 import { EnigmaComponent } from './projects/enigma/enigma.component';
+import { ResumeWebsiteComponent } from './projects/resume-website/resume-website.component';
 
 const routes: Routes = [
     {
@@ -33,6 +34,10 @@ const routes: Routes = [
             {
                 path: 'enigma',
                 component: EnigmaComponent,
+            },
+            {
+                path: 'resume-website',
+                component: ResumeWebsiteComponent,
             },
         ],
     },

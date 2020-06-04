@@ -35,6 +35,7 @@ import { PageNotFoundComponent } from './page-error/page-not-found/page-not-foun
 import { MaintenanceComponent } from './page-error/maintenance/maintenance.component';
 import { FirstProjectComponent } from './projects/first-project/first-project.component';
 import { EnigmaComponent } from './projects/enigma/enigma.component';
+import { ResumeWebsiteComponent } from './projects/resume-website/resume-website.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { EnigmaComponent } from './projects/enigma/enigma.component';
         ProjectSelectorComponent,
         FirstProjectComponent,
         EnigmaComponent,
+        ResumeWebsiteComponent,
     ],
     imports: [
         BrowserModule,
