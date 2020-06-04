@@ -13,6 +13,7 @@ export class ProjectsService {
                 TagType.sql,
                 TagType.html,
                 TagType.css,
+                TagType.digitalocean,
                 TagType.ngnix,
                 TagType.docker,
                 TagType.web_app,
@@ -55,28 +56,28 @@ export class ProjectsService {
             tags: [
                 TagType.python,
                 TagType.cli,
-                TagType.enigma,
                 TagType.personal,
+                TagType.enigma,
             ],
             desc: "The inner machinations of my mind are an enigma",
             router: "enigma",
             alt: "",
         },
-        // {
-        //     title: "My Website",
-        //     thumbnail: "/enigma.jpg", // https://content.presspage.com/uploads/1369/enigmamachine-701206.jpg?10000
-        //     tags: [
-        //         TagType.javascript,
-        //         TagType.html,
-        //         TagType.css,
-        //         TagType.angularjs,
-        //         TagType.digitalocean,
-        //         TagType.ngnix,
-        //     ],
-        //     desc: "The inner machinations of my mind are an enigma",
-        //     router: "enigma",
-        //     alt: "",
-        // },
+        {
+            title: "My Website",
+            thumbnail: "/resume-website.PNG", // Just a screen shot c:
+            tags: [
+                TagType.javascript,
+                TagType.html,
+                TagType.css,
+                TagType.angularjs,
+                TagType.digitalocean,
+                TagType.ngnix,
+            ],
+            desc: "My first attempt and building at building an AngularJS app and deployment on a VPS",
+            router: "enigma",
+            alt: "",
+        },
         // {
         //     title: "To Brock and not to Brock",
         //     thumbnail: "/senior-project.png", // https://i.ibb.co/7yMB9t6/FireRed.png
