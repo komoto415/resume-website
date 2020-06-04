@@ -24,7 +24,7 @@ export class TechnicalSkillsComponent implements OnInit {
     constructor(public technicalSkillsService: TechnicalSkillsService, public router: Router) { }
 
     public getImagePath(technicalSkills: string): string {
-        return `/assets/languages/${technicalSkills}.png`;
+        return `/assets/technical-skills/${technicalSkills}.png`;
     }
 
     public goToProjectsUsing(technicalSkills): void {

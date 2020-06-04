@@ -1,4 +1,4 @@
-import { TechnicalSkillsService } from '../../home/resume/languages/technical-skills.service';
+import { TechnicalSkillsService } from '../../home/resume/technical-skills/technical-skills.service';
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { Project } from '../project';

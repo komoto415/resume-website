@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TechnicalSkillsService } from './home/resume/languages/technical-skills.service';
+import { TechnicalSkillsService } from './home/resume/technical-skills/technical-skills.service';
 import { ProjectsService } from './projects/projects.service';
 
 

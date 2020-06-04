@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { TechnicalSkillsService } from 'src/app/home/resume/languages/technical-skills.service';
+import { TechnicalSkillsService } from 'src/app/home/resume/technical-skills/technical-skills.service';
 import { ProjectsService } from '../projects.service';
 
 @Component({

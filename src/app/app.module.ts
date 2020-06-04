@@ -15,7 +15,7 @@ import { AboutMeComponent } from './home/about-me/about-me.component';
 
 import { ResumeComponent } from './home/resume/resume.component';
 import { ExperiencesComponent } from './home/resume/experiences/experiences.component';
-import { TechnicalSkillsComponent } from './home/resume/languages/languages.component';
+import { TechnicalSkillsComponent } from './home/resume/technical-skills/technical-skills.component';
 import { ContactMeComponent } from './home/contact-me/contact-me.component';
 import { EducationCardComponent } from './home/resume/education-card/education-card.component';
 import { ClassComponentsComponent } from './home/resume/education-card/class-components/class-components.component';
