@@ -3,13 +3,13 @@ import { TechnicalSkillsService } from './technical-skills.service';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-languages',
-    templateUrl: './languages.component.html',
-    styleUrls: ['./languages.component.css']
+    selector: 'app-technical-skills',
+    templateUrl: './technical-skills.component.html',
+    styleUrls: ['./technical-skills.component.css']
 })
 export class TechnicalSkillsComponent implements OnInit {
     goToProjectsWith: string = "";
-    languages: Array<string> = [
+    technicalSkills: string[] = [
         "python", // https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png
         "java", // https://images.vexels.com/media/users/3/166401/isolated/preview/b82aa7ac3f736dd78570dd3fa3fa9e24-java-programming-language-icon-by-vexels.png
         "sql", // https://www.pngwing.com/en/free-png-zoupl
@@ -23,13 +23,13 @@ export class TechnicalSkillsComponent implements OnInit {
 
     constructor(public technicalSkillsService: TechnicalSkillsService, public router: Router) { }
 
-    public getImagePath(language: string): string {
-        return `/assets/languages/${language}.png`;
+    public getImagePath(technicalSkills: string): string {
+        return `/assets/languages/${technicalSkills}.png`;
     }
 
-    public goToProjectsUsing(language): void {
-        this.goToProjectsWith = language;
-        console.log(language);
+    public goToProjectsUsing(technicalSkills): void {
+        this.goToProjectsWith = technicalSkills;
+        console.log(technicalSkills);
         this.router.navigateByUrl('/projects');
     }
 
