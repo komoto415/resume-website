@@ -2,12 +2,6 @@
     margin: 0 30px;
 }
 
-.box {
-    background: #fff;
-    border-radius: 4px;
-    padding-bottom: 100%;
-}
-
 .col-4 {
     margin-top: 30px !important;
 }
@@ -19,9 +13,13 @@
     max-width: 75px;
     height: auto;
     width: auto;
+    transition: .2s;
 }
 
-/* } */
+.skill img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
 
 @media screen and (min-width: 500px) {
     .skill img {
@@ -35,13 +33,4 @@
         max-height: 125px;
         max-width: 125px;
     }
-}
-
-.skill {
-    transition: .2s;
-}
-
-.skill:hover {
-    transform: scale(1.1);
-    cursor: pointer;
 }
