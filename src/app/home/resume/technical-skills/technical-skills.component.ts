@@ -33,7 +33,7 @@ export class TechnicalSkillsComponent implements OnInit {
     constructor(public technicalSkillsService: TechnicalSkillsService, public router: Router) { }
 
     public getImagePath(technicalSkills: string): string {
-        return `/assets/technical-skills/${technicalSkills}.png`;
+        return `/assets/images/technical-skills/${technicalSkills}.png`;
     }
 
     public goToProjectsUsing(technicalSkills): void {
