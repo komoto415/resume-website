@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { TechnicalSkillsService } from './home/resume/technical-skills/technical-skills.service';
 import { ProjectsService } from './projects/projects.service';
@@ -13,13 +13,46 @@ import { ProjectsService } from './projects/projects.service';
 
 export class AppComponent implements OnInit {
     title = 'website';
+    windowScrolled: boolean;
 
-    constructor(public router: Router) { }
-
-    ngOnInit(): void {
+    constructor(public router: Router) {
     }
 
-    checkURL(str:string) {
+    // scrolling solution found here: https://stackoverflow.com/questions/53188426/angular-7-scroll-event-does-not-fire
+    ngOnInit(): void {
+        window.addEventListener('scroll', this.scroll, true); //third parameter
+    }
+
+    ngOnDestroy() {
+        window.removeEventListener('scroll', this.scroll, true);
+    }
+
+    scroll = (event: any): void => {
+        // Here scroll is a variable holding the anonymous function 
+        // this allows scroll to be assigned to the event during onInit
+        // and removed onDestroy
+        
+        // To see what changed:
+        const number = event.srcElement.scrollTop;
+        // console.log(event);
+        console.log('I am scrolling ' + number);
+
+        if (number > 10) {
+            this.windowScrolled = true;
+        } else {
+            this.windowScrolled = false;
+        }
+    };
+
+    getCurrentURL(): string {
+        return this.router.url;
+    }
+
+    checkURL(str: string): boolean {
         return this.router.url.includes(str);
+    }
+
+    goToTop(): void {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
     }
 }
