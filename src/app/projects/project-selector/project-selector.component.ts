@@ -30,14 +30,15 @@ export class ProjectSelectorComponent implements OnInit, OnChanges {
 
     ngOnChanges(changes: SimpleChanges) {
         // console.log(changes.tagQueryIn.previousValue);
-        console.log(changes.tagQueryIn.currentValue);
-        let oldTagQuery = changes.tagQueryIn.previousValue;
-        let newTagQuery = changes.tagQueryIn.currentValue;
+        // console.log(changes.tagQueryIn.currentValue);
+        let newTitleQuery = changes.titleQueryIn == null ? "" : changes.titleQueryIn.currentValue;
+        // console.log(newTitleQuery);
+        let newTagQuery = changes.tagQueryIn == null ? "" : changes.tagQueryIn.currentValue;
         this.filterProjects("", newTagQuery)
     }
 
     filterProjects(title: string, tags: string): void {
-        // this.filterProjectByTitle(title);
+        this.filterProjectByTitle(title);
         this.filterProjectByTag(tags);
     }
 
@@ -122,7 +123,7 @@ export class ProjectSelectorComponent implements OnInit, OnChanges {
 
     filterTags(newTags: string[]): void {
         // console.log("aabout to filter tags");
-        console.log(newTags);
+        // console.log(newTags);
         setTimeout(() => this.currentTagsEmitter.emit(newTags));
     }
 }

@@ -62,9 +62,9 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
         }
         if (newTags == null) return;
         setTimeout(() => {
-            console.log(newTags);
+            // console.log(newTags);
             let hideMe: string[] = this.tags.filter(e => !newTags.includes(e));
-            console.log(hideMe);
+            // console.log(hideMe);
             let checkBoxDiv = document.getElementById("tagCheckboxes").getElementsByTagName("LABEL");
             // console.log(checkBoxDiv);
             for (let i = 0; i < checkBoxDiv.length; i++) {
@@ -128,7 +128,7 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
                     if (node.checked) {
                         node.checked = false;
                         let label = node.parentNode;
-                        console.log(label);
+                        // console.log(label);
                         label.classList.remove("active");
                     }
                     break;
