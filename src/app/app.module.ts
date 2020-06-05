@@ -4,6 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module'; // CLI imports AppRoutingModule
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+
 import { AppComponent } from './app.component';
 
 
@@ -37,7 +38,6 @@ import { FirstProjectComponent } from './projects/first-project/first-project.co
 import { EnigmaComponent } from './projects/enigma/enigma.component';
 import { ResumeWebsiteComponent } from './projects/resume-website/resume-website.component';
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -69,7 +69,7 @@ import { ResumeWebsiteComponent } from './projects/resume-website/resume-website
         BrowserModule,
         NgbModule,
         AppRoutingModule,
-        FontAwesomeModule // CLI adds AppRoutingModule to the AppModule's imports array
+        FontAwesomeModule, // CLI adds AppRoutingModule to the AppModule's imports array
     ],
     providers: [],
     bootstrap: [AppComponent]
