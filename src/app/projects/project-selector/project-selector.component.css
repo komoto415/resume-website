@@ -1,6 +1,5 @@
 /* Cards */
 
-
 /* Card content */
 
 .card {
@@ -37,12 +36,125 @@ a:hover h5 {
 
 /* Masonry layout overrides */
 
-.card-columns {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
-    padding: 0 5vw 0 5vw;
-    /* padding: 0 30px 0 30px; */
+/* .my-container {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -8px;
+    width: 100%;
+}
+
+.container-item {
+    flex: auto;
+    margin: 0 8px 8px 0;
+    height: 250px;
+    min-width: 150px;
+}
+
+.container-item:nth-child(4n+1) {
+    width: 250px;
+}
+
+.container-item:nth-child(4n+1):nth-child(4n+2) {
+    width: 325px;
+}
+
+.container-item:nth-child(4n+1):nth-child(4n+3) {
+    width: 180px;
+}
+
+.container-item:nth-child(4n+1):nth-child(4n+4) {
+    width: 380px;
+} */
+
+/* @media screen and (min-width: 480px) {
+    .container-item {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 880px) {
+    .container-item {
+        width: 33%;
+    }
+} */
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.masonry-wrapper {
+    /* padding: 1.5em; */
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.masonry {
+    columns: 1;
+    column-gap: 20px;
+}
+
+.masonry-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+    .masonry {
+        columns: 2;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .masonry {
+        columns: 3;
+    }
+}
+
+.masonry-item, .masonry-content {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* .masonry-item {
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, .3));
+}
+
+.masonry-item:hover {
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .3));
+} */
+
+.masonry-content {
+    overflow: hidden;
+    border-color: aliceblue;
+}
+
+.masonry-item {
+    background-color: #4b4b88;
+    cursor: pointer;
+}
+
+.masonry-title, .masonry-description {
+    margin: 0;
+}
+
+.masonry-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+}
+
+.masonry-description {
+    padding: 1.5rem;
+    font-size: .9rem;
+    border-top: 2px solid aliceblue;
+}
+
+.masonry-tags {
+    border-top: 0px none transparent !important;
+    padding: 1.1rem;
+    font-size: .75rem;
 }
 
 @media (min-width: 650px) {
