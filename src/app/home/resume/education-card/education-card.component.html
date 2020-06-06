@@ -1,6 +1,6 @@
 <div class="row resume justify-content-center" *ngFor="let college of colleges;">
-    <div class="col-md education" >
-        <div class="card border-dark mb-3 edu" >
+    <div class="col-md education">
+        <div class="card border-dark mb-3 edu">
             <div class="card-header">
                 <div class="row">
                     <div class="col-8">
@@ -36,31 +36,35 @@
                         </h6>
                         <ul *ngIf="college.minors.length > 0">
                             <li *ngFor="let class of this.college.classes;">
-                                <!-- <span class="clazz" data-toggle="modal"
-                                    attr.data-target="#{{ this.simplifyString(class) }}">{{ class }}</span> -->
-                                <span>{{ class }}</span>
+                                <span class="clazz" data-toggle="modal"
+                                    attr.data-target="#{{ this.simplifyString(class.name) }}">{{ class.name }}</span>
+                                <!-- <span>{{ class }}</span> -->
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    
-        <div class="modal fade" attr.id="{{ this.simplifyString(class) }}" tabindex="-1" role="dialog" aria-hidden="true"
-            *ngFor="let class of college.classes;">
-            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+
+        <div class="modal fade" attr.id="{{ this.simplifyString(class.name) }}" tabindex="-1" role="dialog"
+            aria-hidden="true" *ngFor="let class of college.classes;">
+            <div class="modal-dialog modal-dialog modal-xl" role="document">
                 <div class="modal-content edu">
                     <div class="modal-header">
-                        <h5 class="modal-title"> {{ class }}</h5>
+                        <h5 class="modal-title">{{ class.ref }} - {{ class.name }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" style="color: aliceblue;">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
-                            <app-class-swe *ngIf="class == 'Software Engineering I'"></app-class-swe>
-                            <app-class-components *ngIf="class == 'Component-Based Programming'"></app-class-components>
+                            <app-class-swe *ngIf="class.name == 'Software Engineering I'"></app-class-swe>
+                            <app-class-components *ngIf="class.name == 'Component-Based Programming'">
+                            </app-class-components>
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
