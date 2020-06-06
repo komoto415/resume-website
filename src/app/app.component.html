@@ -7,8 +7,7 @@
         </a>
     </span>
     <div *ngIf="!checkURL('/projects')">
-    <!-- <div *ngIf="this.router.url !== '/projects'"> -->
-        <span class="navbar-item" id="projects">
+        <span class="navbar-item">
             <a routerLink="projects" routerLinkActive="active">>>> Projects</a>
         </span>
     </div>
@@ -16,6 +15,9 @@
 <main>
     <router-outlet></router-outlet>
 </main>
+<div [ngClass]="windowScrolled ? 'show-go-to-top' : 'go-to-top'" class="text-right" style="margin: 0px 20px;">
+    <a [ngClass]="windowScrolled ? 'show-go-to-top-click' : 'go-to-top-click'" [routerLink]="getCurrentURL()" (click)="goToTop()">Go To Top <i class="fas fa-chevron-circle-up"></i></a>
+</div>
 <footer class="page-footer font-small">
     <div class="footer-copyright text-center py-3">
         <!-- <div *ngIf="this.router.url === '/'"> -->
