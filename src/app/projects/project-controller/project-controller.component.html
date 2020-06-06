@@ -1,10 +1,20 @@
 <div class="controller">
-    <h4>Search for a particular project!</h4>
+    <!-- <h4>Search for a particular project!</h4> -->
+    <div class="text-center">
+        <a id="filterControl" href="#tagCheckboxes" data-toggle="collapse" role="button" aria-expanded="false"
+            aria-controls="tagCheckboxes">
+            <span id="searchHeader">Search for a particular project!</span>
+            <span style="margin-left: 10px;"><i class="fas fa-filter fa-align-right fa-lg"></i></span>
+        </a>
+    </div>
     <!-- <div class="row">
         <label for="#projectSearchTitle" class="col-4">Project Title</label>
         <div class="col-8">
             <input type="text" class="filter" id="projectSearchTitle" placeholder="title"
                 (keyup)="updateTitle($event.target.value)">
+            <a id="filterControl" href="#tagCheckboxes" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="tagCheckboxes">
+                    <span style="margin-left: 10px;"><i class="fas fa-filter fa-align-right fa-lg"></i></span>
+                </a>
         </div>
     </div> -->
     <!-- <div class="row">
@@ -16,19 +26,23 @@
             </div>
         </div>
     </div> -->
-    <div class="row justify-content-start" id="tagCheckboxes">
-        <div class="tag-wrapper">
-            <div class="btn-group-toggle" data-toggle="buttons">
-                <label (click)="isChecked($event)" class="btn btn-secondary tagCheckboxLabel fade-in"
-                    *ngFor="let tag of tags">
-                    <input type="checkbox" autocomplete="off"> {{ tag }}
-                </label>
+    <div class="collapse" id="tagCheckboxes">
+        <div class="row justify-content-start">
+            <div class="tag-wrapper">
+                <div class="btn-group-toggle" data-toggle="buttons">
+                    <label (click)="isChecked($event)" class="btn btn-secondary tagCheckboxLabel fade-in"
+                        *ngFor="let tag of tags">
+                        <input type="checkbox" autocomplete="off"> {{ tag }}
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row justify-content-center">
-        <div style="margin: 15px;">
+        <div class="row justify-content-center" style="margin: 15px;">
             <button class="btn btn-info btn-sm" (click)="clearForm($event)">Clear Inputs</button>
+            <a class="align-middle text-right" id="filterControl" href="#tagCheckboxes" data-toggle="collapse"
+                role="button" aria-expanded="false" aria-controls="tagCheckboxes">
+                <span style="margin-left: 10px;"><i class="fas fa-minus fa-2x"></i></span>
+            </a>
         </div>
     </div>
 </div>
