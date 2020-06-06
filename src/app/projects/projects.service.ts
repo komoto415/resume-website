@@ -63,7 +63,7 @@ export class ProjectsService {
             alt: "",
         },
         {
-            title: "Resume and Portfolia Website",
+            title: "Resume and Portfolio Website",
             thumbnail: "/resume-website.jpg", // Just a screen shot c:
             tags: [
                 TagType.javascript,
