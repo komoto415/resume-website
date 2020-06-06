@@ -10,7 +10,7 @@ export class EducationCardComponent implements OnInit {
     colleges: College[] = [
         {
             name: "Hong Kong International School",
-            timeline: "Graudated 2017",
+            timeline: "Graudated Jun. 2017",
             shorthand: "hkis",
             degrees: [
                 "High School Diploma",
@@ -21,7 +21,7 @@ export class EducationCardComponent implements OnInit {
         },
         {
             name: "St. Edwards University",
-            timeline: "2017-2021",
+            timeline: "Aug. 2017 - May. 2021",
             shorthand: "steds",
             degrees: [
                 "Bachelors of Science in Computer Science",
