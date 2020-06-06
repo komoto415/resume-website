@@ -26,16 +26,28 @@ a:hover {
 }
 
 /* Go To Top */
-
+.go-to-top, .show-go-to-top {
+    font-size: 18px;
+}
 .go-to-top {
     opacity: 0;
-    transition: 0.2s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
 
 .show-go-to-top {
     opacity: 1;
-    transition: 0.2s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
+/* 
+.go-to-top-click {
+
+}
+
+.show-go-to-top-click {
+    border-width: 1px;
+    border-style: solid;
+    border-bottom: 0px;
+} */
 
 
 /* Footer */
