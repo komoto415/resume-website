@@ -21,8 +21,6 @@ import { ContactMeComponent } from './home/contact-me/contact-me.component';
 import { EducationCardComponent } from './home/resume/education-card/education-card.component';
 import { ClassComponentsComponent } from './home/resume/education-card/class-components/class-components.component';
 import { ClassSweComponent } from './home/resume/education-card/class-swe/class-swe.component';
-import { FlavourOneComponent } from './home/flavour-one/flavour-one.component';
-import { FlavourTwoComponent } from './home/flavour-two/flavour-two.component';
 
 
 import { ProjectsComponent } from './projects/projects.component';
@@ -52,8 +50,6 @@ import { ResumeWebsiteComponent } from './projects/resume-website/resume-website
         AboutMeComponent,
         ProjectsComponent,
         HomeComponent,
-        FlavourOneComponent,
-        FlavourTwoComponent,
         PageNotFoundComponent,
         WegoServicesComponent,
         CompToAlgoComponent,

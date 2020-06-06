@@ -25,6 +25,18 @@ a:hover {
     text-decoration: none !important;
 }
 
+/* Go To Top */
+
+.go-to-top {
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+}
+
+.show-go-to-top {
+    opacity: 1;
+    transition: 0.2s ease-in-out;
+}
+
 
 /* Footer */
 footer {
