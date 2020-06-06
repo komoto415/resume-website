@@ -27,7 +27,7 @@
 }
 
 .wrapper {
-    margin: 30px 4rem 0 4rem;
+    margin: 30px 4rem 30px 4rem;
     min-height: calc(100vh - 201px);
 }
 
@@ -54,17 +54,15 @@
 
 .controller {
     margin: 0 5vw 30px 5vw;
-    padding-top: 20px;
-    padding-bottom: 10px;
 }
 
-.controller h4 {
+.controller #searchHeader {
     font-size: 1.15rem;
     text-align: center;
 }
 
 .card-columns, .controller {
-    font-size: 80%;
+    font-size: 75%;
 }
 
 label.tagCheckBox {
@@ -72,11 +70,11 @@ label.tagCheckBox {
 }
 
 @media screen and (min-width: 480px) {
-    .controller h4 {
+    .controller #searchHeader {
         font-size: 1.30rem;
     }
     .card-columns, .controller {
-        font-size: 85%;
+        font-size: 80%;
     }
     label.btn.btn-secondary.tagCheckbox {
         font-size: 75% !important;
@@ -84,11 +82,11 @@ label.tagCheckBox {
 }
 
 @media screen and (min-width: 800px) {
-    .controller h4 {
+    .controller #searchHeader {
         font-size: 1.40rem;
     }
     .card-columns, .controller {
-        font-size: 95%;
+        font-size: 90%;
     }
     label.btn.btn-secondary.tagCheckbox {
         font-size: 85% !important;
@@ -96,7 +94,7 @@ label.tagCheckBox {
 }
 
 @media screen and (min-width: 1000px) {
-    .controller h4 {
+    .controller #searchHeader {
         font-size: 24px;
     }
     .card-columns, .controller {
@@ -129,9 +127,9 @@ label.tagCheckBox {
         opacity: 0;
         height: 0px;
         width: 0px;
-        padding: 0px;
+        /* padding: 0px;
         margin: 0px;
-        border: 0px;
+        border: 0px; */
         overflow: hidden;
     }
     100% {
@@ -146,9 +144,9 @@ label.tagCheckBox {
         opacity: 0;
         height: 0px;
         width: 0px;
-        padding: 0px;
+        /* padding: 0px;
         margin: 0px;
-        border: 0px;
+        border: 0px; */
         overflow: hidden;
     }
     100% {
@@ -163,9 +161,9 @@ label.tagCheckBox {
         opacity: 0;
         height: 0px;
         width: 0px;
-        padding: 0px;
+        /* padding: 0px;
         margin: 0px;
-        border: 0px;
+        border: 0px; */
         overflow: hidden;
     }
     100% {
@@ -180,9 +178,9 @@ label.tagCheckBox {
         opacity: 0;
         height: 0px;
         width: 0px;
-        padding: 0px;
+        /* padding: 0px;
         margin: 0px;
-        border: 0px;
+        border: 0px; */
         overflow: hidden;
     }
     100% {
@@ -197,9 +195,9 @@ label.tagCheckBox {
         opacity: 0;
         height: 0px;
         width: 0px;
-        padding: 0px;
+        /* padding: 0px;
         margin: 0px;
-        border: 0px;
+        border: 0px; */
         overflow: hidden;
     }
     100% {
