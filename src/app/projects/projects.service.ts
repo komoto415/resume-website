@@ -50,7 +50,7 @@ export class ProjectsService {
             alt: "",
         },
         {
-            title: "Enigma Machine",
+            title: "Python Enigma Machine",
             thumbnail: "/enigma.jpg", // https://content.presspage.com/uploads/1369/enigmamachine-701206.jpg?10000
             tags: [
                 TagType.python,
@@ -63,7 +63,7 @@ export class ProjectsService {
             alt: "",
         },
         {
-            title: "Inception Website",
+            title: "Resume and Portfolia Website",
             thumbnail: "/resume-website.jpg", // Just a screen shot c:
             tags: [
                 TagType.javascript,
