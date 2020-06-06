@@ -5,5 +5,10 @@ export class College {
     degrees: string[];
     gpa: string;
     minors: string[];
-    classes: string[];
+    classes: ClassMeta[];
+}
+
+class ClassMeta {
+    name: string;
+    ref: string;
 }

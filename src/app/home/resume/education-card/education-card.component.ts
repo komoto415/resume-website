@@ -4,49 +4,58 @@ import { College } from './colleges';
 @Component({
     selector: 'app-education-card',
     templateUrl: './education-card.component.html',
-    styleUrls: ['./education-card.component.css']
+    styleUrls: ['./education-card.component.css'],
 })
 export class EducationCardComponent implements OnInit {
     colleges: College[] = [
         {
-            "name": "Hong Kong International School",
-            "timeline": "Graudated 2017",
-            "shorthand": "hkis",
-            "degrees": [
+            name: "Hong Kong International School",
+            timeline: "Graudated 2017",
+            shorthand: "hkis",
+            degrees: [
                 "High School Diploma",
             ],
-            "gpa": "",
-            "minors": [],
-            "classes": [],
+            gpa: "",
+            minors: [],
+            classes: [],
         },
         {
-            "name": "St. Edwards University",
-            "timeline": "2017-2021",
-            "shorthand": "steds",
-            "degrees": [
+            name: "St. Edwards University",
+            timeline: "2017-2021",
+            shorthand: "steds",
+            degrees: [
                 "Bachelors of Science in Computer Science",
             ],
-            "gpa": "",
-            "minors": [
+            gpa: "",
+            minors: [
                 "Mathematics",
             ],
-            "classes": [
-                "Software Engineering I",
-                "Component-Based Programming",
-                // "Database Theory",
+            classes: [
+                {
+                    name: "Software Engineering I",
+                    ref: "COSC3339",
+                },
+                {
+                    name: "Component-Based Programming",
+                    ref: "COSC2329",
+                },
+                {
+                    name: "Database Theory",
+                    ref: "COSC3337",
+                }
             ],
         },
         // {
-        //     "name": "Washington University in St. Louis",
-        //     "timeline": "2021-2024",
-        //     "shorthand": "washu",
-        //     "degrees": [
+        //     name: "Washington University in St. Louis",
+        //     timeline: "2021-2024",
+        //     shorthand: "washu",
+        //     degrees: [
         //         "Masters in Robotics",
         //         "Bachelors of Science Electrical Engineering",
         //     ],
-        //     "gpa": "N/A",
-        //     "minors": [],
-        //     "classes": [],
+        //     gpa: "N/A",
+        //     minors: [],
+        //     classes: [],
         // },
     ]
     constructor() { }
@@ -58,5 +67,4 @@ export class EducationCardComponent implements OnInit {
 
     ngOnInit(): void {
     }
-
 }
