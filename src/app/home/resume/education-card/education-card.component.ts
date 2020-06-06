@@ -39,10 +39,10 @@ export class EducationCardComponent implements OnInit {
                     name: "Component-Based Programming",
                     ref: "COSC2329",
                 },
-                {
-                    name: "Database Theory",
-                    ref: "COSC3337",
-                }
+                // {
+                //     name: "Database Theory",
+                //     ref: "COSC3337",
+                // },
             ],
         },
         // {
