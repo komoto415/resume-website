@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
         // To see what changed:
         const number = event.srcElement.scrollTop;
         // console.log(event);
-        console.log('I am scrolling ' + number);
+        // console.log('I am scrolling ' + number);
 
         if (number > 10) {
             this.windowScrolled = true;
