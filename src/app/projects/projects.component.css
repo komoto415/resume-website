@@ -2,7 +2,7 @@
 
 .navbar {
     background-color: #3b3b69;
-    height: 55px;
+    height: 60px;
 }
 
 .navbar a:hover {
@@ -28,7 +28,7 @@
 
 .wrapper {
     margin: 30px 4rem 30px 4rem;
-    min-height: calc(100vh - 201px);
+    min-height: calc(100vh - 196px);
 }
 
 @media screen and (max-width: 480px) {
@@ -315,4 +315,21 @@ label.tagCheckBox {
         margin: 0px;
         border: 0px;
     }
+}
+
+/* To set when scrolling on projects */
+
+.tag {
+    font-size: 80%;
+    opacity: .7;
+}
+
+a:hover {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+a:hover h5 {
+    color: rgb(89, 175, 250);
+    text-decoration: underline;
 }

@@ -26,8 +26,8 @@ export class TechnicalSkillsComponent implements OnInit {
         /* Technologies */
         TagType.ngnix, // https://favpng.com/png_view/container-nginx-reverse-proxy-computer-software-web-cache-transport-layer-security-png/GJt3Q11s#
         TagType.digitalocean, //http://pluspng.com/png-106044.html
-        TagType.docker, //https://www.docker.com/sites/default/files/d8/2019-07/vertical-logo-monochromatic.png
-        TagType.angularjs, //https://favpng.com/png_download/yP04b9Ab
+        // TagType.docker, // https://www.docker.com/sites/default/files/d8/2019-07/vertical-logo-monochromatic.png
+        TagType.angularjs, // https://favpng.com/png_download/yP04b9Ab
     ];
 
     constructor(public technicalSkillsService: TechnicalSkillsService, public router: Router) { }

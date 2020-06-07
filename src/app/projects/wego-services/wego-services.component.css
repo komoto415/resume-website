@@ -1,0 +1,22 @@
+.card {
+    /* background-color: rgb(42, 32, 71); */
+    background-color: #4b4b88;
+    cursor: pointer;
+}
+
+.card-body {
+    padding: 10px 20px !important;
+}
+
+.card-body h5 {
+    margin-bottom: 0px;
+}
+
+a .card {
+    color: aliceblue;
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: underline;
+}

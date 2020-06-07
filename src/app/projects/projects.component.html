@@ -1,4 +1,4 @@
-<div class="navbar justify-content-start">
+<div class="navbar justify-content-start" [ngClass]="{ 'sticky-top' : this.router.url !== '/projects' }">
     <a *ngIf="!isParentUrl()" routerLink="../projects"><span class="navbar-brand">Projects</span></a>
     <span *ngIf="isParentUrl()" class="navbar-brand">Projects</span>
     <span class="navbar-item">
@@ -11,10 +11,15 @@
             <div>
                 <h1>{{ this.getCurretProject() }}</h1>
             </div>
-            <router-outlet></router-outlet>
+            <div class="project-wrapper">
+                <div class="project-content">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
         </div>
         <div [ngClass]="{ hide : this.router.url !== '/projects' }">
-            <app-project-controller [tagsInView]="tagsInViewAux" (titleEmitter)="captureTitle($event)" (tagEmitter)="captureTags($event)">
+            <app-project-controller [tagsInView]="tagsInViewAux" (titleEmitter)="captureTitle($event)"
+                (tagEmitter)="captureTags($event)">
             </app-project-controller>
             <app-project-selector (currentTagsEmitter)="capturefilteredTags($event)" [titleQueryIn]="titleQueryAux"
                 [tagQueryIn]="tagQueryAux">

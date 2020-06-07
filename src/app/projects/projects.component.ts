@@ -39,9 +39,9 @@ export class ProjectsComponent implements OnInit {
     }
 
     urlToTitle: Object = {
-        "wego-services": "We Go Services",
+        "wego-services": "WeGo Services",
         "comp-to-algo": "Components-Algorithms Bridge Assignment",
-        "first-project": "Humble Beginnings",
+        "first-project": "Login and Register",
         "enigma": "My Enigma Machine",
         "resume-website": "How Incredibly Meta"
     }

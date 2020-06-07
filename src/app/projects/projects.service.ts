@@ -4,7 +4,7 @@ import { TagType } from './tags'
 export class ProjectsService {
     projects: Project[] = [
         {
-            title: "We Go Services",
+            title: "WeGo Services",
             thumbnail: "/wego.jpg", // https://www.newyorker.com/magazine/2013/11/25/auto-correct
             tags: [
                 TagType.python,

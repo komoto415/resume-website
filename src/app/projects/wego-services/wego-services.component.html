@@ -1,40 +1,55 @@
-<div class="project-wrapper">
-    <div class="project-content">
-        <!-- <div class="text-center">
-            <app-maintenance></app-maintenance>
-        </div> -->
-        <div>
-            <div>
-                <h3>Project Overview</h3>
-                <p>
-                    With the increasing prevalence of autonomous vehicles in everyday life, we seek to utilise them as more
-                    than just rideshares or food and grocery deliveries. Need your suit pressed for a party this eveneing?
-                    We’ve got you covered. Need medication delivered on short notice? We can do that too.
-                </p>
-                <p>
-                    Our goal of this project was to produce a proof of concept for a Transportation as a Service web
-                    application that would provide every day services, such as RX delivery, dry-cleaning, etc., as a part of
-                    an ever growing suite of services that under the WeGo brand.
-                </p>
-                <p>
-                    Our autonomours vehicle vendors will be the main providers of couriers for each of the services that we
-                    indend to provide. WIth our software, our vendors would be able to maintain, monitor and simulate the
-                    vehicles they have provided us.
-                </p>
-            </div>
-            <div>
-                <h3></h3>
-                <p>
-                    
-                </p>
-            </div>
-            <div>
-                <h3>Check out our code Repository</h3>
-                <a href="https://github.com/sp20-swei-Team22" target="_blank"><span>Team 22 Repository</span></a>
-            </div>
-            <div>
-                Tags:
+<div class="tag">
+    Tags: <span *ngFor="let tag of tags">#{{ tag }} </span>
+</div>
+<br>
+<div>
+    <div>
+        <h3>Project Overview</h3>
+        <p>
+            With the increasing prevalence of autonomous vehicles in everyday life, we seek to utilise them as
+            more
+            than just rideshares or food and grocery deliveries. Need your suit pressed for a party this
+            eveneing?
+            We’ve got you covered. Need medication delivered on short notice? We can do that too.
+        </p>
+        <p>
+            Our goal of this project was to produce a proof of concept for a Transportation as a Service web
+            application that would provide every day services, such as RX delivery, dry-cleaning, etc., as a
+            part of
+            an ever growing suite of services that under the WeGo brand.
+        </p>
+        <p>
+            Our autonomours vehicle vendors will be the main providers of couriers for each of the services that
+            we
+            indend to provide. WIth our software, our vendors would be able to maintain, monitor and simulate
+            the
+            vehicles they have provided us.
+        </p>
+    </div>
+    <div>
+        <h3>Check it out!</h3>
+        <p>
+            Unfortunately, due to our servers being owned by our school, they have since been destroyed and
+            deactivated. I would like to the full service on my own sever but for now, here are the static HTML
+            pages. Again, this will mean that many of the dynamic elements, the exciting things about our web-app, such
+            as account states, live map generation and the acutual placing an order will not be functional. But if you
+            would like to see the logic, the JavaScript and Python scripts are available in the code repository below.
+        </p>
+        <div class="row justify-content-around" style="margin-bottom: 20px;" *ngFor="let page of staticPages">
+            <div class="col-4" *ngFor="let row of page">
+                <a attr.href="https://codepen.io/komoto415/full/{{ row.penId}} " target="_blank">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ row.pageTitle }}</h5>
+                        </div>
+                        <img class="card-img-bottom" attr.src="/assets/images/projects/wego/{{ row.imgSrc }}.PNG">
+                    </div>
+                </a>
             </div>
         </div>
+    </div>
+    <div>
+        <h3>Check out the <a href="https://github.com/sp20-swei-Team22" target="_blank"><span>Team 22
+                    Repository</span></a></h3>
     </div>
 </div>

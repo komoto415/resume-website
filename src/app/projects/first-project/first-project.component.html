@@ -1,12 +1,18 @@
-<div class="project-wrapper">
-    <div class="project-content">
-        <div class="text-center">
-            <app-maintenance></app-maintenance>
-            <a style="font-size: 120%;" href="https://github.com/komoto415/Login-Register" target="_blank">
-                <span>First Ever CS Project</span>
-            </a>
-        </div>
-        <div>
-        </div>
+<div class="tag">
+    Tags: <span *ngFor="let tag of tags">#{{ tag }} </span>
+</div>
+<br>
+<div>
+    <p>
+        This would mark the first project I ever worked on during college. Turns out I did 90% of it in like, and hour and a half and it didn't even feel like that long. Though my intention is not to sound boastful, the fact that I didn't view this as a school project and had a lot of fun making it made me realise just how much I loved Computer Science.
+    </p>
+    <p>
+        So please, do try it out! This would be a stark difference in implementation come the next time I would have to implement a login and register program, but we all start somewhere don't we? Below is just the program loaded into a repl.it window. If you'd like to try it in a new tab, just click <a href="https://repl.it/@komoto415/Simple-Login-and-Register" target="_blank">here</a>.
+    </p>
+    <div>
+        <iframe height="600px" width="100%" src="https://repl.it/@komoto415/Simple-Login-and-Register?lite=true"
+            scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true"
+            sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals">
+        </iframe>
     </div>
 </div>

@@ -19,21 +19,6 @@ h5 {
     font-weight: 590;
 }
 
-a:hover {
-    text-decoration: none !important;
-    cursor: pointer;
-}
-
-a:hover h5 {
-    color: rgb(89, 175, 250);
-    text-decoration: underline;
-}
-
-.tag {
-    font-size: 80%;
-    opacity: .7;
-}
-
 /* Masonry layout overrides */
 
 /* .my-container {
