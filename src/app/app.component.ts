@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
         // console.log(event);
         // console.log('I am scrolling ' + number);
 
-        if (number > 10) {
+        if (number > 30) {
             this.windowScrolled = true;
         } else {
             this.windowScrolled = false;
