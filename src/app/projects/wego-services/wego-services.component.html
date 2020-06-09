@@ -33,18 +33,55 @@
             deactivated. I would like to the full service on my own sever but for now, here are the static HTML
             pages. Again, this will mean that many of the dynamic elements, the exciting things about our web-app, such
             as account states, live map generation and the acutual placing an order will not be functional. But if you
-            would like to see the logic, the JavaScript and Python scripts are available in the code repository below.
+            would like to see all of the logic, the JavaScript and Python scripts are available in the code repository
+            below. Otherwise the page specific scripts are at the bottom of each card
         </p>
-        <div class="row justify-content-around" style="margin-bottom: 20px;" *ngFor="let page of staticPages">
-            <div class="col-4" *ngFor="let row of page">
-                <a attr.href="https://codepen.io/komoto415/full/{{ row.penId}} " target="_blank">
-                    <div class="card">
+        <h4>Site-Wide Scripts:</h4>
+        <table>
+            <tr>
+                <td style="padding-right: 20px;" *ngFor="let script of siteWideScripts">
+                    <a class="script-link"
+                        attr.href="https://github.com/sp20-swei-Team22/{{ script.cloud }}/blob/master/js/{{ script.name }}"
+                        target="_blank"><span>{{ script.name }}</span></a>
+                </td>
+            </tr>
+        </table>
+        <p>
+            Primarily just scripts that help site wide navigation and high level session management.
+        </p>
+        <h4>Pages:</h4>
+        <div class="row justify-content-around" style="margin-bottom: 20px;" *ngFor="let pageRow of staticPages">
+            <div class="col-lg-5" *ngFor="let page of pageRow">
+                <div class="card">
+                    <a class="pageLink" [attr.href]="page.penId.length !== 0 ? this.getCodePenURL(page.penId) : 'https://codepen.io/collection/DqpoVv'" target="_blank">
                         <div class="card-body">
-                            <h5 class="card-title">{{ row.pageTitle }}</h5>
+                            <h5 class="card-title">{{ page.pageTitle }}</h5>
                         </div>
-                        <img class="card-img-bottom" attr.src="/assets/images/projects/wego/{{ row.imgSrc }}.PNG">
+                        <img class="card-img" attr.src="/assets/images/projects/wego/{{ page.imgSrc }}.PNG">
+                    </a>
+
+                    <div class="card-body">
+                        <div class="card-text">
+                            <a class="script-collapse" data-toggle="collapse"
+                                attr.href="#{{ this.getIdFromPageTitle(page.pageTitle) }}" role="button"
+                                aria-expanded="false"
+                                attr.aria-controls="{{ this.getIdFromPageTitle(page.pageTitle) }}">
+                                <h6>Page Specific Scripts:</h6>
+                            </a>
+                            <div attr.id="{{ this.getIdFromPageTitle(page.pageTitle) }}" class="collapse"
+                                [ngClass]="{ show : page.scripts.length <= 1 }">
+                                <div *ngFor="let script of page.scripts">
+                                    <a class="script-link"
+                                        attr.href="https://github.com/sp20-swei-Team22/{{ script.cloud }}/blob/master/js/{{ script.name }}"
+                                        target="_blank">
+                                        <span>{{ script.name }}</span>
+                                    </a>
+                                </div>
+                                <span *ngIf="page.scripts.length === 0">None</span>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
