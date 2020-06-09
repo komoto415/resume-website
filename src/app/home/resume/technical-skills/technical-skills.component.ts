@@ -38,7 +38,7 @@ export class TechnicalSkillsComponent implements OnInit {
 
     public goToProjectsUsing(technicalSkills): void {
         this.goToProjectsWith = technicalSkills;
-        console.log(technicalSkills);
+        // console.log(technicalSkills);
         this.router.navigateByUrl('/projects');
     }
 
