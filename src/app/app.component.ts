@@ -1,8 +1,11 @@
-import { WindowPositionService } from './site-wide-services/window-position.service';
 import { Component, OnInit, } from '@angular/core';
-import { Router } from '@angular/router';
-import { TechnicalSkillsService } from './home/resume/technical-skills/technical-skills.service';
+import { Title } from '@angular/platform-browser';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { filter, map } from 'rxjs/operators';
+
 import { ProjectsService } from './projects/projects.service';
+import { TechnicalSkillsService } from './home/resume/technical-skills/technical-skills.service';
+import { WindowPositionService } from './site-wide-services/window-position.service';
 
 
 @Component({
@@ -13,18 +16,41 @@ import { ProjectsService } from './projects/projects.service';
 })
 
 export class AppComponent implements OnInit {
-    title = 'website';
+    title = 'Jeffrey Kacey   Ng';
     windowScrolled: boolean;
 
-    constructor(public windowPosition: WindowPositionService, public router: Router) {
+    constructor(private titleService: Title, public windowPosition: WindowPositionService, public router: Router) {
     }
 
     // scrolling solution found here: https://stackoverflow.com/questions/53188426/angular-7-scroll-event-does-not-fire
+    // dyanmic titles solution: https://stackoverflow.com/questions/47900447/how-to-change-page-title-with-routing-in-angular-application
     ngOnInit(): void {
         window.addEventListener('scroll', this.scroll, true); //third parameter
+        this.router.events
+            .pipe(
+                filter((event) => event instanceof NavigationEnd),
+                map(() => this.router)
+            )
+            .subscribe(() => {
+                const title = this.getTitle(this.router.routerState, this.router.routerState.root).join(' - ');
+                this.titleService.setTitle(title);
+            }
+            );
     }
 
-    ngOnDestroy() {
+    getTitle(state, parent): string[] {
+        const data: string[] = [];
+        if (parent && parent.snapshot.data && parent.snapshot.data.title) {
+            data.push(parent.snapshot.data.title);
+        }
+
+        if (state && parent) {
+            data.push(... this.getTitle(state, state.firstChild(parent)));
+        }
+        return data;
+    }
+
+    ngOnDestroy(): void {
         window.removeEventListener('scroll', this.scroll, true);
     }
 
@@ -32,7 +58,7 @@ export class AppComponent implements OnInit {
         // Here scroll is a variable holding the anonymous function 
         // this allows scroll to be assigned to the event during onInit
         // and removed onDestroy
-        
+
         // To see what changed:
         this.windowPosition.currentPosition = event.srcElement.scrollTop;
         // console.log(event);
