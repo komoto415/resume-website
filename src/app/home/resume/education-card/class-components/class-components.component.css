@@ -2,6 +2,7 @@ th, td, table {
     border-width: 1;
     border-style: solid;
 }
+
 th, td {
     padding-left: 4px;
     padding-right: 10px;
@@ -10,4 +11,14 @@ th, td {
 .nomargin {
     margin: 0 !important;
     /* padding: 0 !important; */
+}
+
+span#goToSWE {
+    color: #007bff;
+    cursor: pointer;
+}
+
+span#goToSWE:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }
