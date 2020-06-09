@@ -42,10 +42,12 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
         if (oldTags == null) {
             if (this.technicalSkillsService.technicalSkill != null) {
                 // console.log("need to activate a button");
-                let checkBoxDiv = document.getElementById("tagCheckboxes").getElementsByTagName("LABEL");
+                let checkBoxContainer = document.getElementById("tagCheckboxes")
+                checkBoxContainer.classList.add("show");
+                let checkBoxLabels = checkBoxContainer.getElementsByTagName("LABEL");
                 // console.log(checkBoxDiv);
-                for (let i = 0; i < checkBoxDiv.length; i++) {
-                    let label = checkBoxDiv[i];
+                for (let i = 0; i < checkBoxLabels.length; i++) {
+                    let label = checkBoxLabels[i];
                     let tag = label.textContent.trim();
                     // console.log(tag);
                     if (tag === this.tagQuery) {
