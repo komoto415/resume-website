@@ -17,12 +17,18 @@
     text-decoration: underline !important;
 }
 
+.clazz:hover {
+    color: rgb(142, 167, 189);
+}
+
 .card {
     font-size: 12px;
 }
+
 h5 {
     font-size: 16px;
 }
+
 h6, #school {
     font-size: 14px;
 }
