@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TechnicalSkillsService } from '../home/resume/technical-skills/technical-skills.service';
 import { ProjectsService } from './projects.service';
+import { WindowPositionService } from '../site-wide-services/window-position.service';
 
 @Component({
     selector: 'app-projects',
@@ -29,7 +30,7 @@ export class ProjectsComponent implements OnInit {
     }
 
 
-    constructor(public projectsService: ProjectsService, public technicalSkillsService: TechnicalSkillsService, public router: Router) {
+    constructor(public windowPosition: WindowPositionService, public projectsService: ProjectsService, public technicalSkillsService: TechnicalSkillsService, public router: Router) {
     }
 
     ngOnInit(): void { }

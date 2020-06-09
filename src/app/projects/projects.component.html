@@ -1,4 +1,7 @@
 <div class="navbar justify-content-start" [ngClass]="{ 'sticky-top' : this.router.url !== '/projects' }">
+    <span *ngIf="this.windowPosition.windowScrolled" style="font-size: 24px !important;" class="navbar-brand">Jeffrey
+        Ng</span>
+    <span *ngIf="this.windowPosition.windowScrolled" class="navbar-item">>>> </span>
     <a *ngIf="!isParentUrl()" routerLink="../projects"><span class="navbar-brand">Projects</span></a>
     <span *ngIf="isParentUrl()" class="navbar-brand">Projects</span>
     <span class="navbar-item">
@@ -24,8 +27,6 @@
             <app-project-selector (currentTagsEmitter)="capturefilteredTags($event)" [titleQueryIn]="titleQueryAux"
                 [tagQueryIn]="tagQueryAux">
             </app-project-selector>
-            <!-- <app-project-controller></app-project-controller>
-            <app-project-selector></app-project-selector> -->
         </div>
     </div>
 </div>
