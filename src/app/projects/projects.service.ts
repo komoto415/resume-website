@@ -37,7 +37,7 @@ export class ProjectsService {
             alt: "",
         },
         {
-            title: "Login and Register",
+            title: "Login and Register CLI",
             thumbnail: "/first-project.jpg", // https://naibuzz.com/wp-content/uploads/2017/09/StartOfANewJourney.jpg
             tags: [
                 TagType.python,
