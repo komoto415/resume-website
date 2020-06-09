@@ -15,19 +15,9 @@
 <main>
     <router-outlet></router-outlet>
 </main>
-<div [ngClass]="windowScrolled ? 'show-go-to-top' : 'go-to-top'" class="text-right" style="margin: 0px 20px;">
-    <a [ngClass]="windowScrolled ? 'show-go-to-top-click' : 'go-to-top-click'" [routerLink]="getCurrentURL()" (click)="goToTop()">Go To Top <i class="fas fa-chevron-circle-up"></i></a>
-</div>
+<a [ngClass]="{ show : windowScrolled }" class="go-to-top" [routerLink]="getCurrentURL()" (click)="goToTop()">Top <i class="fas fa-chevron-circle-up"></i></a>
 <footer class="page-footer font-small">
     <div class="footer-copyright text-center py-3">
-        <!-- <div *ngIf="this.router.url === '/'"> -->
-            <!-- <span>Icons from <a href="https://fontawesome.com/" target="_blank">Font Awesome</a></span>
-            <br> -->
-        <!-- </div> -->
-        <!-- <div *ngIf="this.router.url !== '/'">
-            <span>  <a href="https://fontawesome.com/" target="_blank"> </a></span>
-            <br>
-        </div> -->
         <span>© 2020 Copyright: Jeffrey Ng</span>
     </div>
 </footer>
