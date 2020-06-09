@@ -1,7 +1,5 @@
 .card {
-    /* background-color: rgb(42, 32, 71); */
     background-color: #4b4b88;
-    cursor: pointer;
 }
 
 .card-body {
@@ -12,11 +10,28 @@
     margin-bottom: 0px;
 }
 
-a .card {
+.script-collapse, .card .pageLink {
     color: aliceblue;
     text-decoration: none !important;
 }
 
-a:hover {
+.script-collapse h6, .card .pageLink:hover {
     text-decoration: underline;
+}
+
+.card-body h6 {
+    margin-bottom: 2px;
+}
+
+.script-link {
+    color: rgb(167, 166, 255);
+}
+
+.script-link:hover {
+    color: rgb(135, 133, 255);
+    text-decoration: underline !important;
+}
+
+.col-lg-5 {
+    margin-bottom: 20px;
 }
