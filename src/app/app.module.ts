@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module'; // CLI imports AppRoutingModule
@@ -67,7 +67,9 @@ import { ResumeWebsiteComponent } from './projects/resume-website/resume-website
         AppRoutingModule,
         FontAwesomeModule, // CLI adds AppRoutingModule to the AppModule's imports array
     ],
-    providers: [],
+    providers: [
+        Title,
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
