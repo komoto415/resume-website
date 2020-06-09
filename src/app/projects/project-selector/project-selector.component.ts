@@ -58,11 +58,13 @@ export class ProjectSelectorComponent implements OnInit, OnChanges {
     }
 
     filterProjectByTag(tags: string): void {
-        if (tags == null) return;
+        let justLoaded = tags == null;
+        if (justLoaded) return;
         // console.log(tags.length)
         let tagsToKeep: string[] = [];
         setTimeout(() => {
-            if (tags.length === 0) {
+            let noQueryMade = tags.length === 0;
+            if (noQueryMade) {
                 this.noQuery();
                 tagsToKeep = this.projectsService.getAllUniqueTags();
             } else {
@@ -83,7 +85,7 @@ export class ProjectSelectorComponent implements OnInit, OnChanges {
                     let cardTagsAsList: string[] = cardTagsAsString.trim().split(removeHash)
                         .map(e => e.replace(/[^a-zA-Z \-\d]/g, ""));
 
-                    var hasTags: boolean = tagList.every(e => {
+                    let hasTags: boolean = tagList.every(e => {
                         return cardTagsAsList.indexOf(e) >= 0
                     })
 
@@ -115,8 +117,12 @@ export class ProjectSelectorComponent implements OnInit, OnChanges {
         for (let div = 0; div < cards.length; div++) {
             let card = cards[div];
             let classList = card.classList;
-            if (classList.contains(this.FADE_IN_CLASS)) continue;
-            if (classList.contains(this.FADE_OUT_CLASS)) classList.remove(this.FADE_OUT_CLASS);
+            let alreadyInView = classList.contains(this.FADE_IN_CLASS);
+            if (alreadyInView) {
+                continue;
+            } else {
+                classList.remove(this.FADE_OUT_CLASS)
+            };
             classList.add(this.FADE_IN_CLASS);
         }
     }
