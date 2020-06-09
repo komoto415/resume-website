@@ -28,8 +28,14 @@
 
 .wrapper {
     margin: 30px 4rem 30px 4rem;
-    min-height: calc(100vh - 196px);
+    min-height: calc(100vh - 236px);
 }
+/* 
+    header          60
+    footer          56
+    project header  60
+    wrapper margin  30 + 30
+*/
 
 @media screen and (max-width: 480px) {
     .wrapper {
