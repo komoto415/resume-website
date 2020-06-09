@@ -1,3 +1,4 @@
+import { WindowPositionService } from './site-wide-services/window-position.service';
 import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { TechnicalSkillsService } from './home/resume/technical-skills/technical-skills.service';
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
     title = 'website';
     windowScrolled: boolean;
 
-    constructor(public router: Router) {
+    constructor(public windowPosition: WindowPositionService, public router: Router) {
     }
 
     // scrolling solution found here: https://stackoverflow.com/questions/53188426/angular-7-scroll-event-does-not-fire
@@ -33,15 +34,16 @@ export class AppComponent implements OnInit {
         // and removed onDestroy
         
         // To see what changed:
-        const number = event.srcElement.scrollTop;
+        this.windowPosition.currentPosition = event.srcElement.scrollTop;
         // console.log(event);
         // console.log('I am scrolling ' + number);
 
-        if (number > 30) {
+        if (this.windowPosition.currentPosition > 30) {
             this.windowScrolled = true;
         } else {
             this.windowScrolled = false;
         }
+        this.windowPosition.windowScrolled = this.windowScrolled
     };
 
     getCurrentURL(): string {
