@@ -17,7 +17,7 @@ header.navbar {
     font-size: 20px !important;
 }
 
-header {
+header, footer {
     background-color: #22223b;
 } 
 
@@ -26,31 +26,32 @@ a:hover {
 }
 
 /* Go To Top */
-.go-to-top, .show-go-to-top {
-    font-size: 18px;
-}
+/* Inspiration: https://heathertovey.com/blog/floating-back-to-top-button/ */
 .go-to-top {
+
     opacity: 0;
-    transition: 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 999;
+    position: fixed;    
+    right: 30px;
+    /* Padding bottom should always equal 16, since that is the bottom margin of the footer text */
+    padding: 5px;
+    bottom: 11px;
+    background-color: rgba(34, 34, 59, .7);
 }
 
-.show-go-to-top {
+a.go-to-top {
+    font-size: 16px;
+    color: inherit;
+    transition: linear 0.2s;
+}
+
+a.go-to-top.show:hover {
+    color: rgb(142, 167, 189);
+    transition: linear 0.2s;
+}
+
+.go-to-top.show {
     opacity: 1;
-    transition: 0.4s ease-in-out;
-}
-/* 
-.go-to-top-click {
-
-}
-
-.show-go-to-top-click {
-    border-width: 1px;
-    border-style: solid;
-    border-bottom: 0px;
-} */
-
-
-/* Footer */
-footer {
-    background-color: #22223b;
+    transition: opacity 0.4s ease-in-out;
 }
