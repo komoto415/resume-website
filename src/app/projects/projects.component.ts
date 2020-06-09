@@ -14,17 +14,17 @@ export class ProjectsComponent implements OnInit {
     tagQueryAux: string;
     tagsInViewAux: string[];
 
-    captureTitle(title) {
+    captureTitle(title): void {
         this.titleQueryAux = title;
         // console.log(this.titleQueryAux);
     }
 
-    captureTags(queryTags) {
+    captureTags(queryTags): void {
         this.tagQueryAux = queryTags;
         // console.log(this.tagQueryAux);
     }
 
-    capturefilteredTags(filteredTags) {
+    capturefilteredTags(filteredTags): void {
         this.tagsInViewAux = filteredTags
         // console.log(this.tagsInViewAux);
     }
@@ -35,20 +35,20 @@ export class ProjectsComponent implements OnInit {
 
     ngOnInit(): void { }
 
-    isParentUrl() {
+    isParentUrl(): boolean {
         return this.router.url === '/projects'
     }
 
     urlToTitle: Object = {
         "wego-services": "WeGo Services",
         "comp-to-algo": "Components-Algorithms Bridge Assignment",
-        "first-project": "Login and Register",
+        "first-project": "Login and Register CLI",
         "enigma": "My Enigma Machine",
         "resume-website": "How Incredibly Meta"
     }
 
     getCurretProject(): string {
-        var url: Array<String> = this.router.url.split('/');
+        var url: string[] = this.router.url.split('/');
         return this.urlToTitle[`${url[url.length - 1]}`];
     }
 }

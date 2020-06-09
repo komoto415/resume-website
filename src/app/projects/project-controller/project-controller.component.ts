@@ -13,8 +13,8 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
 
     @Input() tagsInView: string[];
 
-    readonly FADE_IN_CLASS = "fade-in";
-    readonly FADE_OUT_CLASS = "fade-out";
+    readonly FADE_IN_CLASS: string = "fade-in";
+    readonly FADE_OUT_CLASS: string = "fade-out";
 
     tags: string[];
     titleQuery: string;
@@ -156,9 +156,4 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
         // this.projectsControllerService.selectedTags = this.tagQuery;
         // console.log(this.projectsControllerService.selectedTags);
     }
-
-    matchCheckBoxWithText(): void {
-
-    }
-
 }
