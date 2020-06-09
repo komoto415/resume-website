@@ -33,5 +33,9 @@
 }
 
 .col-lg-5 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.row {
+    margin-bottom: 0 !important;
 }
