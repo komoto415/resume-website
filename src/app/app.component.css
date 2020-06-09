@@ -28,7 +28,6 @@ a:hover {
 /* Go To Top */
 /* Inspiration: https://heathertovey.com/blog/floating-back-to-top-button/ */
 .go-to-top {
-
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
     z-index: 999;
