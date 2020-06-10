@@ -139,9 +139,9 @@ export class WegoServicesComponent implements OnInit {
         ],
         [
             {
-                penId: "",
+                penId: "vYLLjYj",
                 pageTitle: "Signout Confirmation",
-                imgSrc: "",
+                imgSrc: "signout-confirmation",
                 scripts: [],
             },
         ],
