@@ -1,3 +1,4 @@
+import { TagType } from 'src/app/projects/tags';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TechnicalSkillsService } from '../home/resume/technical-skills/technical-skills.service';
@@ -39,16 +40,38 @@ export class ProjectsComponent implements OnInit {
         return this.router.url === '/projects'
     }
 
-    urlToTitle: Object = {
-        "wego-services": "WeGo Services",
-        "comp-to-algo": "Components-Algorithms Bridge Assignment",
-        "first-project": "Login and Register CLI",
-        "enigma": "My Enigma Machine",
-        "resume-website": "How Incredibly Meta"
+    getCurretProject(): string {
+        let url: string[] = this.router.url.split('/');
+        let route = url[url.length - 1];
+        let index: number = 0;
+        let foundProject: boolean = false;
+        let currentTitle: string = "";
+        while (index < this.projectsService.projects.length && !foundProject) {
+            let project = this.projectsService.projects[index];
+            foundProject = project.router === route;
+            if (foundProject) {
+                currentTitle = project.title;
+            } else {
+                index += 1;
+            }
+        }
+        return currentTitle;
     }
 
-    getCurretProject(): string {
-        var url: string[] = this.router.url.split('/');
-        return this.urlToTitle[`${url[url.length - 1]}`];
+    getCurrentProjectTags(): TagType[] {
+        let currentProjectTitle: string = this.getCurretProject();
+        let index: number = 0;
+        let foundProject: boolean = false;
+        let currentProjectTags: TagType[] = [];
+        while (index < this.projectsService.projects.length && !foundProject) {
+            let project = this.projectsService.projects[index];
+            foundProject = project.title === currentProjectTitle;
+            if (foundProject) {
+                currentProjectTags = project.tags;
+            } else {
+                index += 1;
+            }
+        }
+        return currentProjectTags;
     }
 }
