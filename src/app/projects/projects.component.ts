@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { TechnicalSkillsService } from '../home/resume/technical-skills/technical-skills.service';
 import { ProjectsService } from './projects.service';
 import { WindowPositionService } from '../site-wide-services/window-position.service';
+import { Project } from './project';
 
 @Component({
     selector: 'app-projects',
@@ -15,17 +16,17 @@ export class ProjectsComponent implements OnInit {
     tagQueryAux: string;
     tagsInViewAux: string[];
 
-    captureTitle(title): void {
+    captureTitle(title: string): void {
         this.titleQueryAux = title;
         // console.log(this.titleQueryAux);
     }
 
-    captureTags(queryTags): void {
+    captureTags(queryTags: string): void {
         this.tagQueryAux = queryTags;
         // console.log(this.tagQueryAux);
     }
 
-    capturefilteredTags(filteredTags): void {
+    capturefilteredTags(filteredTags: string[]): void {
         this.tagsInViewAux = filteredTags
         // console.log(this.tagsInViewAux);
     }
@@ -47,7 +48,7 @@ export class ProjectsComponent implements OnInit {
         let foundProject: boolean = false;
         let currentTitle: string = "";
         while (index < this.projectsService.projects.length && !foundProject) {
-            let project = this.projectsService.projects[index];
+            let project: Project = this.projectsService.projects[index];
             foundProject = project.router === route;
             if (foundProject) {
                 currentTitle = project.title;
@@ -64,7 +65,7 @@ export class ProjectsComponent implements OnInit {
         let foundProject: boolean = false;
         let currentProjectTags: TagType[] = [];
         while (index < this.projectsService.projects.length && !foundProject) {
-            let project = this.projectsService.projects[index];
+            let project: Project = this.projectsService.projects[index];
             foundProject = project.title === currentProjectTitle;
             if (foundProject) {
                 currentProjectTags = project.tags;

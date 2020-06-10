@@ -36,7 +36,7 @@ export class TechnicalSkillsComponent implements OnInit {
         return `/assets/images/technical-skills/${technicalSkills}.png`;
     }
 
-    public goToProjectsUsing(technicalSkills): void {
+    public goToProjectsUsing(technicalSkills: string): void {
         this.goToProjectsWith = technicalSkills;
         // console.log(technicalSkills);
         this.router.navigateByUrl('/projects');
