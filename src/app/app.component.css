@@ -37,6 +37,7 @@ a:hover {
     padding: 5px;
     bottom: 11px;
     background-color: rgba(34, 34, 59, .7);
+    border-radius: 10px;
 }
 
 a.go-to-top {
