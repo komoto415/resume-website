@@ -3,10 +3,6 @@
     margin-bottom: 30px;
 }
 
-app-education-card {
-    min-width: 100%;
-}
-
 .container {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -23,13 +19,13 @@ app-education-card {
 }
 
 .education-wrapper {
-    margin: 0 7vw;
+    /* margin: 0 4vw; */
     padding: 15px 3vw 0 3vw;
     background-color: #34344e;
 }
 
 .wrapper {
-    margin: 10px 3vw 10px 3vw;
+    margin: 60px 3vw;
 }
 
 @media screen and (max-width: 480px) {

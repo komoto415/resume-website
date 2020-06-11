@@ -8,10 +8,6 @@
     margin-bottom: 15px;
 }
 
-.card {
-    max-width: 400px !important;
-}
-
 .clazz {
     cursor: pointer;
     text-decoration: underline !important;
