@@ -35,6 +35,7 @@ import { MaintenanceComponent } from './page-error/maintenance/maintenance.compo
 import { FirstProjectComponent } from './projects/first-project/first-project.component';
 import { EnigmaComponent } from './projects/enigma/enigma.component';
 import { ResumeWebsiteComponent } from './projects/resume-website/resume-website.component';
+import { CountdownToGraduationComponent } from './home/countdown-to-graduation/countdown-to-graduation.component';
 
 @NgModule({
     declarations: [
@@ -60,6 +61,7 @@ import { ResumeWebsiteComponent } from './projects/resume-website/resume-website
         FirstProjectComponent,
         EnigmaComponent,
         ResumeWebsiteComponent,
+        CountdownToGraduationComponent,
     ],
     imports: [
         BrowserModule,
