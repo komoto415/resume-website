@@ -5,7 +5,7 @@
     height: 60px;
 }
 
-.navbar a:hover {
+.navbar a span.navbar-item:hover {
     text-decoration: none !important;
     color: #007bff !important;
 }
@@ -20,6 +20,14 @@
     }
 }
 
+.navbar-brand a {
+    font-size: 24px !important;
+}
+
+.navbar-brand a:hover {
+    color: aliceblue !important;
+}
+
 /* Connent Wrappers */
 
 .content, .project-content {
@@ -30,6 +38,7 @@
     margin: 30px 4rem 30px 4rem;
     min-height: calc(100vh - 236px);
 }
+
 /* 
     header          60
     footer          56
