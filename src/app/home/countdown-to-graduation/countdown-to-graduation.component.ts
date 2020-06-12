@@ -49,7 +49,9 @@ export class CountdownToGraduationComponent implements OnInit {
         };
 
         setInterval((): void => {
-            p.clear();
+            if (p != null) {
+                p.clear();
+            }
             let grad: moment.Moment = moment("20210508");
             let now: moment.Moment = moment();
 
