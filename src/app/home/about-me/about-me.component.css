@@ -1,8 +1,6 @@
-.wrapper {
-    padding: 20px;
-    background-color: #34344e;
+.about-me-wrapper {
+    padding: 10px 20px;
 }
-
 
 img {
     max-height: 300px;
