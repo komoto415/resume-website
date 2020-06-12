@@ -28,21 +28,18 @@ export class CountdownToGraduationComponent implements OnInit {
             counterDiv.innerHTML = "";
             this.p5 = new p5(this.sketch, counterDiv);
         }
-
     }
 
     private sketch(p: any) {
-        const WRAPPER_DIV_MARGIN: number = 50;
-        const NUMBER_OF_TIME_BARS: number = 4;
-        const FONT_Y_OFFSET: number = 14;
-        const FONT_WIDTH: number = 11;
+        const WRAPPER_DIV_MARGIN: number = 20;
+        const NUMBER_OF_TIME_BARS: number = 5;
         const ALICEBLUE_HEX: string = "f7f3ee";
-        const END_OF_BAR_OFFSET: number = 6; // about ish the width of 2-3 whitespaces
+        const END_OF_BAR_OFFSET: number = 6; // about ish the width of 2-3 whitespaces @ 100% zoom
 
         let counterDiv = window.document.getElementById("counter");
         let divWidth: number = counterDiv.clientWidth;
         let canvasHeight: number = window.innerHeight / 2;
-        let maxBarWidth: number = divWidth - 2 * WRAPPER_DIV_MARGIN;
+        let maxBarWidth: number = (divWidth * 1) - 2 * WRAPPER_DIV_MARGIN;
 
         let heightDiff: number = canvasHeight / (NUMBER_OF_TIME_BARS * 2);
         let BAR_CONTAINER_MARGIN: number = heightDiff * .2;
@@ -59,64 +56,70 @@ export class CountdownToGraduationComponent implements OnInit {
             let ss: number = grad.diff(now, "seconds") % 60;
             let mm: number = grad.diff(now, "minutes") % 60;
             let hh: number = grad.diff(now, "hours") % 24;
-            let DD: number = grad.diff(now, "days") % 365;
+            let DD: number = grad.diff(now, "days") % 7;
+            let WW: number = grad.diff(now, "weeks");
 
-            let isOrPastGrad: boolean = ss <= 0 && mm <= 0 && hh <= 0 && DD <= 0;
+            let isOrPastGrad: boolean = ss <= 0 && mm <= 0 && hh <= 0 && DD <= 0 && WW <= 0;
             if (isOrPastGrad) {
                 // I'll do something special at some points
             } else {
                 p.strokeWeight(0);
+                p.textFont("Balsamiq Sans");
                 p.textSize(heightDiff - 20);
+                p.textAlign(p.RIGHT, p.CENTER)
                 let barDataArr: BarMeta[] = []
 
+                // Weeks
+                let WWPer: number = WW / 52;
+                let WWWitdh: number = Math.floor(maxBarWidth * WWPer);
+                barDataArr.push(new BarMeta(WWPer, WWWitdh, maxBarWidth / 52, "#0c9df3", `${WW}`, "W"))
+
                 // Days
-                let DDPer: number = DD / 365;
+                let DDPer: number = DD / 7;
                 let DDWidth: number = Math.floor(maxBarWidth * DDPer);
-                barDataArr.push(new BarMeta(DDPer, DDWidth, maxBarWidth / 365, "#ec1390", `${DD}`, "DD"));
+                barDataArr.push(new BarMeta(DDPer, DDWidth, maxBarWidth / 7, "#ec1390", `${DD}`, "D"));
 
                 // Hours
                 let hhPer: number = hh / 24;
                 let hhWidth: number = Math.floor(maxBarWidth * hhPer);
-                barDataArr.push(new BarMeta(hhPer, hhWidth, maxBarWidth / 24, "#37c87f", `${hh}`, "HH"));
+                barDataArr.push(new BarMeta(hhPer, hhWidth, maxBarWidth / 24, "#37c87f", `${hh}`, "H"));
 
                 // Minutes
                 let mmPer: number = mm / 60;
                 let mmWidth: number = Math.floor(maxBarWidth * mmPer);
-                barDataArr.push(new BarMeta(mmPer, mmWidth, maxBarWidth / 60, "#e68519", `${mm}`, "MM"));
+                barDataArr.push(new BarMeta(mmPer, mmWidth, maxBarWidth / 60, "#e68519", `${mm}`, "M"));
 
                 // Seconds
                 let ssPer: number = ss / 60;
                 let ssWidth: number = Math.floor(maxBarWidth * ssPer);
-                barDataArr.push(new BarMeta(ssPer, ssWidth, maxBarWidth / 60, "#9b15ea", `${ss}`, "SS"));
-                p.textFont("Balsamiq Sans");
+                barDataArr.push(new BarMeta(ssPer, ssWidth, maxBarWidth / 60, "#9b15ea", `${ss}`, "S"));
 
                 barDataArr.forEach((barObj, index, _) => {
                     let height: number = index * 2 * heightDiff + BAR_CONTAINER_MARGIN;
-                    let textLegnth: number = FONT_WIDTH * barObj.desc.length;
-                    let textXPosition: number = Math.max(END_OF_BAR_OFFSET * 2, barObj.width - textLegnth - END_OF_BAR_OFFSET) + WRAPPER_DIV_MARGIN;
+                    let timeText: string = barObj.desc + " " + barObj.unit;
+                    let textWidth: number = p.textWidth(timeText);
+                    let textUnitWidth: number = textWidth / timeText.length;
+                    let textXPosition: number = Math.max(textUnitWidth * 4, barObj.width - END_OF_BAR_OFFSET) + WRAPPER_DIV_MARGIN;
+                    const NUBS = barObj.widthPerUnit * 0.75;
 
                     // the 'holsters' of the bars
                     p.fill(p.color("#1d1d33"));
                     p.rect(0, height - BAR_CONTAINER_MARGIN,
-                        WRAPPER_DIV_MARGIN + barObj.widthPerUnit * 2, heightDiff + BAR_CONTAINER_MARGIN * 2,
+                        WRAPPER_DIV_MARGIN + NUBS, heightDiff + BAR_CONTAINER_MARGIN * 2,
                         0, 5, 5, 0);
 
                     // 'cut out' of the bar holsters
                     p.strokeWeight(0);
                     p.fill(p.color("#2c2c4e"))
-                    p.rect(WRAPPER_DIV_MARGIN, height, barObj.widthPerUnit * 2, heightDiff);
+                    p.rect(WRAPPER_DIV_MARGIN, height, NUBS, heightDiff);
 
                     // The actual bar of the time
                     p.fill(p.color(barObj.barColour));
                     p.rect(WRAPPER_DIV_MARGIN, height, barObj.width, heightDiff, 0, 5, 5, 0);
 
-                    // Time units display
-                    p.fill(p.color(ALICEBLUE_HEX));
-                    p.text(barObj.unit, END_OF_BAR_OFFSET * 2, height + heightDiff - FONT_Y_OFFSET);
-
                     // Text of the numeric time
                     p.fill(p.color(ALICEBLUE_HEX));
-                    p.text(barObj.desc, textXPosition, height + heightDiff - FONT_Y_OFFSET);
+                    p.text(barObj.desc + " " + barObj.unit, textXPosition, height + heightDiff * 0.5);
                 })
             }
         }, 1000);
