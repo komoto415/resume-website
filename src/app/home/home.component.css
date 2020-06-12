@@ -1,3 +1,8 @@
-.wrapper {
+.home-wrapper {
     margin: 1.5rem 4rem 0 4rem;
+}
+
+.education-wrapper.home-content-wrapper, .about-me-wrapper.home-content-wrapper {
+    background-color: #34334e !important;
+    margin-top: 50px;
 }

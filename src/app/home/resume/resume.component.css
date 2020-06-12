@@ -1,16 +1,10 @@
-.resume {
-    margin-top: 15px; 
-    margin-bottom: 30px;
-}
-
-.container {
-    margin-top: 50px;
-    margin-bottom: 50px;
-
+.education-wrapper {
+    padding: 15px 3vw;
 }
 
 .technical-skills-wrapper {
     margin-top: 50px;
+    margin-bottom: 20px;
     padding: 20px;
     border-style: solid;
     border-width: 15px;
@@ -18,18 +12,12 @@
     border-radius: 50px;
 }
 
-.education-wrapper {
-    /* margin: 0 4vw; */
-    padding: 15px 3vw 0 3vw;
-    background-color: #34344e;
-}
-
-.wrapper {
-    margin: 60px 3vw;
+h3.title {
+    text-align: center;
 }
 
 @media screen and (max-width: 480px) {
-    h3 {
+    h3.title {
         font-size: 22px;
     }
 }
