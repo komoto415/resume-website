@@ -90,7 +90,7 @@ export class CountdownToGraduationComponent implements OnInit {
                     let textWidth: number = p.textWidth(timeText);
                     let textUnitWidth: number = textWidth / timeText.length;
                     let textXPosition: number = Math.max(textUnitWidth * 4, width - END_OF_BAR_OFFSET) + WRAPPER_DIV_MARGIN;
-
+                    
                     // the 'holsters' of the bars
                     p.fill(p.color("#1d1d33"));
                     p.rect(0, yPosition - BAR_CONTAINER_MARGIN,
