@@ -13,7 +13,7 @@
 </div>
 <div class="wrapper">
     <div class="content">
-        <div [ngClass]="{ hide : this.router.url === '/projects' }">
+        <div id="selected-project-container" [ngClass]="{ hide : this.router.url === '/projects' }">
             <div>
                 <h1>{{ this.getCurretProject() }}</h1>
             </div>

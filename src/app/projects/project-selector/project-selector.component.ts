@@ -28,7 +28,7 @@ export class ProjectSelectorComponent implements OnInit, OnChanges {
     ngOnInit(): void {
     }
 
-    ngOnChanges(changes: SimpleChanges) {
+    ngOnChanges(changes: SimpleChanges): void {
         // console.log(changes.tagQueryIn.previousValue);
         // console.log(changes.tagQueryIn.currentValue);
         let newTitleQuery = changes.titleQueryIn == null ? "" : changes.titleQueryIn.currentValue;

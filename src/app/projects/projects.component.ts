@@ -16,6 +16,11 @@ export class ProjectsComponent implements OnInit {
     tagQueryAux: string;
     tagsInViewAux: string[];
 
+    constructor(public windowPosition: WindowPositionService, public projectsService: ProjectsService, public technicalSkillsService: TechnicalSkillsService, public router: Router) {
+    }
+
+    ngOnInit(): void { }
+
     captureTitle(title: string): void {
         this.titleQueryAux = title;
         // console.log(this.titleQueryAux);
@@ -30,12 +35,6 @@ export class ProjectsComponent implements OnInit {
         this.tagsInViewAux = filteredTags
         // console.log(this.tagsInViewAux);
     }
-
-
-    constructor(public windowPosition: WindowPositionService, public projectsService: ProjectsService, public technicalSkillsService: TechnicalSkillsService, public router: Router) {
-    }
-
-    ngOnInit(): void { }
 
     isParentUrl(): boolean {
         return this.router.url === '/projects'
