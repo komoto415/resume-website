@@ -23,9 +23,24 @@
         </p>
     </div>
     <div>
-        <h3>Design and Agile Development</h3>
-        
-        <a class="my-a-link" href="https://drive.google.com/drive/folders/1yNNPdBaBPV2lX9_pwGAfAyhcPyfnxh6O?usp=sharing">Temp</a>
+        <h3>Design and Process</h3>
+        <p>
+            From pitch to POC, our team developed several service concepts to execute our TaaS with. In coming up with
+            out service concepts we developed UCD artifacts and Web Platform canvases that would serve the foundations
+            of determining our service. Ultimately we decided in a Dry Cleaning service.
+        </p>
+        <p>
+            For the first several weeks of development, we spent a lot of our time diagramming ad building the
+            foundations with things such as marketecture, system and static and dyanmic object orientated diagrams.
+            These would be continuously updated as we learnt more about the project and would be our primary sources to
+            reference when we considered added in new features and systems.
+        </p>
+        <p>
+            <a class="my-a-link"
+                href="https://drive.google.com/drive/folders/1yNNPdBaBPV2lX9_pwGAfAyhcPyfnxh6O?usp=sharing">Here</a> is
+            a link to where I have most recently migrated our file repository if you would like to see some of our
+            design components.
+        </p>
     </div>
     <div>
         <h3>Check it out!</h3>
@@ -37,21 +52,26 @@
             would like to see all of the logic, the JavaScript and Python scripts are available in the code repository
             below. Otherwise the page specific scripts are at the bottom of each card
         </p>
-        <h4>Site-Wide Scripts:</h4>
-        <table>
-            <tr>
-                <td style="padding-right: 20px;" *ngFor="let script of siteWideScripts">
-                    <a class="my-a-link"
-                        attr.href="https://github.com/sp20-swei-Team22/{{ script.cloud }}/blob/master/js/{{ script.name }}"><span>{{ script.name }}</span></a>
-                </td>
-            </tr>
-        </table>
-        <p>
-            Primarily just scripts that help site wide navigation and high level session management.
-        </p>
-        <h4>Pages:</h4>
-        <div class="row justify-content-around" style="margin-bottom: 20px;" *ngFor="let pageRow of staticPages">
-            <div class="col-lg-5" *ngFor="let page of pageRow">
+        <div class="row justify-content-around" style="margin-bottom: 20px;">
+            <div class="col-lg-3 col-sm-6" *ngFor="let page of staticPages">
+                <!-- <div class="card">
+                    <a class="pageLink"
+                        [attr.href]="page.penId.length !== 0 ? this.getCodePenURL(page.penId) : 'https://codepen.io/collection/DqpoVv'">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ page.pageTitle }}</h5>
+                            <div class="card-text">
+                                <span>Page Specific Scripts: </span> <span *ngFor="let script of page.scripts">
+                                    <a class="my-a-link"
+                                        attr.href="https://github.com/sp20-swei-Team22/{{ script.cloud }}/blob/master/js/{{ script.name }}">{{ script.name }}</a>
+                                    <span> | </span>
+                                </span>
+                                <span *ngIf="page.scripts.length === 0">None</span>
+                            </div>
+                        </div>
+                        <img class="card-img-bottom" attr.src="/assets/images/projects/wego/{{ page.imgSrc }}.jpg"
+                            attr.alt="we-go-services-{{ page.imgSrc }}">
+                    </a>
+                </div> -->
                 <div class="card">
                     <a class="pageLink"
                         [attr.href]="page.penId.length !== 0 ? this.getCodePenURL(page.penId) : 'https://codepen.io/collection/DqpoVv'">
@@ -63,12 +83,13 @@
 
                     <div class="card-body">
                         <div class="card-text">
-                            <a class="script-collapse" data-toggle="collapse"
+                            <a *ngIf="page.scripts.length > 1" class="script-collapse" data-toggle="collapse"
                                 attr.href="#{{ this.getIdFromPageTitle(page.pageTitle) }}" role="button"
                                 aria-expanded="false"
                                 attr.aria-controls="{{ this.getIdFromPageTitle(page.pageTitle) }}">
                                 <h6>Page Specific Scripts:</h6>
                             </a>
+                            <h6 *ngIf="page.scripts.length <= 1">Page Specific Scripts:</h6>
                             <div attr.id="{{ this.getIdFromPageTitle(page.pageTitle) }}" class="collapse"
                                 [ngClass]="{ show : page.scripts.length <= 1 }">
                                 <div *ngFor="let script of page.scripts">
@@ -84,6 +105,18 @@
                 </div>
             </div>
         </div>
+        <h4>Site-Wide Scripts:</h4>
+        <table>
+            <tr>
+                <td style="padding-right: 20px;" *ngFor="let script of siteWideScripts">
+                    <a class="my-a-link"
+                        attr.href="https://github.com/sp20-swei-Team22/{{ script.cloud }}/blob/master/js/{{ script.name }}"><span>{{ script.name }}</span></a>
+                </td>
+            </tr>
+        </table>
+        <p>
+            Primarily just scripts that help site wide navigation and high level session management.
+        </p>
     </div>
     <div>
         <h3>Check out the <a href="https://github.com/sp20-swei-Team22"><span>Team 22
