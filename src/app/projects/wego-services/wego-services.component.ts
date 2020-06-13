@@ -35,7 +35,7 @@ export class WegoServicesComponent implements OnInit {
             {
                 penId: "eYJNoEe",
                 pageTitle: "Landing Page",
-                imgSrc: "landing",
+                imgSrc: "landing-page",
                 scripts: [
                     {
                         name: "landingsession.js",
@@ -76,7 +76,7 @@ export class WegoServicesComponent implements OnInit {
             {
                 penId: "JjGdVBw",
                 pageTitle: "Registration",
-                imgSrc: "register",
+                imgSrc: "registration",
                 scripts: [
                     {
                         name: "register.js",
@@ -107,7 +107,7 @@ export class WegoServicesComponent implements OnInit {
             {
                 penId: "",
                 pageTitle: "Fleet Manager Dashboard",
-                imgSrc: "",
+                imgSrc: "fleet-manager-dashboard",
                 scripts: [],
             },
         ],
@@ -146,20 +146,7 @@ export class WegoServicesComponent implements OnInit {
             },
         ],
     ];
-
-    tags: TagType[] = [
-        TagType.python,
-        TagType.javascript,
-        TagType.sql,
-        TagType.html,
-        TagType.css,
-        TagType.digitalocean,
-        TagType.ngnix,
-        TagType.docker,
-        TagType.web_app,
-        TagType.swei,
-    ]
-
+    
     constructor() { }
 
     ngOnInit(): void {

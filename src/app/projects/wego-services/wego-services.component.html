@@ -23,6 +23,11 @@
         </p>
     </div>
     <div>
+        <h3>Design and Agile Development</h3>
+        
+        <a class="my-a-link" href="https://drive.google.com/drive/folders/1yNNPdBaBPV2lX9_pwGAfAyhcPyfnxh6O?usp=sharing">Temp</a>
+    </div>
+    <div>
         <h3>Check it out!</h3>
         <p>
             Unfortunately, due to our servers being owned by our school, they have since been destroyed and
@@ -36,9 +41,8 @@
         <table>
             <tr>
                 <td style="padding-right: 20px;" *ngFor="let script of siteWideScripts">
-                    <a class="script-link"
-                        attr.href="https://github.com/sp20-swei-Team22/{{ script.cloud }}/blob/master/js/{{ script.name }}"
-                        target="_blank"><span>{{ script.name }}</span></a>
+                    <a class="my-a-link"
+                        attr.href="https://github.com/sp20-swei-Team22/{{ script.cloud }}/blob/master/js/{{ script.name }}"><span>{{ script.name }}</span></a>
                 </td>
             </tr>
         </table>
@@ -50,12 +54,11 @@
             <div class="col-lg-5" *ngFor="let page of pageRow">
                 <div class="card">
                     <a class="pageLink"
-                        [attr.href]="page.penId.length !== 0 ? this.getCodePenURL(page.penId) : 'https://codepen.io/collection/DqpoVv'"
-                        target="_blank">
+                        [attr.href]="page.penId.length !== 0 ? this.getCodePenURL(page.penId) : 'https://codepen.io/collection/DqpoVv'">
                         <div class="card-body">
                             <h5 class="card-title">{{ page.pageTitle }}</h5>
                         </div>
-                        <img class="card-img" attr.src="/assets/images/projects/wego/{{ page.imgSrc }}.PNG">
+                        <img class="card-img" attr.src="/assets/images/projects/wego/{{ page.imgSrc }}.PNG" attr.alt="we-go-services-{{ page.imgSrc }}">
                     </a>
 
                     <div class="card-body">
@@ -69,9 +72,8 @@
                             <div attr.id="{{ this.getIdFromPageTitle(page.pageTitle) }}" class="collapse"
                                 [ngClass]="{ show : page.scripts.length <= 1 }">
                                 <div *ngFor="let script of page.scripts">
-                                    <a class="script-link"
-                                        attr.href="https://github.com/sp20-swei-Team22/{{ script.cloud }}/blob/master/js/{{ script.name }}"
-                                        target="_blank">
+                                    <a class="my-a-link"
+                                        attr.href="https://github.com/sp20-swei-Team22/{{ script.cloud }}/blob/master/js/{{ script.name }}">
                                         <span>{{ script.name }}</span>
                                     </a>
                                 </div>
@@ -84,7 +86,7 @@
         </div>
     </div>
     <div>
-        <h3>Check out the <a href="https://github.com/sp20-swei-Team22" target="_blank"><span>Team 22
+        <h3>Check out the <a href="https://github.com/sp20-swei-Team22"><span>Team 22
                     Repository</span></a></h3>
     </div>
 </div>
