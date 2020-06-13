@@ -23,11 +23,11 @@
     margin-bottom: 2px;
 }
 
-.script-link {
+.my-a-link {
     color: rgb(167, 166, 255);
 }
 
-.script-link:hover {
+.my-a-link:hover {
     color: rgb(135, 133, 255);
     text-decoration: underline !important;
 }
