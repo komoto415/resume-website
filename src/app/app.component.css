@@ -55,3 +55,12 @@ a.go-to-top.show:hover {
     opacity: 1;
     transition: opacity 0.4s ease-in-out;
 }
+
+.my-a-link {
+    color: rgb(138, 136, 255);
+}
+
+.my-a-link:hover {
+    color: rgb(140, 139, 173);
+    text-decoration: underline !important;
+}
