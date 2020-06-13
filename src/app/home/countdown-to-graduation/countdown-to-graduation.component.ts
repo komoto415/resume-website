@@ -35,14 +35,15 @@ export class CountdownToGraduationComponent implements OnInit {
         const NUMBER_OF_TIME_BARS: number = 5;
         const ALICEBLUE_HEX: string = "f7f3ee";
         const END_OF_BAR_OFFSET: number = 6; // about ish the width of 2-3 whitespaces @ 100% zoom
+        const TIME_BAR_ROUNDED_RECTANGLE_VALUES: number[] = [0, 10, 10, 0]; // top-left, top-right, bottom-right, bottom-left
 
-        let counterDiv = window.document.getElementById("counter");
+        let counterDiv: HTMLElement = window.document.getElementById("counter");
         let divWidth: number = counterDiv.clientWidth;
         let canvasHeight: number = window.innerHeight / 2;
         let maxBarWidth: number = (divWidth * 1) - 2 * WRAPPER_DIV_MARGIN;
 
-        let heightDiff: number = canvasHeight / (NUMBER_OF_TIME_BARS * 2);
-        let BAR_CONTAINER_MARGIN: number = heightDiff * .2;
+        let rowHeight: number = canvasHeight / (NUMBER_OF_TIME_BARS * 2);
+        let BAR_CONTAINER_MARGIN: number = rowHeight * .2;
 
         p.setup = (): void => {
             p.createCanvas(divWidth, canvasHeight - 2 * BAR_CONTAINER_MARGIN);
@@ -67,61 +68,47 @@ export class CountdownToGraduationComponent implements OnInit {
             } else {
                 p.strokeWeight(0);
                 p.textFont("Balsamiq Sans");
-                p.textSize(heightDiff - 20);
+                p.textSize(rowHeight - 20);
                 p.textAlign(p.RIGHT, p.CENTER)
-                let barDataArr: BarMeta[] = []
+                let barNetaArr: BarMeta[] = [
+                    new BarMeta(WW, 52, maxBarWidth / 52, "#0c9df3", "W"),  // Weeks
+                    new BarMeta(DD, 7, maxBarWidth / 7, "#ec1390", "D"),    // Days
+                    new BarMeta(hh, 24, maxBarWidth / 24, "#37c87f", "H"),  // Hours
+                    new BarMeta(mm, 60, maxBarWidth / 60, "#e68519", "M"),  // Minutes
+                    new BarMeta(ss, 60, maxBarWidth / 60, "#9b15ea", "S"),  // Seconds
+                ]
 
-                // Weeks
-                let WWPer: number = WW / 52;
-                let WWWitdh: number = Math.floor(maxBarWidth * WWPer);
-                barDataArr.push(new BarMeta(WWPer, WWWitdh, maxBarWidth / 52, "#0c9df3", `${WW}`, "W"))
+                barNetaArr.forEach((bar, index, _) => {
+                    let percentage: number = bar.timeValue / bar.unitDivisor;
+                    let width = Math.floor(maxBarWidth * percentage);
 
-                // Days
-                let DDPer: number = DD / 7;
-                let DDWidth: number = Math.floor(maxBarWidth * DDPer);
-                barDataArr.push(new BarMeta(DDPer, DDWidth, maxBarWidth / 7, "#ec1390", `${DD}`, "D"));
+                    const NUBS = bar.widthPerUnit * 0.75;
+                    const TIME_BAR_MID_LINE: number = rowHeight * 0.5;
 
-                // Hours
-                let hhPer: number = hh / 24;
-                let hhWidth: number = Math.floor(maxBarWidth * hhPer);
-                barDataArr.push(new BarMeta(hhPer, hhWidth, maxBarWidth / 24, "#37c87f", `${hh}`, "H"));
-
-                // Minutes
-                let mmPer: number = mm / 60;
-                let mmWidth: number = Math.floor(maxBarWidth * mmPer);
-                barDataArr.push(new BarMeta(mmPer, mmWidth, maxBarWidth / 60, "#e68519", `${mm}`, "M"));
-
-                // Seconds
-                let ssPer: number = ss / 60;
-                let ssWidth: number = Math.floor(maxBarWidth * ssPer);
-                barDataArr.push(new BarMeta(ssPer, ssWidth, maxBarWidth / 60, "#9b15ea", `${ss}`, "S"));
-
-                barDataArr.forEach((barObj, index, _) => {
-                    let height: number = index * 2 * heightDiff + BAR_CONTAINER_MARGIN;
-                    let timeText: string = barObj.desc + " " + barObj.unit;
+                    let yPosition: number = index * 2 * rowHeight + BAR_CONTAINER_MARGIN;
+                    let timeText: string = bar.desc + " " + bar.unit;
                     let textWidth: number = p.textWidth(timeText);
                     let textUnitWidth: number = textWidth / timeText.length;
-                    let textXPosition: number = Math.max(textUnitWidth * 4, barObj.width - END_OF_BAR_OFFSET) + WRAPPER_DIV_MARGIN;
-                    const NUBS = barObj.widthPerUnit * 0.75;
+                    let textXPosition: number = Math.max(textUnitWidth * 4, width - END_OF_BAR_OFFSET) + WRAPPER_DIV_MARGIN;
 
                     // the 'holsters' of the bars
                     p.fill(p.color("#1d1d33"));
-                    p.rect(0, height - BAR_CONTAINER_MARGIN,
-                        WRAPPER_DIV_MARGIN + NUBS, heightDiff + BAR_CONTAINER_MARGIN * 2,
-                        0, 5, 5, 0);
+                    p.rect(0, yPosition - BAR_CONTAINER_MARGIN,
+                        WRAPPER_DIV_MARGIN + NUBS, rowHeight + BAR_CONTAINER_MARGIN * 2,
+                        ...TIME_BAR_ROUNDED_RECTANGLE_VALUES);
 
                     // 'cut out' of the bar holsters
                     p.strokeWeight(0);
                     p.fill(p.color("#2c2c4e"))
-                    p.rect(WRAPPER_DIV_MARGIN, height, NUBS, heightDiff);
+                    p.rect(WRAPPER_DIV_MARGIN, yPosition, NUBS, rowHeight);
 
                     // The actual bar of the time
-                    p.fill(p.color(barObj.barColour));
-                    p.rect(WRAPPER_DIV_MARGIN, height, barObj.width, heightDiff, 0, 5, 5, 0);
+                    p.fill(p.color(bar.barColour));
+                    p.rect(WRAPPER_DIV_MARGIN, yPosition, width, rowHeight, ...TIME_BAR_ROUNDED_RECTANGLE_VALUES);
 
                     // Text of the numeric time
                     p.fill(p.color(ALICEBLUE_HEX));
-                    p.text(barObj.desc + " " + barObj.unit, textXPosition, height + heightDiff * 0.5);
+                    p.text(bar.desc, textXPosition, yPosition + TIME_BAR_MID_LINE);
                 })
             }
         }, 1000);

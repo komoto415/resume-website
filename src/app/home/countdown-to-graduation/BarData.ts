@@ -1,17 +1,17 @@
 export class BarMeta {
-    percentage: number;
-    width: number;
+    timeValue: number;
+    unitDivisor:number;
     widthPerUnit: number;
     barColour: string;
-    desc: string;
     unit: string;
+    desc: string;
 
-    constructor(percentage: number, width: number, widthPerUnit: number, barColour: string, desc: string, unit: string) {
-        this.percentage = percentage;
-        this.width = width;
+    constructor(timeValue: number, unitDivisor: number, widthPerUnit: number, barColour: string, unit: string) {
+        this.timeValue = timeValue;
+        this.unitDivisor = unitDivisor;
         this.widthPerUnit = widthPerUnit;
         this.barColour = barColour;
-        this.desc = desc;
         this.unit = unit;
+        this.desc = `${timeValue} ${unit}`;
     }
 }
