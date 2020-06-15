@@ -15,8 +15,8 @@
     text-decoration: none !important;
 }
 
-a.script-collapse h6, .card .pageLink:hover {
-    text-decoration: underline;
+a.script-collapse , .card .pageLink:hover {
+    text-decoration: underline !important;
 }
 
 .card-body h6 {

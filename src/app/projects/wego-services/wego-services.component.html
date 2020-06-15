@@ -78,18 +78,22 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ page.pageTitle }}</h5>
                         </div>
-                        <img class="card-img" attr.src="/assets/images/projects/wego/{{ page.imgSrc }}.jpg" attr.alt="we-go-services-{{ page.imgSrc }}">
+                        <img class="card-img" attr.src="/assets/images/projects/wego/{{ page.imgSrc }}.jpg"
+                            attr.alt="we-go-services-{{ page.imgSrc }}">
                     </a>
 
                     <div class="card-body">
                         <div class="card-text">
-                            <a *ngIf="page.scripts.length > 1" class="script-collapse" data-toggle="collapse"
-                                attr.href="#{{ this.getIdFromPageTitle(page.pageTitle) }}" role="button"
-                                aria-expanded="false"
-                                attr.aria-controls="{{ this.getIdFromPageTitle(page.pageTitle) }}">
-                                <h6>Page Specific Scripts:</h6>
-                            </a>
-                            <h6 *ngIf="page.scripts.length <= 1">Page Specific Scripts:</h6>
+                            <h6>
+                                <a *ngIf="page.scripts.length > 1" class="script-collapse" data-toggle="collapse"
+                                    attr.href="#{{ this.getIdFromPageTitle(page.pageTitle) }}" role="button"
+                                    aria-expanded="false"
+                                    attr.aria-controls="{{ this.getIdFromPageTitle(page.pageTitle) }}">
+                                    Page Specific Scripts:
+                                </a>
+                            </h6>
+                            <span *ngIf="page.scripts.length <= 1">Page Specific Scripts:</span>
+                            <span *ngIf="page.scripts.length === 0"> None</span>
                             <div attr.id="{{ this.getIdFromPageTitle(page.pageTitle) }}" class="collapse"
                                 [ngClass]="{ show : page.scripts.length <= 1 }">
                                 <div *ngFor="let script of page.scripts">
@@ -98,7 +102,6 @@
                                         <span>{{ script.name }}</span>
                                     </a>
                                 </div>
-                                <span *ngIf="page.scripts.length === 0">None</span>
                             </div>
                         </div>
                     </div>
