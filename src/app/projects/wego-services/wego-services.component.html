@@ -92,7 +92,7 @@
                                     Page Specific Scripts:
                                 </a>
                             </h6>
-                            <span *ngIf="page.scripts.length <= 1">Page Specific Scripts:</span>
+                            <span *ngIf="page.scripts.length <= 1">Page Specific Script:</span>
                             <span *ngIf="page.scripts.length === 0"> None</span>
                             <div attr.id="{{ this.getIdFromPageTitle(page.pageTitle) }}" class="collapse"
                                 [ngClass]="{ show : page.scripts.length <= 1 }">
