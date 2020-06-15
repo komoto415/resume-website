@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import * as p5 from 'p5';
 import * as moment from 'moment'; // aDD this 1 of 4
@@ -11,7 +12,7 @@ import { BarMeta } from './BarData';
 export class CountdownToGraduationComponent implements OnInit {
     private p5;
 
-    constructor() {
+    constructor(public router: Router) {
     }
 
     ngOnInit() {
@@ -20,9 +21,6 @@ export class CountdownToGraduationComponent implements OnInit {
 
     private createCanvas() {
         let counterDiv: HTMLElement = window.document.getElementById("counter");
-        if (counterDiv == null) {
-            return;
-        }
         this.p5 = new p5(this.sketch, counterDiv);
         this.p5.windowResized = () => {
             counterDiv.innerHTML = "";
@@ -38,7 +36,9 @@ export class CountdownToGraduationComponent implements OnInit {
         const TIME_BAR_ROUNDED_RECTANGLE_VALUES: number[] = [0, 10, 10, 0]; // top-left, top-right, bottom-right, bottom-left
 
         let counterDiv: HTMLElement = window.document.getElementById("counter");
-        let divWidth: number = counterDiv.clientWidth;
+        try {
+            var divWidth: number = counterDiv.clientWidth;  
+        } catch  { }
         let canvasHeight: number = window.innerHeight / 2;
         let maxBarWidth: number = (divWidth * 1) - 2 * WRAPPER_DIV_MARGIN;
 
@@ -90,7 +90,7 @@ export class CountdownToGraduationComponent implements OnInit {
                     let textWidth: number = p.textWidth(timeText);
                     let textUnitWidth: number = textWidth / timeText.length;
                     let textXPosition: number = Math.max(textUnitWidth * 4, width - END_OF_BAR_OFFSET) + WRAPPER_DIV_MARGIN;
-                    
+
                     // the 'holsters' of the bars
                     p.fill(p.color("#1d1d33"));
                     p.rect(0, yPosition - BAR_CONTAINER_MARGIN,
