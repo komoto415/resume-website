@@ -64,3 +64,7 @@ a.go-to-top.show:hover {
     color: rgb(140, 139, 173);
     text-decoration: underline !important;
 }
+
+.my-a-link:visited {
+    color: rgb(102, 100, 150);
+}
