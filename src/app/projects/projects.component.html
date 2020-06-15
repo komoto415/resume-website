@@ -4,11 +4,11 @@
             <span>Jeffrey Ng</span>
         </a>
     </span>
-    <span *ngIf="this.windowPosition.windowScrolled && !isParentUrl()" class="navbar-item">>>>&nbsp;</span>
+    <span *ngIf="this.windowPosition.windowScrolled && !isParentUrl()" class="navbar-item">/>>&nbsp;</span>
     <a *ngIf="!isParentUrl()" routerLink="../projects"><span class="navbar-brand">Projects</span></a>
     <span *ngIf="isParentUrl()" class="navbar-brand">Projects</span>
     <span class="navbar-item">
-        <span *ngIf="!isParentUrl()">>>> {{ this.getCurretProject() }}</span>
+        <span *ngIf="!isParentUrl()">/>> {{ this.getCurretProject() }}</span>
     </span>
 </div>
 <div class="wrapper">
