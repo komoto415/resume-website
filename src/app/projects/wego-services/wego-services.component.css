@@ -30,3 +30,7 @@ a.script-collapse h6, .card .pageLink:hover {
 .row {
     margin-bottom: 0 !important;
 }
+
+.card-img {
+    border-radius: 0 !important;
+}
