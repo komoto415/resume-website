@@ -31,10 +31,10 @@ export class EducationCardComponent implements OnInit {
                 "Mathematics",
             ],
             classes: [
-                {
-                    name: "Software Engineering I",
-                    ref: "COSC3339",
-                },
+                // {
+                //     name: "Software Engineering I",
+                //     ref: "COSC3339",
+                // },
                 {
                     name: "Component-Based Programming",
                     ref: "COSC2329",
