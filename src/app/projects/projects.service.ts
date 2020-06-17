@@ -22,20 +22,20 @@ export class ProjectsService {
             router: "wego-services",
             alt: "",
         },
-        {
-            title: "Components-Algorithms Bridge Assignment",
-            thumbnail: "/kart-test.jpg", // https://www.aoe.com/fileadmin/AOE.com/images/main_navigation/blog/Stock_Photos/miscellaneous/Fotolia_94900081_Chess_Pieces_930_590_70.jpg
-            tags: [
-                TagType.java,
-                TagType.components,
-                TagType.algorithms,
-                TagType.data_structures,
-                TagType.personal,
-            ],
-            desc: "An open bid for experimental projects that could be assigned in Component-Based Programming and then reduxed for Algorithm and Data Structures.",
-            router: "comp-to-algo",
-            alt: "",
-        },
+        // {
+        //     title: "Components-Algorithms Bridge Assignment",
+        //     thumbnail: "/kart-test.jpg", // https://www.aoe.com/fileadmin/AOE.com/images/main_navigation/blog/Stock_Photos/miscellaneous/Fotolia_94900081_Chess_Pieces_930_590_70.jpg
+        //     tags: [
+        //         TagType.java,
+        //         TagType.components,
+        //         TagType.algorithms,
+        //         TagType.data_structures,
+        //         TagType.personal,
+        //     ],
+        //     desc: "An open bid for experimental projects that could be assigned in Component-Based Programming and then reduxed for Algorithm and Data Structures.",
+        //     router: "comp-to-algo",
+        //     alt: "",
+        // },
         {
             title: "Login and Register CLI",
             thumbnail: "/first-project.jpg", // https://naibuzz.com/wp-content/uploads/2017/09/StartOfANewJourney.jpg
@@ -62,21 +62,21 @@ export class ProjectsService {
             router: "enigma",
             alt: "",
         },
-        {
-            title: "Resume and Portfolio Website",
-            thumbnail: "/resume-website.jpg", // Just a screen shot c:
-            tags: [
-                TagType.javascript,
-                TagType.html,
-                TagType.css,
-                TagType.angularjs,
-                TagType.digitalocean,
-                TagType.ngnix,
-            ],
-            desc: "My first attempt at building an AngularJS app and deploying it on a VPS",
-            router: "resume-website",
-            alt: "",
-        },
+        // {
+        //     title: "Resume and Portfolio Website",
+        //     thumbnail: "/resume-website.jpg", // Just a screen shot c:
+        //     tags: [
+        //         TagType.javascript,
+        //         TagType.html,
+        //         TagType.css,
+        //         TagType.angularjs,
+        //         TagType.digitalocean,
+        //         TagType.ngnix,
+        //     ],
+        //     desc: "My first attempt at building an AngularJS app and deploying it on a VPS",
+        //     router: "resume-website",
+        //     alt: "",
+        // },
         // {
         //     title: "To Brock and not to Brock",
         //     thumbnail: "/senior-project.png", // https://i.ibb.co/7yMB9t6/FireRed.png
