@@ -29,6 +29,19 @@ h6, #school {
     font-size: 14px;
 }
 
+.card-header {
+    padding: 10px 15px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h6, .card-body ul {
+    margin-bottom: 5px;
+}
+
+
 @media screen and (min-width: 480px) {
     .card {
         font-size: 14px;
