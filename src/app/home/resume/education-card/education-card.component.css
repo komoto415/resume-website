@@ -65,3 +65,29 @@ h6, #school {
         font-size: 18px;
     }
 }
+
+/* ul {
+list-style: none;  */
+    /* Remove default bullets */
+/* } */
+
+/* ul li {
+    display: inline;  */
+    /* Needed to add space between the bullet and the text */
+    /* padding: 0;
+} */
+
+/* ul li::before { */
+    /* content: "\2022";   */
+    /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    /* font-weight: bolder;  */
+    /* If you want it to be bold */
+    /* width: 1em;  */
+    /* Also needed for space (tweak if needed) */
+    /* margin-left: -1em;  */
+    /* Also needed for space (tweak if needed) */
+/* } */
+
+/* ul li {
+    margin-right: 1.25em;
+} */

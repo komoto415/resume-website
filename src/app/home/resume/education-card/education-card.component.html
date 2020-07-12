@@ -19,7 +19,7 @@
                             <span>
                                 {{ "Minor" + (college.minors.length > 1 ? "s" : "") }}
                             </span>
-                            <ul>
+                            <ul id="minors">
                                 <li *ngFor="let minor of college.minors;">
                                     {{ minor }}
                                 </li>
@@ -35,10 +35,12 @@
                         <h6>
                             {{ "Class" + (college.classes.length > 1 ? "es" : "" ) + " of Note" }}
                         </h6>
-                        <ul *ngIf="college.minors.length > 0">
+                        <ul id="classes">
                             <li *ngFor="let class of this.college.classes;">
                                 <span class="clazz" data-toggle="modal"
-                                    attr.data-target="#{{ this.simplifyString(class.name) }}">{{ class.name }}</span>
+                                    attr.data-target="#{{ this.simplifyString(class.name) }}">
+                                    {{ class.name }}
+                                </span>
                             </li>
                         </ul>
                     </div>
