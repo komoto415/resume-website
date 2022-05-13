@@ -1,55 +1,25 @@
 <div class="card-columns">
     <div class="item project-card inner fade-in" *ngFor="let project of projects;">
-        <a routerLink="{{ project.router }}">
-            <div class="card">
-                <img class="card-img-top" attr.src="/assets/images/projects/{{ project.thumbnail }}"
-                    attr.alt="{{ project.alt }}">
-                <div class="card-body">
+        <!-- <a routerLink="{{ project.router }}"> -->
+        <div class="card">
+            <a routerLink="{{ project.router }}">
+                <img class="card-img-top" attr.src="/assets/images/projects/{{ project.thumbnail }}" attr.alt="{{ project.alt }}">
+            </a>
+            <div class="card-body">
+                <a routerLink="{{ project.router }}">
                     <h5 class="card-title"> {{ project.title }} </h5>
-                    <p class="card-text"> {{ project.desc }} </p>
-                    <div class="tags">
-                        <span class="tag" *ngFor="let tag of project.tags"> #{{ tag }} </span>
-                    </div>
+                </a>
+                <p class="card-text"> {{ project.desc }} </p>
+                <div class="tags">
+                    <span class="tag" *ngFor="let tag of project.tags"> #{{ tag }} </span>
                 </div>
+                <!-- <div class="credit">
+                    <a href="{{ project.credit }}">
+                        <span>Image</span>
+                    </a>
+                </div> -->
             </div>
-        </a>
+        </div>
+        <!-- </a> -->
     </div>
 </div>
-
-<!-- <div class="masonry-wrapper">
-    <div class="masonry">
-        <div class="masonry-item project-card inner fade-in" *ngFor="let project of projects;">
-            <a routerLink="{{ project.router }}">
-                <div class="masonry-content">
-                    <img class="card-img-top" attr.src="/assets/images/projects/{{ project.thumbnail }}"
-                        attr.alt="{{ project.alt }}">
-                    <h3 class="masonry-title"> {{ project.title }} </h3>
-                    <div class="masonry-description">
-                        {{ project.desc }}
-                        <div class="tags">
-                            <span class="tag" *ngFor="let tag of project.tags"> #{{ tag }} </span>
-                        </div>
-                    </div>
-                </div>
-            </a>    
-        </div>
-    </div>
-</div> -->
-
-<!-- <div class="my-container">
-    <div class="container-item project-card inner fade-in" *ngFor="let project of projects;">
-        <a routerLink="{{ project.router }}">
-            <div class="card">
-                <img class="card-img-top" attr.src="/assets/images/projects/{{ project.thumbnail }}"
-                    attr.alt="{{ project.alt }}">
-                <div class="card-body">
-                    <h5 class="card-title"> {{ project.title }} </h5>
-                    <p class="card-text"> {{ project.desc }} </p>
-                    <div class="tags">
-                        <span class="tag" *ngFor="let tag of project.tags"> #{{ tag }} </span>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-</div> -->

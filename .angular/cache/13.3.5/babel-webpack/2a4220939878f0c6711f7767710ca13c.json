@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class BarMeta {\n  constructor(timeValue, unitDivisor, widthPerUnit, barColour, unit) {\n    this.timeValue = timeValue;\n    this.unitDivisor = unitDivisor;\n    this.widthPerUnit = widthPerUnit;\n    this.barColour = barColour;\n    this.unit = unit;\n    this.desc = `${timeValue} ${unit}`;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

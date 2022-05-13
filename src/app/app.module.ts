@@ -39,6 +39,7 @@ import { MiniCactpotComponent } from './projects/mini-cactpot/mini-cactpot.compo
 import { CountdownToGraduationComponent } from './home/countdown-to-graduation/countdown-to-graduation.component';
 import { Rc4Component } from './projects/rc4/rc4.component';
 import { DominoesComponent } from './projects/dominoes/dominoes.component';
+import { TournamentComponent } from './projects/tournament/tournament.component';
 
 @NgModule({
     declarations: [
@@ -68,6 +69,7 @@ import { DominoesComponent } from './projects/dominoes/dominoes.component';
         MiniCactpotComponent,
         Rc4Component,
         DominoesComponent,
+        TournamentComponent,
     ],
     imports: [
         BrowserModule,

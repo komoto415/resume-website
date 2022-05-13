@@ -1,38 +1,34 @@
-<div *ngIf="this.router.url !== '/projects'" class="navbar justify-content-start"
-    [ngClass]="{ 'sticky-top' : this.router.url !== '/projects' }">
+<div *ngIf="this.router.url !== '/projects'" class="navbar justify-content-start" [ngClass]="{ 'sticky-top' : this.router.url !== '/projects' }">
     <span *ngIf="this.windowPosition.windowScrolled && !isParentUrl()" class="navbar-brand">
         <a style="color: aliceblue;" routerLink="" routerLinkActive="active">
             <span>Jeffrey Ng</span>
-        </a>
+    </a>
     </span>
     <a *ngIf="this.windowPosition.windowScrolled && !isParentUrl()" routerLink="../projects">
         <span class="navbar-brand">Projects</span>
     </a>
     <span *ngIf="this.windowPosition.windowScrolled && !isParentUrl()" class="navbar-brand">/</span>
     <span class="navbar-brand"> {{ this.getCurrentProject() }} </span>
+    <div class="tag">
+        <span *ngFor="let tag of getCurrentProjectTags()">#{{ tag }} </span>
+    </div>
 </div>
 <div class="wrapper">
     <div class="content">
         <div id="selected-project-container" [ngClass]="{ hide : this.router.url === '/projects' }">
-            <div>
+            <!-- <div>
                 <h1>{{ this.getCurrentProject() }}</h1>
-            </div>
+            </div> -->
             <div class="project-wrapper">
                 <div class="project-content">
-                    <div class="tag">
-                        Tags: <span *ngFor="let tag of getCurrentProjectTags()">#{{ tag }} </span>
-                    </div>
-                    <br>
                     <router-outlet></router-outlet>
                 </div>
             </div>
         </div>
         <div [ngClass]="{ hide : this.router.url !== '/projects' }">
-            <app-project-controller [tagsInView]="tagsInViewAux" (titleEmitter)="captureTitle($event)"
-                (tagEmitter)="captureTags($event)">
+            <app-project-controller [tagsInView]="tagsInViewAux" (titleEmitter)="captureTitle($event)" (tagEmitter)="captureTags($event)">
             </app-project-controller>
-            <app-project-selector (currentTagsEmitter)="capturefilteredTags($event)" [titleQueryIn]="titleQueryAux"
-                [tagQueryIn]="tagQueryAux">
+            <app-project-selector (currentTagsEmitter)="capturefilteredTags($event)" [titleQueryIn]="titleQueryAux" [tagQueryIn]="tagQueryAux">
             </app-project-selector>
         </div>
     </div>

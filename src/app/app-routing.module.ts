@@ -13,6 +13,7 @@ import { ResumeWebsiteComponent } from './projects/resume-website/resume-website
 import { MiniCactpotComponent } from './projects/mini-cactpot/mini-cactpot.component';
 import { DominoesComponent } from './projects/dominoes/dominoes.component';
 import { Rc4Component } from './projects/rc4/rc4.component';
+import { TournamentComponent } from './projects/tournament/tournament.component';
 
 const routes: Routes = [
     {
@@ -84,6 +85,13 @@ const routes: Routes = [
                 component: Rc4Component,
                 data: {
                     title: "RC4 Encryption",
+                },
+            },
+            {
+                path: 'tournament',
+                component: TournamentComponent,
+                data: {
+                    title: "Tournament Bracket",
                 },
             },
         ],

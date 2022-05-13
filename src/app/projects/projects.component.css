@@ -28,9 +28,11 @@
     color: aliceblue !important;
 }
 
+
 /* Connent Wrappers */
 
-.content, .project-content {
+.content,
+.project-content {
     margin: 0;
 }
 
@@ -38,6 +40,7 @@
     margin: 30px 4rem 30px 4rem;
     min-height: calc(100vh - 236px);
 }
+
 
 /* 
     header          60
@@ -54,16 +57,19 @@
 }
 
 @media screen and (min-width: 480px) {
-    .content, .project-content {
+    .content,
+    .project-content {
         margin: 0 2vw 0 2vw;
     }
 }
+
 
 /* Project Selector */
 
 .hide {
     display: none;
 }
+
 
 /* Subcomponent content media scaling */
 
@@ -76,7 +82,8 @@
     text-align: center;
 }
 
-.card-columns, .controller {
+.card-columns,
+.controller {
     font-size: 75%;
 }
 
@@ -88,7 +95,8 @@ label.tagCheckBox {
     .controller #searchHeader {
         font-size: 1.30rem;
     }
-    .card-columns, .controller {
+    .card-columns,
+    .controller {
         font-size: 80%;
     }
     label.btn.btn-secondary.tagCheckbox {
@@ -100,7 +108,8 @@ label.tagCheckBox {
     .controller #searchHeader {
         font-size: 1.40rem;
     }
-    .card-columns, .controller {
+    .card-columns,
+    .controller {
         font-size: 90%;
     }
     label.btn.btn-secondary.tagCheckbox {
@@ -112,13 +121,15 @@ label.tagCheckBox {
     .controller #searchHeader {
         font-size: 24px;
     }
-    .card-columns, .controller {
+    .card-columns,
+    .controller {
         font-size: 100%;
     }
     label.btn.btn-secondary.tagCheckbox {
         font-size: 90% !important;
     }
 }
+
 
 /* Fade in fade out credit: https://medium.com/cloud-native-the-gathering/how-to-use-css-to-fade-in-and-fade-out-html-text-and-pictures-f45c11364f08 */
 
@@ -331,6 +342,7 @@ label.tagCheckBox {
         border: 0px;
     }
 }
+
 
 /* To set when scrolling on projects */
 

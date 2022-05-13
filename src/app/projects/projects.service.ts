@@ -5,7 +5,8 @@ export class ProjectsService {
     projects: Project[] = [
         {
             title: "WeGo Services",
-            thumbnail: "/wego.jpg", // https://www.newyorker.com/magazine/2013/11/25/auto-correct
+            thumbnail: "/wego.jpg", 
+            credit: "https://www.newyorker.com/magazine/2013/11/25/auto-correct",
             tags: [
                 TagType.python,
                 TagType.javascript,
@@ -26,7 +27,8 @@ export class ProjectsService {
         },
         {
             title: "A Coding Litmus Test",
-            thumbnail: "/kart-test.jpg", // https://www.aoe.com/fileadmin/AOE.com/images/main_navigation/blog/Stock_Photos/miscellaneous/Fotolia_94900081_Chess_Pieces_930_590_70.jpg
+            thumbnail: "/kart-test.jpg", 
+            credit: "https://www.aoe.com/fileadmin/AOE.com/images/main_navigation/blog/Stock_Photos/miscellaneous/Fotolia_94900081_Chess_Pieces_930_590_70.jpg",
             tags: [
                 TagType.java,
                 TagType.components,
@@ -41,7 +43,8 @@ export class ProjectsService {
         },
         {
             title: "Login and Register CLI",
-            thumbnail: "/first-project.jpg", // https://naibuzz.com/wp-content/uploads/2017/09/StartOfANewJourney.jpg
+            thumbnail: "/first-project.jpg",
+            credit: "https://naibuzz.com/wp-content/uploads/2017/09/StartOfANewJourney.jpg",
             tags: [
                 TagType.python,
                 TagType.cli,
@@ -55,7 +58,8 @@ export class ProjectsService {
         },
         // {
         //     title: "Python Enigma Machine",
-        //     thumbnail: "/enigma.jpg", // https://content.presspage.com/uploads/1369/enigmamachine-701206.jpg?10000
+        //     thumbnail: "/enigma.jpg",
+            // credit: "https://content.presspage.com/uploads/1369/enigmamachine-701206.jpg?10000",
         //     tags: [
         //         TagType.python,
         //         TagType.cli,
@@ -69,6 +73,7 @@ export class ProjectsService {
         {
             title: "Resume and Portfolio Website",
             thumbnail: "/resume-website.jpg", // Just a screen shot c:
+            credit: "",
             tags: [
                 TagType.javascript,
                 TagType.html,
@@ -84,7 +89,8 @@ export class ProjectsService {
         },
         // {
         //     title: "Final Fantasy 14 Mini Cactpot Solver",
-        //     thumbnail: "/mini-cactbot.jpg", // https://img.finalfantasyxiv.com/lds/h/s/W9Kg2eTjUfbVOr3GwZrSkTI7Nc.jpg
+        //     thumbnail: "/mini-cactbot.jpg", 
+            // credit: "https://img.finalfantasyxiv.com/lds/h/s/W9Kg2eTjUfbVOr3GwZrSkTI7Nc.jpg",
         //     tags: [
         //         TagType.python,
         //         TagType.cli,
@@ -99,7 +105,8 @@ export class ProjectsService {
         // },
         {
             title: "Dominoes",
-            thumbnail: "/dominoes.jpg", // https://www.gamesver.com/wp-content/uploads/2019/09/Domino.-The-game-of-dominoes.jpg
+            thumbnail: "/dominoes.jpg", 
+            credit: "https://www.gamesver.com/wp-content/uploads/2019/09/Domino.-The-game-of-dominoes.jpg",
             tags: [
                 TagType.java,
                 TagType.school,
@@ -113,6 +120,7 @@ export class ProjectsService {
         {
             title: "RC4",
             thumbnail: "/rc4.jpg",
+            credit: "",
             tags: [
                 TagType.python,
                 TagType.school,
@@ -121,6 +129,19 @@ export class ProjectsService {
             ],
             desc: "The inner machinations of my mind are an enigma",
             router: "rc4",
+            alt: "",
+            replit_url: "",
+        },
+        {
+            title: "Tournament",
+            thumbnail: "",
+            credit: "",
+            tags: [
+                TagType.java,
+                TagType.school,
+            ],
+            desc: "The inner machinations of my mind are an enigma",
+            router: "tournament",
             alt: "",
             replit_url: "",
         },

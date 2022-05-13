@@ -1,8 +1,7 @@
 <div class="row justify-content-center">
-    <div *ngFor="let technicalSkill of technicalSkills" class="col-4">
+    <div *ngFor="let technicalSkill of technicalSkills" class="col-6 col-sm-4 col-lg-3 col-xl-2">
         <div class="skill d-flex justify-content-center">
-            <img (click)="goToProjectsUsing($event.target.id)" [src]="this.getImagePath(technicalSkill)"
-                attr.id="{{technicalSkill}}">
+            <img (click)="goToProjectsUsing($event.target.id)" [src]="this.getImagePath(technicalSkill)" attr.id="{{technicalSkill}}">
         </div>
     </div>
 </div>
