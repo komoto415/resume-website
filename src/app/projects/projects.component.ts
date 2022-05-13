@@ -40,7 +40,7 @@ export class ProjectsComponent implements OnInit {
         return this.router.url === '/projects'
     }
 
-    getCurretProject(): string {
+        getCurrentProject(): string {
         let url: string[] = this.router.url.split('/');
         let route = url[url.length - 1];
         let index: number = 0;
@@ -59,7 +59,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     getCurrentProjectTags(): TagType[] {
-        let currentProjectTitle: string = this.getCurretProject();
+        let currentProjectTitle: string = this.getCurrentProject();
         let index: number = 0;
         let foundProject: boolean = false;
         let currentProjectTags: TagType[] = [];

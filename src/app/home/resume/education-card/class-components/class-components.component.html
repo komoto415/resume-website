@@ -1,118 +1,60 @@
-<h4>Learning How to Conform with Design</h4>
-<!-- <h5>"I have my agenda"</h5>
-<span>- Dr. Kart</span> -->
+<h4>Learning how to Conform with Design</h4>
 <div>
     <p>
-        Up until now, projects were fairly straight forwards. As far as design constraints were concerned, all there was
+        Up until now, projects were fairly straight forward. As far as design constraints were concerned, all there was
         to
         it was a simple interface. However, problems weren’t complex enough to have lots of different forms of
         implementation nor were we seeking any kind of optimisations. Although some testing practices existed prior to
         this
-        class, Components would be the first class to try and promote the usage of unit tests and that student begin to
-        write their own test cases for their assignments.
+        class, Components would be the first class to try and promote the usage of unit tests and for students to begin
+        writing their own test cases for assignments.
     </p>
     <div class="">
-        <img src="/assets/images/education/dominos.jpg" class="img-fluid float-left mr-3">
-        <h5>Dominos</h5>
+        <h5>Dominoes</h5>
         <p>
-            The stand out assignments from this class was Dominos part 1 and 2. The main arc of them could be
+            The stand out assignments from this class was Dominoes part 1 and 2. The main arc of them could be
             simplified into one question: How do we comply with a client's representation of
-            a concept that we developed, and use it with our representation of the same concept? For example, at an
-            instance level, our domino might be represented as two integer variables, aptly named lowPipCount and
-            highPipCount. But say the method in which our client interfaces with our instance is a string where the
-            first number is the high, the second the low and delimited by a colon. This translation can also be
-            represented in a table as so:
+            a concept that we developed, and use it with our representation of the same concept? In other words, how do we as the developers of the program/interface contend with this mismatch of concept representation? In essence that's what Dominoes was; lots different ways of representing the same concept interfacing and translating between different client facing representations of the domino concept.
+            <a href="/projects/dominoes">Learn more</a> about the Dominoes assignment and my implementation!
+        </p>
+        <h5>Ambiguous Ambiguity </h5>
+        <p>
+            Though that does seem to be the assignment that many alumni of the class remember, the heart of this class,
+            I
+            believe, was in all of its weirdness and how it leans on ambiguity. Assignment handouts were often times
+            left
+            short
+            on information, documented poorly or in an unhelpful way and once asked for the incorrect formatting on
+            deliverables. Intentionally. This was especially terrifying because you had one submission and no ones tests
+            to
+            run
+            against except if you had made your own.
+        </p>
+        <p>
+            Some students found it frustrating which I can understand, but like no other class before it, Components was
+            designed to
+            reward those who took the time to read the assignment sheets early and to spending time looking for
+            potential
+            errors, inconsistencies and/or short comings. If you didn't, the difference between getting a 50 and a 100
+            might
+            as
+            well have been a coin flip. Like no other class before it makes you appreciate good documentation and
+            well-formed
+            specifications in documentation. But, though perhaps more due to the nature of the assignment concepts, it
+            really
+            forced you to come up with <strong>good</strong> clarifying questions and better ways to clearly articulate
+            your
+            point.
+        </p>
+        <p>
+            With the combination of assignments and professor, Components is easily one of my favourite
+            classes in university and comes to be one of the closest we get to learning about <strong>design</strong>
+            principles
+            and
+            the <strong>limitations</strong> of that design outside of our
+            Software Engineering class.
+        </p>
+        <p>
+            Click <a href="https://github.com/komoto415/COSC2329">here</a> if you'd like to check out my GitHub repository of all my Components assignments.
         </p>
     </div>
-    <div class="row justify-content-around" style="margin-bottom: 16px;">
-        <div class="col nomargin d-flex justify-content-center">
-            <table>
-                <thead>
-                    <th>Client</th>
-                    <th>Internal</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>highLowString = "0:0"</td>
-                        <td>lowPipCount = 0, highPipCount = 0</td>
-                    </tr>
-                    <tr>
-                        <td>highLowString = "1:0"</td>
-                        <td>lowPipCount = 0, highPipCount = 1</td>
-                    </tr>
-                    <tr>
-                        <td>highLowString = "2:0"</td>
-                        <td>lowPipCount = 0, highPipCount = 2</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col nomargin d-flex justify-content-center">
-            <table>
-                <thead>
-                    <th>Client</th>
-                    <th>Internal</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>highLowString = "3:0"</td>
-                        <td>lowPipCount = 0, highPipCount = 3</td>
-                    </tr>
-                    <tr>
-                        <td>highLowString = "4:0"</td>
-                        <td>lowPipCount = 0, highPipCount = 4</td>
-                    </tr>
-                    <tr>
-                        <td>highLowString = "5:0"</td>
-                        <td>lowPipCount = 0, highPipCount = 5</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <p>
-        so on and so forth. With this in mind, how do we as the developers of the program/interface contend with this
-        mismatch is concept representation? In essence that's what Dominos was; lots different ways of representing the
-        same
-        concept interfacing and translating between different client facing representations of the dominos concept.
-    </p>
-    <h5>Ambiguous Ambiguity </h5>
-    <p>
-        Though that does seem to be the assignment that many alumni of the class remember, the heart of this class, I
-        believe, was in all of its weirdness and how it leans on ambiguity. Assignment handouts were often times left
-        short
-        on information, documented poorly or in an unhelpful way and once asked for the incorrect formatting on
-        deliverables. Intentionally. This was especially terrifying because you had one submission and no ones tests to
-        run
-        against except if you had made your own.
-    </p>
-    <p>
-        Some students found it frustrating which I can understand, but like no other class before it, Components was designed to
-        reward those who took the time to read the assignment sheets early and to spending time looking for potential
-        errors, inconsistencies and/or short comings. If you didn't, the difference between getting a 50 and a 100 might
-        as
-        well have been a coin flip. Like no other class before it makes you appreciate good documentation and
-        well-formed
-        specifications in documentation. But, though perhaps more due to the nature of the assignment concepts, it
-        really
-        forced you to come up with <strong>good</strong> clarifying questions and to find ways to clearly articulate
-        your
-        point.
-    </p>
-    <p>
-        The assignments we had in combination with the professor, Components is easily one of my favourite
-        classes in university and comes to be one of the closest we get to learning about <strong>design</strong> principles
-        and
-        the <strong>limitations</strong> of that design outside of our 
-        <!-- <span id="goToSWE" data-toggle="modal"
-            data-target="#software-engineering-i-modal" data-dismiss="modal">Software
-            Engineering</span>  -->
-        Software Engineering class.
-    </p>
-    <p>
-        Click <a href="https://github.com/komoto415/COSC2329">here</a> if you'd like to check out the repository of my
-        submitted assignments. <br />
-        And here's Dominos <a href="https://github.com/komoto415/COSC2329/tree/master/CHIII">part 1</a> and
-        <a href="https://github.com/komoto415/COSC2329/tree/master/CHIV">part 2</a>.
-    </p>
-</div>

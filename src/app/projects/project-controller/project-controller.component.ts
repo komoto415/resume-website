@@ -21,8 +21,8 @@ export class ProjectControllerComponent implements OnInit, OnChanges {
     tagQuery: string;
 
     constructor(public projectsService: ProjectsService, public technicalSkillsService: TechnicalSkillsService) {
-        this.tags = this.projectsService.getAllUniqueTags();
-        this.tagsInView = this.projectsService.getAllUniqueTags();
+        this.tags = this.projectsService.getAllUniqueTags().sort();
+        this.tagsInView = this.projectsService.getAllUniqueTags().sort();
         this.tagQuery = "";
         if (this.technicalSkillsService.technicalSkill != null) {
             this.tagQuery = this.technicalSkillsService.technicalSkill;

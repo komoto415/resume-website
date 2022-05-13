@@ -41,18 +41,6 @@ export class EducationCardComponent implements OnInit {
                 },
             ],
         },
-        // {
-        //     name: "Washington University in St. Louis",
-        //     timeline: "2021-2024",
-        //     shorthand: "washu",
-        //     degrees: [
-        //         "Masters in Robotics",
-        //         "Bachelors of Science Electrical Engineering",
-        //     ],
-        //     gpa: "N/A",
-        //     minors: [],
-        //     classes: [],
-        // },
     ]
     constructor() { }
 

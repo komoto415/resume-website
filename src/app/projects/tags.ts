@@ -8,9 +8,20 @@ export enum TagType {
     sql = "sql",
     julia = "julia",
 
-    /*  */
+    /* Scale */
+    small = "small",
+    medium = "medium",
+    large = "large",
+    mini_project = "mini-project",
+
+    /* misc */
     first = "first",
+
+    /* Why */
     personal = "personal",
+    for_fun = "for-fun",
+    learning_oppurtunity = "learning-oppurtunity",
+    school = "school",
 
     /* Technologies */
     angularjs = "angularjs",
@@ -26,10 +37,12 @@ export enum TagType {
 
     /* Classes */
     cs1 = "cs1",
+    cs2 = "cs2",
     components = "components",
     algorithms = "algorithms",
     data_structures = "data-structures",
     swei = "swei",
+    security = "security",
 
     /* Form/Medium */
     web_app = "web-app",

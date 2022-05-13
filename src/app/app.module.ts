@@ -7,7 +7,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 
-
 import { HomeComponent } from './home/home.component';
 
 import { BannerComponent } from './home/banner/banner.component';
@@ -26,16 +25,20 @@ import { ClassSweComponent } from './home/resume/education-card/class-swe/class-
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectControllerComponent } from './projects/project-controller/project-controller.component';
 import { ProjectSelectorComponent } from './projects/project-selector/project-selector.component';
-import { WegoServicesComponent } from './projects/wego-services/wego-services.component';
-import { CompToAlgoComponent } from './projects/comp-to-algo/comp-to-algo.component';
 
 import { PageErrorComponent } from './page-error/page-error.component';
 import { PageNotFoundComponent } from './page-error/page-not-found/page-not-found.component';
 import { MaintenanceComponent } from './page-error/maintenance/maintenance.component';
+
+import { WegoServicesComponent } from './projects/wego-services/wego-services.component';
+import { CompToAlgoComponent } from './projects/comp-to-algo/comp-to-algo.component';
+import { ResumeWebsiteComponent } from './projects/resume-website/resume-website.component';
 import { FirstProjectComponent } from './projects/first-project/first-project.component';
 import { EnigmaComponent } from './projects/enigma/enigma.component';
-import { ResumeWebsiteComponent } from './projects/resume-website/resume-website.component';
+import { MiniCactpotComponent } from './projects/mini-cactpot/mini-cactpot.component';
 import { CountdownToGraduationComponent } from './home/countdown-to-graduation/countdown-to-graduation.component';
+import { Rc4Component } from './projects/rc4/rc4.component';
+import { DominoesComponent } from './projects/dominoes/dominoes.component';
 
 @NgModule({
     declarations: [
@@ -62,6 +65,9 @@ import { CountdownToGraduationComponent } from './home/countdown-to-graduation/c
         EnigmaComponent,
         ResumeWebsiteComponent,
         CountdownToGraduationComponent,
+        MiniCactpotComponent,
+        Rc4Component,
+        DominoesComponent,
     ],
     imports: [
         BrowserModule,
