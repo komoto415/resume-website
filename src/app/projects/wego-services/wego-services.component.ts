@@ -128,12 +128,12 @@ export class WegoServicesComponent implements OnInit {
                 }
             ],
         },
-        {
-            penId: "",
-            pageTitle: "Fleet Manager Dashboard",
-            imgSrc: "fleet-manager-dashboard",
-            scripts: [],
-        },
+        // {
+        //     penId: "",
+        //     pageTitle: "Fleet Manager Dashboard",
+        //     imgSrc: "fleet-manager-dashboard",
+        //     scripts: [],
+        // },
     ];
 
     constructor() { }

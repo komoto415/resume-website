@@ -8,5 +8,4 @@ export class Project {
     desc: string;
     router: string;
     alt: string;
-    replit_url: string;
 }
